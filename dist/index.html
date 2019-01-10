@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>首页</title>
+  <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <div class="home">
+    <div class="sidebar">
+      <a class="logo" href="./index.html">NOWPAY</a>
+      <li class="sidebar-item"
+          v-for="(item,index) in sidebarData"
+          :class="index === currentIndex?'sidebar-active':''"
+          @click="indexTab(index)"
+      >
+        <i></i>
+        <span>{{item}}</span>
+      </li>
+    </div>
+    <div class="main">
+      <div class="main-top">
+        <div class="top-content">
+          <div class="content-left">欢迎使用NOVOXPAY出入金系统！</div>
+          <div class="content-right">
+            <span>2018.08.03</span>
+            <span>星期五</span>
+            <span>15:23:56</span>
+            <span>xiaodao</span>
+          </div>
+        </div>
+        <a class="top-logout" href="./login.html"></a>
+      </div>
+      <div class="dear-user">
+        <div class="user-content">
+          <p>尊敬的经纪商用户：</p>
+          <p>
+            NOVOXPAY欢迎您！上次登录时间：
+            <span>2018-8-3 11:55:16</span></p>
+        </div>
+      </div>
+      <div class="remind">
+        <div class="remind-content">
+          <i class="icon"></i>
+          <p>为确保CRM的美金跟NOVOXPAY的USDT一致，
+            建议CRM设置汇率时兑入价比NOVOXPAY高1%，
+            兑出价格低1%</p>
+        </div>
+      </div>
+      <!--汇率-->
+      <div class="cny">
+        <div class="cny-cnh">
+          <div class="cnh-item">
+            <p class="item-title">人民币兑入汇率</p>
+            <i class="item-icon"></i>
+            <p class="item-text">
+              <strong>6.97</strong>CNY</p>
+          </div>
+          <div class="cnh-item">
+            <p class="item-title">人民币兑出汇率</p>
+            <i class="item-icon"></i>
+            <p class="item-text">
+              <strong>6.88</strong>CNY</p>
+          </div>
+        </div>
+        <!--资产-->
+        <div class="asset">
+          <div class="asset-item"></div>
+          <div class="asset-item"></div>
+          <div class="asset-item"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script src="js/index.js"></script>

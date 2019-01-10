@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>登录</title>
+  <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/login.css">
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <div class="login">
+    <div class="login-main">
+      <i class="main-logo"></i>
+      <p>兑入兑出系统</p>
+      <form action="#">
+        <li>
+          <i></i>
+          <input type="tel"
+                 v-model="mobile"
+                 placeholder="手机号" maxlength="13">
+        </li>
+        <li>
+          <i></i>
+          <input type="password"
+                 placeholder="密码" maxlength="16">
+        </li>
+        <li>
+          <a href="./index.html">
+            <input type="button" value="登录">
+          </a>
+        </li>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script src="js/login.js"></script>

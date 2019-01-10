@@ -1,0 +1,80 @@
+/*登录页面*/
+.login {
+  width: 100%;
+  height: 737px;
+  background: url("../images/bg/bg.png") no-repeat center;
+  position: relative;
+}
+.login .login-main {
+  width: 436px;
+  height: 316px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.login .login-main .main-logo {
+  display: block;
+  width: 200px;
+  height: 28px;
+  background: url("../images/logo/login_logo.png") no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 44px;
+}
+.login .login-main > p {
+  text-align: center;
+  color: #ad9d7c;
+  margin-top: 8px;
+}
+.login .login-main form {
+  width: 323px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.login .login-main form li {
+  width: 100%;
+  height: 36px;
+  margin-top: 20px;
+  border: 1px solid #e2e3e7;
+  border-radius: 4px;
+}
+.login .login-main form li > i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 12px;
+  background: url("../images/logo/login_icon_phone.png") no-repeat;
+}
+.login .login-main form li input {
+  width: 280px;
+  height: 100%;
+  float: left;
+  outline: none;
+  margin-left: 12px;
+}
+.login .login-main form li input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+.login .login-main form li:nth-child(3) {
+  border: 1px solid #fae3b3;
+}
+.login .login-main form li:nth-child(3) a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.login .login-main form li:nth-child(3) a input {
+  width: 100%;
+  margin-left: 0;
+  background: #fae3b3;
+  cursor: pointer;
+  color: #231815;
+  font-size: 14px;
+  font-weight: bold;
+}
