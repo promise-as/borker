@@ -41,7 +41,7 @@
       <a class="logo" href="./index.html">NOWPAY</a>
       <li class="sidebar-item"
           v-for="(item,index) in sidebarData"
-          :class="index === currentIndex?'sidebar-active':''"
+          :class="cashOutOrderSidebarIndex === index?'sidebar-active':''"
           @click="indexTab(index)"
       >
         <i></i>

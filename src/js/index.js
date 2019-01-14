@@ -6,7 +6,8 @@ var app = new Vue({
     sidebarData: [
       '兑入订单管理', '兑出订单管理', '收款订单管理', '数字资产汇款', '自定义风格页面 '
     ],
-    currentIndex: 0,
+    homeSidebarIndex: 0,
+    cashOutOrderSidebarIndex: 1,
     assets: [
       {title: '当前资产', USDT: '10000.00', CNY: '70000.00'},
       {title: '冻结资产', USDT: '10000.00', CNY: '70000.00'},
@@ -152,7 +153,8 @@ var app = new Vue({
   methods: {
     // 侧栏tab
     indexTab: function (index) {
-      this.currentIndex = index
+      this.homeSidebarIndex = index
+      this.cashOutOrderSidebarIndex = index
     },
 
     lookLog: function () {

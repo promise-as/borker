@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>订单详情</title>
+  <title>兑入订单详情</title>
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/order_detail.css">
+  <link rel="stylesheet" href="./css/match_order_detail.css">
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -17,7 +17,7 @@
       <a class="logo" href="./index.html">NOWPAY</a>
       <li class="sidebar-item"
           v-for="(item,index) in sidebarData"
-          :class="index === currentIndex?'sidebar-active':''"
+          :class="homeSidebarIndex === index?'sidebar-active':''"
           @click="indexTab(index)"
       >
         <i></i>

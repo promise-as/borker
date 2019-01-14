@@ -6,7 +6,8 @@ var app = new Vue({
   el: '#app',
   data: {
     sidebarData: ['兑入订单管理', '兑出订单管理', '收款订单管理', '数字资产汇款', '自定义风格页面 '],
-    currentIndex: 0,
+    homeSidebarIndex: 0,
+    cashOutOrderSidebarIndex: 1,
     assets: [{ title: '当前资产', USDT: '10000.00', CNY: '70000.00' }, { title: '冻结资产', USDT: '10000.00', CNY: '70000.00' }, { title: '可用资产', USDT: '10000.00', CNY: '70000.00' }],
     remitUrl: 'http://18.136.105.121:8087/acceptant/' + 'toPayPayeeConfigIndexPage?model=acceptor&fun=acceptor_edit',
     infoDetail: [{ name: '商户名称：', value: 'CPT' }, { name: '允许调用的IP：', value: '192.25.56.366' }, { name: '加密key：', value: '192.25.56.366' }, { name: '商户电话：', value: '192.25.56.366' }, { name: '商户邮箱：', value: 'zhongwuchisha@163.com' }, { name: '回调地址：', value: '192.25.56.366' }],
@@ -125,7 +126,8 @@ var app = new Vue({
   methods: {
     // 侧栏tab
     indexTab: function indexTab(index) {
-      this.currentIndex = index;
+      this.homeSidebarIndex = index;
+      this.cashOutOrderSidebarIndex = index;
     },
 
     lookLog: function lookLog() {
