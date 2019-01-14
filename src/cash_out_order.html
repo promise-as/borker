@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>兑入订单</title>
+  <title>兑出订单</title>
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/match_order.css">
+  <link rel="stylesheet" href="./css/cash_out_order.css">
   <!-- 引入样式 -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
@@ -18,7 +18,7 @@
 <body>
 <div id="app">
 
-  <div class="match">
+  <div class="cash_out">
     <!--蒙版-->
     <div class="match-mask" v-if="log">
       <div class="mask"></div>
@@ -62,8 +62,17 @@
         <a class="top-logout" href="./login.html"></a>
       </div>
       <div class="main-warp">
-        <p class="title">兑入订单管理</p>
+        <p class="title">兑出订单管理</p>
         <div class="order-state">
+          <div class="state-header">
+            <div class="header-btn"
+                 v-for="(item, index) in orderText" @click="orderTextTab(index)"
+                 :class="orderIndex === index ? 'active': ''">
+              {{item}}
+            </div>
+            <i class="header-icon"></i>
+
+          </div>
           <div class="state">
             <span>订单状态</span>
             <select>
@@ -76,23 +85,14 @@
             </select>
             <input type="text" placeholder="付款人">
             <input type="text" placeholder="订单编号">
-            <input type="text" placeholder="服务商收款账号">
-            <input type="text" placeholder="转账备注码">
+            <input type="button" value="添加兑出申请">
+            <input type="button" value="批量添加兑出申请">
           </div>
           <div class="state">
-            <span>订单类型</span>
-            <select>
-              <option value="" style="display: none">所有类型</option>
-              <option value="done">已完成</option>
-              <option value="unpaid">待客户支付</option>
-              <option value="payable">待服务商收款</option>
-              <option value="uncollected">服务商未收款</option>
-              <option value="canceled">已取消</option>
-            </select>
-            <input type="text" placeholder="服务商">
-            <input type="text" placeholder="第三方订单号">
+            <input class="export" type="button" value="导出">
             <input class="query" type="button" value="查询">
-            <input class="export" type="button" value="导出excel">
+            <input type="text" placeholder="第三方订单号">
+            <input type="text" placeholder="服务商">
           </div>
         </div>
         <div class="order-content">

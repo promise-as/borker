@@ -6,13 +6,37 @@
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/match_order.css">
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 </head>
 <body>
 <div id="app">
+
   <div class="match">
+    <!--蒙版-->
+    <div class="match-mask" v-if="log">
+      <div class="mask"></div>
+      <div class="wrap">
+        <div class="modal">
+          <div class="model-header">
+            <span>操作日志</span>
+            <i @click="closeLog"></i>
+          </div>
+
+          <a class="actCouponBtn" href="javascript:;"
+             @click="assess(enterSum)">
+            <span>确定</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div class="sidebar">
       <a class="logo" href="./index.html">NOWPAY</a>
       <li class="sidebar-item"
@@ -95,7 +119,7 @@
               <div class="detail-item">{{item.sum}}</div>
               <div class="detail-item">
                 <input type="button" value="详情">
-                <input type="button" value="日志">
+                <input @click="lookLog" type="button" value="日志">
               </div>
             </div>
           </div>
@@ -106,7 +130,8 @@
               </span>
               <select>
                 <option >10条/页</option>
-                <option >5条/页</option>
+                <option >20条/页</option>
+                <option >30条/页</option>
               </select>
               <input class="prev" type="button" value="<">
               <input class="next" type="button" value=">">

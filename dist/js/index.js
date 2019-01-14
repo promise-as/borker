@@ -87,19 +87,17 @@ var app = new Vue({
       time: '2018.8.3 15:15:15',
       payer: '张三',
       USDTNumber: '1000.01',
-      sum: '7000.01' }, {
-      orderNumber: '20180802_1500022135',
-      thirdPartyOrder: '1500022135',
-      orderState: '待客户支付',
-      facilitator: '李沅泽',
-      time: '2018.8.3 15:15:15',
-      payer: '张三',
-      USDTNumber: '1000.01',
       sum: '7000.01' }],
 
     orderDetail: [{
       title: '订单信息'
-    }]
+    }],
+
+    log: false,
+
+    // 订单分类显示
+    orderIndex: 0, // 0:全部,1:待处理
+    orderText: ['全部订单', '待处理订单']
   },
   // 组件已经挂载
   mounted: function mounted() {
@@ -128,6 +126,18 @@ var app = new Vue({
     // 侧栏tab
     indexTab: function indexTab(index) {
       this.currentIndex = index;
+    },
+
+    lookLog: function lookLog() {
+      this.log = true;
+    },
+
+    closeLog: function closeLog() {
+      this.log = false;
+    },
+
+    orderTextTab: function orderTextTab(index) {
+      this.orderIndex = index;
     }
   }
 });
