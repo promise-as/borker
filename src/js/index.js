@@ -30,7 +30,6 @@ var app = new Vue({
       {value:'已支付!'}
     ],
     msgRemindIndex: 0, // 0是已确认，1是已支付
-
     orderItems: [
       {
         orderNumber: '20180802_1500022135',
@@ -114,18 +113,32 @@ var app = new Vue({
         USDTNumber: '1000.01',
         sum: '7000.01'},
     ],
-
     orderDetail: [
       {
         title: '订单信息'
       }
     ],
-
     log: false,
-
     // 订单分类显示
     orderIndex: 0, // 0:全部,1:待处理
-    orderText: ['全部订单', '待处理订单']
+    orderText: ['全部订单', '待处理订单'],
+    cashOutOrderDetailIsShow: false,
+    // 提交打款信息
+    isShowRemitMsg: false,
+    submitRemitMsgBtn: ['确认', '取消'],
+    submitRemitMsgBtnIndex: 0,
+    // 发邮件
+    sendEmailsSidebarIndex: 2,
+    isShowSendEmail: false,
+    // 发送成功
+    isShowSendSucceed: false,
+
+    // 兑出设置
+    cashOutSet: false,
+
+    // 汇率设置
+    cnySetSidebarIndex: 3,
+    cnySetText: ['汇率设置', '服务器设置'],
   },
   // 组件已经挂载
   mounted: function () {
@@ -138,6 +151,11 @@ var app = new Vue({
         that.isHasOrder = true
       }, 1000)
     }
+
+    // 1秒之后显示邮件发送成功
+    setTimeout(function () {
+      that.isShowSendSucceed = true
+    }, 1000)
   },
   // 组件已更新
   updated: function () {
@@ -149,12 +167,13 @@ var app = new Vue({
       }, 3000)
     }
   },
-
   methods: {
     // 侧栏tab
     indexTab: function (index) {
       this.homeSidebarIndex = index
       this.cashOutOrderSidebarIndex = index
+      this.sendEmailsSidebarIndex = index
+      this.cnySetSidebarIndex = index
     },
 
     lookLog: function () {
@@ -167,6 +186,42 @@ var app = new Vue({
 
     orderTextTab: function (index) {
       this.orderIndex = index
-    }
+    },
+
+    voucher: function () {
+      this.cashOutOrderDetailIsShow = true
+    },
+
+    closeVoucher: function () {
+      this.cashOutOrderDetailIsShow = false
+    },
+
+    showRemitMsg: function () {
+      this.isShowRemitMsg = true
+    },
+
+    closeRemitMsg: function () {
+      this.isShowRemitMsg = false
+    },
+
+    btnIndexTab: function (index) {
+      this.submitRemitMsgBtnIndex = index
+    },
+
+    showSendEmails: function () {
+      this.isShowSendEmail = true
+    },
+    closeSendEmails: function () {
+      this.isShowSendEmail = false
+    },
+    closeSendSucceed: function () {
+      this.isShowSendSucceed = false
+    },
+    showCashOutSet: function () {
+      this.cashOutSet = true
+    },
+    closeCashOutSet: function () {
+      this.cashOutSet = false
+    },
   }
 })

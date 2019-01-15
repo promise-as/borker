@@ -18,9 +18,9 @@
 <body>
 <div id="app">
 
-  <div class="cash_out">
-    <!--蒙版-->
-    <div class="match-mask" v-if="log">
+  <div class="cash-out">
+    <!--操作日志-->
+    <div class="cash-out-mask" v-if="log">
       <div class="mask"></div>
       <div class="wrap">
         <div class="modal">
@@ -33,6 +33,54 @@
              @click="assess(enterSum)">
             <span>确定</span>
           </a>
+        </div>
+      </div>
+    </div>
+    <!--兑出设置-->
+    <div class="set-mask" v-if="cashOutSet">
+      <div class="mask"></div>
+      <div class="modal">
+        <div class="model-header">
+          <span>兑出设置</span>
+          <i @click="closeCashOutSet"></i>
+        </div>
+        <div class="model-content">
+          <div class="content">
+            <div class="sms">
+              <span>*是否需要短信验证：</span>
+              <div class="item">
+                <label for="server1">
+                  <input type="radio" id="server1" class="radio" name="ser" checked="checked">
+                  <i></i>
+                </label>
+                <span>是</span>
+              </div>
+              <div class="item">
+                <label for="server2">
+                  <input type="radio" id="server2" class="radio" name="ser">
+                  <i></i>
+                </label>
+                <span>否</span>
+              </div>
+            </div>
+            <div class="verification-code">
+              <span>*接收验证码手机：</span>
+              <input type="text" value="139****1325">
+              <input type="button" value="发送验证码">
+            </div>
+            <div class="mms-verification">
+              <span>*短信验证码：</span>
+              <input type="text" value=" ">
+            </div>
+            <div class="btn">
+              <input type="button"
+                     v-for="(btnText, index) in submitRemitMsgBtn"
+                     :value="btnText"
+                     :class="submitRemitMsgBtnIndex === index ? 'active': ''"
+                     @click="btnIndexTab(index)"
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -70,7 +118,7 @@
                  :class="orderIndex === index ? 'active': ''">
               {{item}}
             </div>
-            <i class="header-icon"></i>
+            <i class="header-icon" @click="showCashOutSet"></i>
 
           </div>
           <div class="state">
@@ -118,7 +166,7 @@
               <div class="detail-item">{{item.USDTNumber}}</div>
               <div class="detail-item">{{item.sum}}</div>
               <div class="detail-item">
-                <input type="button" value="详情">
+                <a href="./cash_out_order_detail.html">详情</a>
                 <input @click="lookLog" type="button" value="日志">
               </div>
             </div>

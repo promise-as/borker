@@ -1,8 +1,8 @@
-/*经纪商 兑入订单详情页面*/
+/*经纪商 添加兑入申请页面*/
 
 .order-detail {
   width: 1200px;
-  height: 735px;
+  height: 943px;
   //border: 1px solid #cccccc;
   margin-left: auto;
   margin-right: auto;
@@ -182,15 +182,6 @@
                     background-size: contain;
                     border: 0;
                   }
-                }
-                i {
-                  display: block;
-                  width: 14px;
-                  height: 14px;
-                  border:1px solid rgba(195,195,195,1);
-                  box-sizing: border-box;
-                  border-radius: 50%;
-                  cursor: pointer;
                 }
               }
               > span{
@@ -431,20 +422,6 @@
           line-height: 30px;
           float: left;
         }
-        input{
-          width:160px;
-          height:30px;
-          border:1px solid rgba(251,205,108,1);
-          border-radius:8px;
-          background: transparent;
-          font-size:14px;
-          font-weight:bold;
-          color:rgba(251,205,108,1);
-          text-align: center;
-          line-height: 30px;
-          cursor: pointer;
-          float: right;
-        }
         a {
           display: block;
           width: 59px;
@@ -470,8 +447,8 @@
         //clear: both;
         float: left;
         .order-item {
-          width: 490px;
-          height: 312px;
+          width: 100%;
+          //height: 292px;
           background: rgba(255, 255, 255, 1);
           float: left;
           //border: 1px solid #cccccc;
@@ -497,25 +474,26 @@
             .content {
               width: 100%;
               li {
-                height: 25px;
-                border-bottom: 1px solid #EFEFEF;
-                margin-bottom: 15px;
+                height: 36px;
+                margin-bottom: 20px;
+                //border: 1px solid pink;
                 label {
                   font-size: 14px;
                   span {
                     display: block;
-                    width: 130px;
+                    width: 90px;
                     float: left;
                     color: #999999;
+                    line-height: 36px;
                   }
                   input {
                     outline: none;
-                    float: left;
-                    margin-left: 20px;
-                    color: #1E1E1E;
-                    &.active {
-                      color: #FBCD6C;
-                    }
+                    width:370px;
+                    height:36px;
+                    border:1px solid rgba(226,227,231,1);
+                    border-radius:8px;
+                    padding-left: 10px;
+                    padding-right: 10px;
                   }
                   i {
                     display: block;
@@ -532,28 +510,86 @@
                 }
               }
             }
+
           }
           &:nth-of-type(odd) {
             margin-right: 10px;
           }
-          &:nth-child(2){
+          &:first-child{
             .item-content{
               .content{
                 li{
-                  &:last-child{
+                  &:nth-child(2){
+                    label{
+                      float: left;
+                    }
                     input{
-                      color:rgba(55,125,255,1);
-                      background: transparent;
-                      cursor: pointer;
+                      width: 160px;
+                      border: 0;
+                      padding-left: 0;
                     }
                   }
                 }
               }
             }
           }
-          &:last-child {
+          &:nth-child(2){
+            .item-content{
+              .content{
+                span{
+                  width: 130px;
+                }
+                input{
+                  width: 558px;
+                }
+              }
+            }
+          }
+          &:nth-child(3){
             width: 100%;
-            height: 180px;
+            //height: 180px;
+            .item-content{
+              .content{
+                li{
+                  span{
+                    width: 130px;
+                  }
+                  input{
+                    float: left;
+                  }
+                  .auth-code{
+                    width:120px;
+                    height:36px;
+                    background:rgba(251,205,108,1);
+                    border-radius:8px;
+                    font-size:12px;
+                    font-weight:800;
+                    color:rgba(255,255,255,1);
+                    line-height:36px;
+                    float: left;
+                  }
+                  &:first-child{
+                    input{
+                      width: 150px;
+                      border: 0;
+                      padding-left: 0;
+                    }
+                  }
+                }
+                .btn{
+                  width:120px;
+                  height:36px;
+                  background:rgba(223,223,223,1);
+                  border-radius:8px;
+                  font-size:14px;
+                  font-weight:bold;
+                  color:rgba(153,153,153,1);
+                  line-height:30px;
+                  margin-left: 130px;
+                  cursor: pointer;
+                }
+              }
+            }
           }
         }
       }

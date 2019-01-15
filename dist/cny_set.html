@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>兑出订单</title>
+  <title>汇率设置</title>
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/cash_out_order.css">
+  <link rel="stylesheet" href="./css/cny_set.css">
   <!-- 引入样式 -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
@@ -89,7 +89,7 @@
       <a class="logo" href="./index.html">NOWPAY</a>
       <li class="sidebar-item"
           v-for="(item,index) in sidebarData"
-          :class="cashOutOrderSidebarIndex === index?'sidebar-active':''"
+          :class="cnySetSidebarIndex === index?'sidebar-active':''"
           @click="indexTab(index)"
       >
         <i></i>
@@ -110,82 +110,56 @@
         <a class="top-logout" href="./login.html"></a>
       </div>
       <div class="main-warp">
-        <p class="title">兑出订单管理</p>
+        <p class="title">数字资产汇款</p>
         <div class="order-state">
           <div class="state-header">
             <div class="header-btn"
-                 v-for="(item, index) in orderText" @click="orderTextTab(index)"
-                 :class="orderIndex === index ? 'active': ''">
+                 v-for="(item, index) in cnySetText" @click="orderTextTab(index)"
+                 :class="1 === index ? 'active': ''">
               {{item}}
             </div>
-            <i class="header-icon" @click="showCashOutSet"></i>
+            <input class="add-servers" type="button" value="添加服务器">
+          </div>
+          <!--<div class="order-content">
+            <div class="content-header">
+              <div class="header-item">币种</div>
+              <div class="header-item">汇率</div>
+              <div class="header-item">相关操作</div>
+            </div>
+            <div class="content-detail">
+              <div class="detail" v-for="(item, index) in orderItems">
+                <div class="detail-item">{{item.USDTNumber}}</div>
+                <div class="detail-item">{{item.sum}}</div>
+                <div class="detail-item">
+                  <div class="item">
+                    <a href="./cash_out_order_detail.html">编辑</a>
+                    <input @click="lookLog" type="button" value="日志">
+                  </div>
 
-          </div>
-          <div class="state">
-            <span>订单状态</span>
-            <select>
-              <option value="" style="display: none">所有状态</option>
-              <option value="done">已完成</option>
-              <option value="unpaid">待客户支付</option>
-              <option value="payable">待服务商收款</option>
-              <option value="uncollected">服务商未收款</option>
-              <option value="canceled">已取消</option>
-            </select>
-            <input type="text" placeholder="付款人">
-            <input type="text" placeholder="订单编号">
-            <input type="button" value="添加兑出申请">
-            <input type="button" value="批量添加兑出申请">
-          </div>
-          <div class="state">
-            <input class="export" type="button" value="导出">
-            <input class="query" type="button" value="查询">
-            <input type="text" placeholder="第三方订单号">
-            <input type="text" placeholder="服务商">
-          </div>
-        </div>
-        <div class="order-content">
-          <div class="content-header">
-            <div class="header-item">订单编号</div>
-            <div class="header-item">第三方订单</div>
-            <div class="header-item">订单状态</div>
-            <div class="header-item">服务商</div>
-            <div class="header-item">时间</div>
-            <div class="header-item">付款人</div>
-            <div class="header-item">USDT数量</div>
-            <div class="header-item">金额(CNY)</div>
-            <div class="header-item">相关操作</div>
-          </div>
-          <div class="content-detail">
-            <div class="detail" v-for="(item, index) in orderItems">
-              <div class="detail-item">{{item.orderNumber}}</div>
-              <div class="detail-item">{{item.thirdPartyOrder}}</div>
-              <div class="detail-item">{{item.orderState}}</div>
-              <div class="detail-item">{{item.facilitator}}</div>
-              <div class="detail-item">{{item.time}}</div>
-              <div class="detail-item">{{item.payer}}</div>
-              <div class="detail-item">{{item.USDTNumber}}</div>
-              <div class="detail-item">{{item.sum}}</div>
-              <div class="detail-item">
-                <a href="./cash_out_order_detail.html">详情</a>
-                <input @click="lookLog" type="button" value="日志">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="content-page">
-            <div class="page">
-              <span class="page-row">
-                共<em>64</em>条
-              </span>
-              <select>
-                <option >10条/页</option>
-                <option >20条/页</option>
-                <option >30条/页</option>
-              </select>
-              <input class="prev" type="button" value="<">
-              <input class="next" type="button" value=">">
-              <span class="page-skip">跳转到</span>
-              <input class="skip-number" type="text" value="2">
-              <input class="skip-confirm" type="button" value="确定">
+          </div>-->
+          <div class="servers-content">
+            <div class="content-header">
+              <div class="header-item">编号</div>
+              <div class="header-item">服务器名称</div>
+              <div class="header-item">状态</div>
+              <div class="header-item">相关操作</div>
+            </div>
+            <div class="content-detail">
+              <div class="detail" v-for="(item, index) in orderItems">
+                <div class="detail-item">{{item.USDTNumber}}</div>
+                <div class="detail-item">{{item.sum}}</div>
+                <div class="detail-item">{{item.sum}}</div>
+                <div class="detail-item">
+                  <div class="item">
+                    <a href="./cash_out_order_detail.html">编辑</a>
+                    <input @click="lookLog" type="button" value="日志">
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>

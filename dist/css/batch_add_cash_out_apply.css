@@ -1,7 +1,7 @@
-/*经纪商 兑入订单详情页面*/
+/*经纪商 批量添加兑入申请页面*/
 .order-detail {
   width: 1200px;
-  height: 735px;
+  height: 803px;
   margin-left: auto;
   margin-right: auto;
   background: #efefef;
@@ -180,16 +180,6 @@
   background: url("../images/icon/icon_dianji.png") no-repeat;
   background-size: contain;
   border: 0;
-}
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > label i {
-  display: block;
-  width: 14px;
-  height: 14px;
-  border: 1px solid #c3c3c3;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 50%;
-  cursor: pointer;
 }
 .order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > span {
   float: left;
@@ -390,7 +380,7 @@
 .order-detail .main .main-warp .header {
   width: 990px;
   float: left;
-  margin-bottom: 3px;
+  margin-bottom: 12px;
 }
 .order-detail .main .main-warp .header span {
   font-size: 18px;
@@ -398,20 +388,6 @@
   color: #1e1e1e;
   line-height: 30px;
   float: left;
-}
-.order-detail .main .main-warp .header input {
-  width: 160px;
-  height: 30px;
-  border: 1px solid #fbcd6c;
-  border-radius: 8px;
-  background: transparent;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fbcd6c;
-  text-align: center;
-  line-height: 30px;
-  cursor: pointer;
-  float: right;
 }
 .order-detail .main .main-warp .header a {
   display: block;
@@ -432,82 +408,61 @@
   margin-left: 10px;
 }
 .order-detail .main .main-warp .order {
+  clear: both;
   width: 990px;
-  float: left;
-}
-.order-detail .main .main-warp .order .order-item {
-  width: 490px;
-  height: 312px;
+  height: 660px;
   background: #ffffff;
-  float: left;
-  margin-top: 10px;
+  padding-top: 93px;
+  padding-right: 200px;
+  padding-left: 200px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.order-detail .main .main-warp .order .order-item .item-header {
+.order-detail .main .main-warp .order .import {
   width: 100%;
-  height: 39px;
-  background: rgba(250, 227, 179, 0.3);
-  border-bottom: 1px solid #FAE3B3;
+  height: 200px;
 }
-.order-detail .main .main-warp .order .order-item .item-header span {
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  color: #1e1e1e;
-  line-height: 38px;
-  margin-left: 15px;
-  float: left;
-  border-bottom: 1px solid #434343;
+.order-detail .main .main-warp .order .import li {
+  margin-bottom: 20px;
 }
-.order-detail .main .main-warp .order .order-item .item-content {
-  padding: 25px 54px 20px;
-}
-.order-detail .main .main-warp .order .order-item .item-content .content {
-  width: 100%;
-}
-.order-detail .main .main-warp .order .order-item .item-content .content li {
-  height: 25px;
-  border-bottom: 1px solid #EFEFEF;
-  margin-bottom: 15px;
-}
-.order-detail .main .main-warp .order .order-item .item-content .content li label {
-  font-size: 14px;
-}
-.order-detail .main .main-warp .order .order-item .item-content .content li label span {
-  display: block;
-  width: 130px;
-  float: left;
+.order-detail .main .main-warp .order .import li span {
   color: #999999;
 }
-.order-detail .main .main-warp .order .order-item .item-content .content li label input {
+.order-detail .main .main-warp .order .import li input {
+  width: 370px;
+  height: 36px;
+  border: 1px solid #e2e3e7;
+  border-radius: 8px;
   outline: none;
-  float: left;
-  margin-left: 20px;
-  color: #1E1E1E;
-}
-.order-detail .main .main-warp .order .order-item .item-content .content li label input.active {
-  color: #FBCD6C;
-}
-.order-detail .main .main-warp .order .order-item .item-content .content li label i {
-  display: block;
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  background: url("../images/icon/icon_vip.png") no-repeat;
-  float: left;
-}
-.order-detail .main .main-warp .order .order-item .item-content .content li label i:last-child {
-  background: url("../images/icon/icon_cer.png") no-repeat;
-  margin-left: 4px;
-}
-.order-detail .main .main-warp .order .order-item:nth-of-type(odd) {
-  margin-right: 10px;
-}
-.order-detail .main .main-warp .order .order-item:nth-child(2) .item-content .content li:last-child input {
-  color: #377dff;
-  background: transparent;
+  padding-left: 10px;
+  padding-right: 10px;
   cursor: pointer;
 }
-.order-detail .main .main-warp .order .order-item:last-child {
-  width: 100%;
-  height: 180px;
+.order-detail .main .main-warp .order .import li .browse {
+  width: 90px;
+  height: 36px;
+  background: #fbcd6c;
+  border-radius: 8px;
+  border: 0;
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 30px;
+}
+.order-detail .main .main-warp .order .import li:nth-child(2) input {
+  border: 0;
+  color: #377DFF;
+}
+.order-detail .main .main-warp .order .import .confirm-import {
+  width: 90px;
+  height: 36px;
+  background: #fbcd6c;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 30px;
+  margin-left: 94px;
+  cursor: pointer;
 }

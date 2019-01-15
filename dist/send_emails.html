@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>兑出订单详情</title>
+  <title>发邮件</title>
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/cash_out_order_detail.css">
+  <link rel="stylesheet" href="./css/send_emails.css">
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -13,73 +13,63 @@
 <body>
 <div id="app">
   <div class="order-detail">
-    <!--凭证-->
-    <div class="voucher-mask" v-if="cashOutOrderDetailIsShow">
-      <div class="mask"></div>
-      <div class="wrap">
-        <div class="modal">
-          <div class="model-header">
-            <span>查看凭证</span>
-            <i @click="closeVoucher"></i>
-          </div>
-          <div class="model-content"></div>
-          <div class="model-bottom">
-            <div class="bottom">
-              <input type="button">
-              <input type="button">
-              <input type="button">
-              <input type="button">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--提交打款信息-->
-    <div class="remittance-mask" v-if="isShowRemitMsg">
+    <!--发送邮件-->
+    <div class="send-emails-mask" v-if="isShowSendEmail">
       <div class="mask"></div>
       <div class="modal">
-        <div class="model-header">
-          <span>提交打款信息</span>
-          <i @click="closeRemitMsg"></i>
-        </div>
-        <div class="model-content">
-          <div class="content">
-            <div class="succeed-failure">
+        <form action="#">
+          <div class="model-header">
+            <span>发送邮件</span>
+            <i @click="closeSendEmails"></i>
+          </div>
+          <div class="model-content">
+            <div class="content">
               <div class="item">
-                <label for="server1">
-                  <input type="radio" id="server1" class="radio" name="ser" checked="checked">
-                  <i></i>
+                <label for="recipients">
+                  <span>*收件人：</span>
+                  <input type="text" id="recipients">
                 </label>
-                <span>确认已成功收款</span>
               </div>
               <div class="item">
-                <label for="server2">
-                  <input type="radio" id="server2" class="radio" name="ser">
-                  <i></i>
+                <label for="theme">
+                  <span>*邮件主题：</span>
+                  <input type="text" id="theme">
                 </label>
-                <span>确认打款失败</span>
               </div>
-            </div>
-            <div class="upload">
-              <span>上传凭证：</span>
-              <label for="upload">
-                <input type="file" id="upload">
-              </label>
-            </div>
-            <div class="remark">
-              <span>备注：</span>
-              <textarea ></textarea>
-            </div>
-            <div class="btn">
-              <input type="button"
-                     v-for="(btnText, index) in submitRemitMsgBtn"
-                     :value="btnText"
-                     :class="submitRemitMsgBtnIndex === index ? 'active': ''"
-                     @click="btnIndexTab(index)"
-              >
+              <div class="remark">
+                <span>*邮件内容：</span>
+                <textarea></textarea>
+              </div>
+              <div class="btn">
+                <input type="button"
+                       v-for="(btnText, index) in submitRemitMsgBtn"
+                       :value="btnText"
+                       :class="submitRemitMsgBtnIndex === index ? 'active': ''"
+                       @click="btnIndexTab(index)"
+                >
+              </div>
             </div>
           </div>
-        </div>
+        </form>
+      </div>
+    </div>
+    <!--发送成功-->
+    <div class="send-succeed-mask" v-if="isShowSendSucceed">
+      <div class="mask"></div>
+      <div class="modal">
+        <form action="#">
+          <div class="model-header">
+            <span>提示</span>
+            <i @click="closeSendSucceed"></i>
+          </div>
+          <div class="model-content">
+            <div class="content">
+              <i class="icon"></i>
+              <p class="text">发送成功</p>
+              <input class="btn" type="button" value="关闭">
+            </div>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -87,7 +77,7 @@
       <a class="logo" href="./index.html">NOWPAY</a>
       <li class="sidebar-item"
           v-for="(item,index) in sidebarData"
-          :class="cashOutOrderSidebarIndex === index?'sidebar-active':''"
+          :class="sendEmailsSidebarIndex === index?'sidebar-active':''"
           @click="indexTab(index)"
       >
         <i></i>
@@ -110,9 +100,9 @@
       <div class="main-warp">
         <div class="header">
           <span>订单详情</span>
-          <a href="./cash_out_order.html">返回</a>
-          <input @click="showRemitMsg"
-                  type="button" value="确认收款信息"/>
+          <a href="./match_order.html">返回</a>
+          <input @click="showSendEmails"
+                 type="button" value="发送邮件"/>
 
         </div>
         <div class="order">
@@ -190,36 +180,6 @@
                   <label for="0">
                     <span>收款凭证:</span>
                     <input @click="voucher" type="button" value="查看凭证" id="0">
-                  </label>
-                </li>
-              </div>
-            </div>
-          </div>
-
-          <div class="order-item">
-            <div class="item-header">
-              <span>服务商信息</span>
-            </div>
-            <div class="item-content">
-              <div class="content">
-                <li>
-                  <label for="0">
-                    <span>服务商名称：</span>
-                    <input type="text" value="玉米蒸" id="0">
-                    <i></i>
-                    <i></i>
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>服务次数：</span>
-                    <input type="text" value="10010" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>平均确认时长：</span>
-                    <input type="text" value="00:05:00" id="0">
                   </label>
                 </li>
               </div>

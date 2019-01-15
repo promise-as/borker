@@ -1,4 +1,4 @@
-/*经纪商 兑入订单页面*/
+/*经纪商 汇率设置页面*/
 .cash-out {
   width: 1200px;
   height: 820px;
@@ -374,7 +374,6 @@
 }
 .cash-out .main .main-warp .order-state {
   width: 100%;
-  height: 192px;
   background-color: white;
   margin-top: 15px;
   padding: 20px 20px 16px;
@@ -391,6 +390,8 @@
   width: 249px;
   height: 50px;
   border: 1px solid #e2e3e7;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   float: left;
   text-align: center;
   line-height: 50px;
@@ -404,102 +405,32 @@
   border: 0;
   color: white;
 }
-.cash-out .main .main-warp .order-state .state-header .header-icon {
-  display: block;
-  width: 27px;
-  height: 27px;
-  background: url("../images/icon/icon_setting.png") no-repeat;
-  float: right;
-  cursor: pointer;
-}
-.cash-out .main .main-warp .order-state .state {
-  width: 100%;
-  height: 36px;
-  clear: both;
-}
-.cash-out .main .main-warp .order-state .state:first-child {
-  margin-bottom: 10px;
-}
-.cash-out .main .main-warp .order-state .state > span {
-  font-size: 14px;
-  font-weight: 500;
-  color: #999999;
-  line-height: 34px;
-}
-.cash-out .main .main-warp .order-state .state select {
-  outline: none;
-  width: 156px;
-  height: 36px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #1e1e1e;
-  padding-left: 6px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 1px solid #999999;
-  margin-left: 10px;
-}
-.cash-out .main .main-warp .order-state .state input {
-  outline: none;
-  width: 156px;
-  height: 36px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #1e1e1e;
-  padding-left: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 1px solid #999999;
-  margin-left: 20px;
-}
-.cash-out .main .main-warp .order-state .state input:nth-child(5) {
+.cash-out .main .main-warp .order-state .state-header .add-servers {
+  width: 160px;
+  height: 30px;
   border: 1px solid #fbcd6c;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
   color: #fbcd6c;
-  text-align: center;
-  padding-left: 0;
-  background-color: white;
+  line-height: 30px;
   cursor: pointer;
-}
-.cash-out .main .main-warp .order-state .state input[type='button']:last-child {
-  border: 1px solid #fbcd6c;
-  color: #fbcd6c;
-  text-align: center;
-  padding-left: 0;
-  background-color: white;
-  cursor: pointer;
-}
-.cash-out .main .main-warp .order-state .state input.query {
-  background: #fbcd6c;
-  border: 0;
-  color: white;
-  cursor: pointer;
-}
-.cash-out .main .main-warp .order-state .state input.export {
-  background: #68e3ab;
-  border: 0;
-  color: white;
-  cursor: pointer;
-}
-.cash-out .main .main-warp .order-state .state:last-child {
-  margin-top: 10px;
-}
-.cash-out .main .main-warp .order-state .state:last-child input {
   float: right;
-  margin-left: 25px;
+  margin-top: 9px;
 }
-.cash-out .main .main-warp .order-content {
+.cash-out .main .main-warp .order-state .order-content {
   height: 550px;
   margin-top: 10px;
   background-color: white;
+  clear: both;
 }
-.cash-out .main .main-warp .order-content .content-header {
+.cash-out .main .main-warp .order-state .order-content .content-header {
   height: 44px;
-  background: #fae3b3;
+  background: rgba(250, 227, 179, 0.3);
 }
-.cash-out .main .main-warp .order-content .content-header .header-item {
-  width: 190px;
+.cash-out .main .main-warp .order-state .order-content .content-header .header-item {
+  width: 316px;
   height: 44px;
   font-size: 14px;
   font-weight: bold;
@@ -509,37 +440,15 @@
   border-right: 1px solid #EEEEEE;
   float: left;
 }
-.cash-out .main .main-warp .order-content .content-header .header-item:nth-child(2) {
-  width: 110px;
-}
-.cash-out .main .main-warp .order-content .content-header .header-item:nth-child(3) {
-  width: 90px;
-}
-.cash-out .main .main-warp .order-content .content-header .header-item:nth-child(4) {
-  width: 80px;
-}
-.cash-out .main .main-warp .order-content .content-header .header-item:nth-child(5) {
-  width: 150px;
-}
-.cash-out .main .main-warp .order-content .content-header .header-item:nth-child(6) {
-  width: 70px;
-}
-.cash-out .main .main-warp .order-content .content-header .header-item:nth-child(7) {
-  width: 90px;
-}
-.cash-out .main .main-warp .order-content .content-header .header-item:nth-child(8) {
-  width: 80px;
-}
-.cash-out .main .main-warp .order-content .content-header .header-item:nth-child(9) {
-  width: 113px;
+.cash-out .main .main-warp .order-state .order-content .content-header .header-item:last-child {
   border: 0;
 }
-.cash-out .main .main-warp .order-content .content-detail .detail {
+.cash-out .main .main-warp .order-state .order-content .content-detail .detail {
   height: 42px;
 }
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item {
-  width: 190px;
-  height: 42px;
+.cash-out .main .main-warp .order-state .order-content .content-detail .detail .detail-item {
+  width: 316px;
+  height: 44px;
   font-size: 14px;
   font-weight: bold;
   color: #666666;
@@ -548,35 +457,19 @@
   border-right: 1px solid #EEEEEE;
   float: left;
 }
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:nth-child(2) {
-  width: 110px;
-}
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:nth-child(3) {
-  width: 90px;
-}
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:nth-child(4) {
-  width: 80px;
-}
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:nth-child(5) {
-  width: 150px;
-}
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:nth-child(6) {
-  width: 70px;
-}
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:nth-child(7) {
-  width: 90px;
-}
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:nth-child(8) {
-  width: 80px;
-}
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:last-child {
-  width: 113px;
+.cash-out .main .main-warp .order-state .order-content .content-detail .detail .detail-item:last-child {
   border: 0;
   padding: 10px 13px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:last-child a {
+.cash-out .main .main-warp .order-state .order-content .content-detail .detail .detail-item:last-child .item {
+  width: 85px;
+  height: 22px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cash-out .main .main-warp .order-state .order-content .content-detail .detail .detail-item:last-child .item a {
   display: block;
   width: 40px;
   height: 22px;
@@ -589,11 +482,11 @@
   border-radius: 4px;
   line-height: 22px;
 }
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:last-child a:hover {
+.cash-out .main .main-warp .order-state .order-content .content-detail .detail .detail-item:last-child .item a:hover {
   background-color: #FBCD6C;
   color: white;
 }
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:last-child input {
+.cash-out .main .main-warp .order-state .order-content .content-detail .detail .detail-item:last-child .item input {
   width: 40px;
   height: 22px;
   padding: 4px 6px;
@@ -608,98 +501,105 @@
   border: 1px solid #89B4F4;
   color: #89B4F4;
 }
-.cash-out .main .main-warp .order-content .content-detail .detail .detail-item:last-child input:hover {
+.cash-out .main .main-warp .order-state .order-content .content-detail .detail .detail-item:last-child .item input:hover {
   background-color: #89B4F4;
   color: white;
 }
-.cash-out .main .main-warp .order-content .content-detail .detail:nth-of-type(odd) {
+.cash-out .main .main-warp .order-state .order-content .content-detail .detail:nth-of-type(odd) {
   background-color: white;
 }
-.cash-out .main .main-warp .order-content .content-detail .detail:nth-of-type(even) {
+.cash-out .main .main-warp .order-state .order-content .content-detail .detail:nth-of-type(even) {
   background-color: #FAFAFA;
 }
-.cash-out .main .main-warp .order-content .content-page {
-  width: 100%;
-  height: 56px;
-  background: rgba(250, 227, 179, 0.3);
-  padding: 10px 265px 10px 273px;
+.cash-out .main .main-warp .order-state .servers-content {
+  height: 550px;
+  margin-top: 10px;
+  background-color: white;
+  clear: both;
+}
+.cash-out .main .main-warp .order-state .servers-content .content-header {
+  height: 44px;
+  background: #fae3b3;
+}
+.cash-out .main .main-warp .order-state .servers-content .content-header .header-item {
+  width: 236px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666666;
+  line-height: 45px;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+  float: left;
+}
+.cash-out .main .main-warp .order-state .servers-content .content-header .header-item:last-child {
+  border: 0;
+}
+.cash-out .main .main-warp .order-state .servers-content .content-detail .detail {
+  height: 42px;
+}
+.cash-out .main .main-warp .order-state .servers-content .content-detail .detail .detail-item {
+  width: 236px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666666;
+  line-height: 45px;
+  text-align: center;
+  border-right: 1px solid #EEEEEE;
+  float: left;
+}
+.cash-out .main .main-warp .order-state .servers-content .content-detail .detail .detail-item:last-child {
+  border: 0;
+  padding: 10px 13px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.cash-out .main .main-warp .order-content .content-page .page {
-  width: 100%;
-  height: 36px;
+.cash-out .main .main-warp .order-state .servers-content .content-detail .detail .detail-item:last-child .item {
+  width: 85px;
+  height: 22px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.cash-out .main .main-warp .order-content .content-page .page .page-row {
-  font-size: 14px;
-  font-weight: 500;
-  color: #666666;
-  line-height: 36px;
+.cash-out .main .main-warp .order-state .servers-content .content-detail .detail .detail-item:last-child .item a {
+  display: block;
+  width: 40px;
+  height: 22px;
+  margin-right: 5px;
+  border: 1px solid #FBCD6C;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #FBCD6C;
   float: left;
-  margin-right: 10px;
+  border-radius: 4px;
+  line-height: 22px;
 }
-.cash-out .main .main-warp .order-content .content-page .page .page-row em {
-  font-style: normal;
+.cash-out .main .main-warp .order-state .servers-content .content-detail .detail .detail-item:last-child .item a:hover {
+  background-color: #FBCD6C;
+  color: white;
 }
-.cash-out .main .main-warp .order-content .content-page .page select {
-  outline: none;
-  width: 117px;
-  height: 36px;
-  border: 1px solid #e2e3e7;
-  font-size: 14px;
-  font-weight: bold;
-  color: #1e1e1e;
-  line-height: 30px;
+.cash-out .main .main-warp .order-state .servers-content .content-detail .detail .detail-item:last-child .item input {
+  width: 40px;
+  height: 22px;
+  padding: 4px 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
   float: left;
-  background: transparent;
-}
-.cash-out .main .main-warp .order-content .content-page .page input {
-  width: 36px;
-  height: 36px;
-  background: transparent;
+  background-color: white;
+  font-size: 14px;
+  line-height: 10px;
   cursor: pointer;
-  outline: none;
-  margin-left: 6px;
-  float: left;
+  border: 1px solid #89B4F4;
+  color: #89B4F4;
 }
-.cash-out .main .main-warp .order-content .content-page .page input.prev {
-  background: #fae3b3;
+.cash-out .main .main-warp .order-state .servers-content .content-detail .detail .detail-item:last-child .item input:hover {
+  background-color: #89B4F4;
   color: white;
 }
-.cash-out .main .main-warp .order-content .content-page .page input.prev:hover {
-  background: #fae3b3;
-  color: white;
-  border: 1px solid #FAE3B3;
+.cash-out .main .main-warp .order-state .servers-content .content-detail .detail:nth-of-type(odd) {
+  background-color: white;
 }
-.cash-out .main .main-warp .order-content .content-page .page input.next {
-  border: 1px solid #e2e3e7;
-  color: #D8D9DC;
-}
-.cash-out .main .main-warp .order-content .content-page .page input.next:hover {
-  background: #fae3b3;
-  color: white;
-  border: 1px solid #FAE3B3;
-}
-.cash-out .main .main-warp .order-content .content-page .page .page-skip {
-  float: left;
-  font-size: 14px;
-  color: #666666;
-  line-height: 38px;
-  margin-left: 20px;
-}
-.cash-out .main .main-warp .order-content .content-page .page .skip-number {
-  width: 60px;
-  height: 36px;
-  border: 1px solid #e2e3e7;
-  text-align: center;
-}
-.cash-out .main .main-warp .order-content .content-page .page .skip-confirm {
-  width: 60px;
-  height: 36px;
-  border: 1px solid #e2e3e7;
-  font-size: 14px;
-  font-weight: bold;
-  color: #1e1e1e;
-  line-height: 34px;
-  float: left;
+.cash-out .main .main-warp .order-state .servers-content .content-detail .detail:nth-of-type(even) {
+  background-color: #FAFAFA;
 }

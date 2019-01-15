@@ -15,7 +15,6 @@ var app = new Vue({
     isHasOrder: false, // 是否有订单
     confirmOrPay: [{ value: '客户已确认转账!' }, { value: '已支付!' }],
     msgRemindIndex: 0, // 0是已确认，1是已支付
-
     orderItems: [{
       orderNumber: '20180802_1500022135',
       thirdPartyOrder: '1500022135',
@@ -89,16 +88,30 @@ var app = new Vue({
       payer: '张三',
       USDTNumber: '1000.01',
       sum: '7000.01' }],
-
     orderDetail: [{
       title: '订单信息'
     }],
-
     log: false,
-
     // 订单分类显示
     orderIndex: 0, // 0:全部,1:待处理
-    orderText: ['全部订单', '待处理订单']
+    orderText: ['全部订单', '待处理订单'],
+    cashOutOrderDetailIsShow: false,
+    // 提交打款信息
+    isShowRemitMsg: false,
+    submitRemitMsgBtn: ['确认', '取消'],
+    submitRemitMsgBtnIndex: 0,
+    // 发邮件
+    sendEmailsSidebarIndex: 2,
+    isShowSendEmail: false,
+    // 发送成功
+    isShowSendSucceed: false,
+
+    // 兑出设置
+    cashOutSet: false,
+
+    // 汇率设置
+    cnySetSidebarIndex: 3,
+    cnySetText: ['汇率设置', '服务器设置']
   },
   // 组件已经挂载
   mounted: function mounted() {
@@ -111,6 +124,11 @@ var app = new Vue({
         that.isHasOrder = true;
       }, 1000);
     }
+
+    // 1秒之后显示邮件发送成功
+    setTimeout(function () {
+      that.isShowSendSucceed = true;
+    }, 1000);
   },
   // 组件已更新
   updated: function updated() {
@@ -122,12 +140,13 @@ var app = new Vue({
       }, 3000);
     }
   },
-
   methods: {
     // 侧栏tab
     indexTab: function indexTab(index) {
       this.homeSidebarIndex = index;
       this.cashOutOrderSidebarIndex = index;
+      this.sendEmailsSidebarIndex = index;
+      this.cnySetSidebarIndex = index;
     },
 
     lookLog: function lookLog() {
@@ -140,6 +159,42 @@ var app = new Vue({
 
     orderTextTab: function orderTextTab(index) {
       this.orderIndex = index;
+    },
+
+    voucher: function voucher() {
+      this.cashOutOrderDetailIsShow = true;
+    },
+
+    closeVoucher: function closeVoucher() {
+      this.cashOutOrderDetailIsShow = false;
+    },
+
+    showRemitMsg: function showRemitMsg() {
+      this.isShowRemitMsg = true;
+    },
+
+    closeRemitMsg: function closeRemitMsg() {
+      this.isShowRemitMsg = false;
+    },
+
+    btnIndexTab: function btnIndexTab(index) {
+      this.submitRemitMsgBtnIndex = index;
+    },
+
+    showSendEmails: function showSendEmails() {
+      this.isShowSendEmail = true;
+    },
+    closeSendEmails: function closeSendEmails() {
+      this.isShowSendEmail = false;
+    },
+    closeSendSucceed: function closeSendSucceed() {
+      this.isShowSendSucceed = false;
+    },
+    showCashOutSet: function showCashOutSet() {
+      this.cashOutSet = true;
+    },
+    closeCashOutSet: function closeCashOutSet() {
+      this.cashOutSet = false;
     }
   }
 });

@@ -1,4 +1,4 @@
-/*经纪商 兑入订单详情页面*/
+/*经纪商 发邮件页面*/
 .order-detail {
   width: 1200px;
   height: 735px;
@@ -6,10 +6,10 @@
   margin-right: auto;
   background: #efefef;
   position: relative;
-  /*凭证 弹出框*/
-  /*提交打款信息 弹出框*/
+  /*发送邮件 弹出框*/
+  /*发送邮件 弹出框*/
 }
-.order-detail .voucher-mask .mask {
+.order-detail .send-emails-mask .mask {
   position: absolute;
   top: 0;
   left: 0;
@@ -18,104 +18,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
-.order-detail .voucher-mask .wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-.order-detail .voucher-mask .wrap .modal {
-  width: 1200px;
-  height: 735px;
-  background: transparent;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.order-detail .voucher-mask .wrap .modal .model-header {
-  width: 100%;
-  height: 40px;
-  padding: 13px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.order-detail .voucher-mask .wrap .modal .model-header > span {
-  font-size: 14px;
-  font-weight: bold;
-  float: left;
-  color: white;
-}
-.order-detail .voucher-mask .wrap .modal .model-header > i {
-  display: block;
-  width: 14px;
-  height: 14px;
-  background: url("../images/icon/icon_popup_close.png") no-repeat;
-  float: right;
-  cursor: pointer;
-}
-.order-detail .voucher-mask .wrap .modal .model-content {
-  width: 450px;
-  height: 281px;
-  border: 1px solid white;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-.order-detail .voucher-mask .wrap .modal .model-bottom {
-  width: 100%;
-  height: 60px;
-  background: rgba(1, 9, 16, 0.4);
-  position: absolute;
-  bottom: 0;
-}
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom {
-  width: 220px;
-  height: 60px;
-  padding-top: 21px;
-  padding-bottom: 21px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-}
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom input {
-  cursor: pointer;
-}
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom input:first-child {
-  width: 20px;
-  height: 17px;
-  background: url("../images/icon/icon_popup_left.png") no-repeat;
-}
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(2) {
-  width: 19px;
-  height: 20px;
-  background: url("../images/icon/icon_popup_rotate.png") no-repeat;
-  margin-left: 47px;
-  padding-right: 47px;
-}
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(3) {
-  width: 20px;
-  height: 20px;
-  background: url("../images/icon/icon_popup_apli.png") no-repeat;
-  margin-right: 47px;
-}
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(4) {
-  width: 20px;
-  height: 18px;
-  background: url("../images/icon/icon_popup_right.png") no-repeat;
-}
-.order-detail .remittance-mask .mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.order-detail .remittance-mask .modal {
+.order-detail .send-emails-mask .modal {
   width: 470px;
   height: 397px;
   background: transparent;
@@ -126,7 +29,7 @@
   right: 0;
   margin: auto;
 }
-.order-detail .remittance-mask .modal .model-header {
+.order-detail .send-emails-mask .modal .model-header {
   width: 100%;
   height: 40px;
   padding: 13px;
@@ -134,13 +37,13 @@
           box-sizing: border-box;
   background: #fae3b3;
 }
-.order-detail .remittance-mask .modal .model-header > span {
+.order-detail .send-emails-mask .modal .model-header > span {
   font-size: 14px;
   float: left;
   font-weight: bold;
   color: #181818;
 }
-.order-detail .remittance-mask .modal .model-header > i {
+.order-detail .send-emails-mask .modal .model-header > i {
   display: block;
   width: 14px;
   height: 14px;
@@ -148,112 +51,72 @@
   float: right;
   cursor: pointer;
 }
-.order-detail .remittance-mask .modal .model-content {
+.order-detail .send-emails-mask .modal .model-content {
   width: 100%;
   height: 357px;
   background-color: white;
-  padding: 30px 61px 41px 59px;
+  padding: 20px 58px 31px 55px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.order-detail .remittance-mask .modal .model-content .content {
+.order-detail .send-emails-mask .modal .model-content .content {
   width: 100%;
   height: 100%;
 }
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure {
-  float: left;
-  margin-bottom: 20px;
-}
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item {
-  height: 14px;
-  font-size: 12px;
-  float: left;
-  margin-right: 49px;
-}
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > label {
-  float: left;
-}
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > label .radio {
-  display: none;
-}
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > label .radio:checked + i {
-  background: url("../images/icon/icon_dianji.png") no-repeat;
-  background-size: contain;
-  border: 0;
-}
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > label i {
-  display: block;
-  width: 14px;
-  height: 14px;
-  border: 1px solid #c3c3c3;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > span {
-  float: left;
-  color: #1E1E1E;
-  font-size: 14px;
-  margin-left: 5px;
-}
-.order-detail .remittance-mask .modal .model-content .content .upload {
+.order-detail .send-emails-mask .modal .model-content .content .item {
   width: 100%;
-  height: 54px;
-  clear: both;
+  height: 36px;
   margin-bottom: 20px;
 }
-.order-detail .remittance-mask .modal .model-content .content .upload span {
+.order-detail .send-emails-mask .modal .model-content .content .item label span {
   font-size: 14px;
   font-weight: 500;
   color: #999999;
-  line-height: 43px;
+  line-height: 36px;
   float: left;
 }
-.order-detail .remittance-mask .modal .model-content .content .upload label {
-  width: 54px;
-  height: 54px;
+.order-detail .send-emails-mask .modal .model-content .content .item label input {
+  width: 280px;
+  height: 36px;
   border: 1px solid #e2e3e7;
   border-radius: 4px;
-  float: left;
-  background: url("../images/icon/icon_popup_close1.png") no-repeat center;
-  cursor: pointer;
-}
-.order-detail .remittance-mask .modal .model-content .content .upload label input {
-  width: 54px;
-  visibility: hidden;
-}
-.order-detail .remittance-mask .modal .model-content .content .remark {
-  clear: both;
-  height: 122px;
-  margin-bottom: 20px;
-}
-.order-detail .remittance-mask .modal .model-content .content .remark span {
-  font-size: 14px;
-  font-weight: 500;
-  color: #999999;
-  line-height: 43px;
-  float: left;
-}
-.order-detail .remittance-mask .modal .model-content .content .remark textarea {
-  float: right;
-  width: 304px;
-  height: 122px;
-  border: 1px solid #e2e3e7;
   padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  float: right;
+  outline: none;
+}
+.order-detail .send-emails-mask .modal .model-content .content .remark {
+  clear: both;
+  height: 122px;
+  margin-bottom: 20px;
+}
+.order-detail .send-emails-mask .modal .model-content .content .remark span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 43px;
+  float: left;
+}
+.order-detail .send-emails-mask .modal .model-content .content .remark textarea {
+  float: right;
+  width: 280px;
+  height: 113px;
+  border: 1px solid #e2e3e7;
   border-radius: 4px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: none;
   resize: none;
 }
-.order-detail .remittance-mask .modal .model-content .content .btn {
+.order-detail .send-emails-mask .modal .model-content .content .btn {
   width: 304px;
   height: 36px;
   clear: both;
   float: right;
 }
-.order-detail .remittance-mask .modal .model-content .content .btn input {
+.order-detail .send-emails-mask .modal .model-content .content .btn input {
   width: 120px;
   height: 36px;
   border: 1px solid #fbcd6c;
@@ -266,9 +129,95 @@
   outline: none;
   margin-right: 20px;
 }
-.order-detail .remittance-mask .modal .model-content .content .btn input.active {
+.order-detail .send-emails-mask .modal .model-content .content .btn input.active {
   background: #fbcd6c;
   color: #ffffff;
+}
+.order-detail .send-succeed-mask .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.order-detail .send-succeed-mask .modal {
+  width: 370px;
+  height: 296px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.order-detail .send-succeed-mask .modal .model-header {
+  width: 100%;
+  height: 40px;
+  padding: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fae3b3;
+}
+.order-detail .send-succeed-mask .modal .model-header > span {
+  font-size: 14px;
+  float: left;
+  font-weight: bold;
+  color: #181818;
+}
+.order-detail .send-succeed-mask .modal .model-header > i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url("../images/icon/icon_popup_close.png") no-repeat;
+  float: right;
+  cursor: pointer;
+}
+.order-detail .send-succeed-mask .modal .model-content {
+  width: 100%;
+  background-color: white;
+  padding-top: 40px;
+  padding-bottom: 39px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.order-detail .send-succeed-mask .modal .model-content .content {
+  width: 100%;
+  height: 100%;
+}
+.order-detail .send-succeed-mask .modal .model-content .content .icon {
+  display: block;
+  width: 76px;
+  height: 77px;
+  margin-left: auto;
+  margin-right: auto;
+  background: url("../images/icon/icon_order.png") no-repeat;
+  margin-bottom: 20px;
+}
+.order-detail .send-succeed-mask .modal .model-content .content .text {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e1e1e;
+}
+.order-detail .send-succeed-mask .modal .model-content .content .btn {
+  width: 120px;
+  height: 36px;
+  border: 1px solid #fbcd6c;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fbcd6c;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .order-detail .sidebar {
   width: 170px;
@@ -506,8 +455,4 @@
   color: #377dff;
   background: transparent;
   cursor: pointer;
-}
-.order-detail .main .main-warp .order .order-item:last-child {
-  width: 100%;
-  height: 180px;
 }
