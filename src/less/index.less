@@ -8,429 +8,341 @@
   margin-right: auto;
   background: rgba(239, 239, 239, 1);
   position: relative;
-  .sidebar {
-    width: 170px;
-    height: 100%;
-    background: rgba(24, 24, 24, 1);
-    float: left;
-    .logo {
-      width: 100%;
-      height: 58px;
-      background: url("../images/logo/logo.png") no-repeat center;
-      text-indent: -9999px;
-    }
-    .sidebar-item {
-      color: white;
-      height: 46px;
-      text-align: center;
-      line-height: 46px;
-      cursor: pointer;
-      i {
-        display: block;
-        width: 19px;
-        height: 22px;
-        background: url("../images/icon/nav_icon_ruujin_sel2.png") no-repeat;
-        float: left;
-        margin-top: 12px;
-        margin-left: 15px;
-        margin-right: 10px;
-      }
-      span {
+
+}
+
+.main {
+  float: right;
+  .main-top {
+    width: 1030px;
+    height: 60px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
+    //border: 1px solid #cccccc;
+    .top-content {
+      width: 960px;
+      height: 60px;
+      //border: 1px solid #000;
+      float: left;
+      font-size: 14px;
+      .content-left {
+        font-weight: bold;
+        color: rgba(102, 102, 102, 1);
+        margin-top: 23px;
+        margin-left: 20px;
         float: left;
       }
-      &:nth-child(2) {
-        &.sidebar-active {
-          i {
-            background: url("../images/icon/nav_icon_ruujin_sel.png") no-repeat;
-          }
-        }
-      }
-      &:nth-child(3) {
-        i {
-          background: url("../images/icon/nav_icon_chujin_nor.png") no-repeat;
-        }
-        &.sidebar-active {
-          i {
-            background: url("../images/icon/nav_icon_chujin_nor2.png") no-repeat;
-          }
-        }
-      }
-      &:nth-child(4) {
-        i {
-          width: 20px;
-          height: 20px;
-          background: url("../images/icon/nav_icon_gather_sel.png") no-repeat;
-        }
-        &.sidebar-active {
-          i {
-            background: url("../images/icon/nav_icon_gather_sel2.png") no-repeat;
-          }
-        }
-      }
-      &:nth-child(5) {
-        i {
-          width: 21px;
-          height: 21px;
-          background: url("../images/icon/icon_shuzi.png") no-repeat;
-        }
-        &.sidebar-active {
-          i {
-            background: url("../images/icon/icon_shuzi2.png") no-repeat;
-          }
-        }
-      }
-      &:nth-child(6) {
-        i {
-          width: 21px;
-          height: 20px;
-          background: url("../images/icon/icon_setting.png") no-repeat;
-          background-size: contain;
-        }
-        &.sidebar-active {
-          i {
-            background: url("../images/icon/icon_setting2.png") no-repeat;
+      .content-right {
+        float: right;
+        margin-top: 23px;
+        margin-right: 20px;
+        color: #999999;
+
+        span {
+          &:last-child {
+            color: #FBCD6C;
           }
         }
       }
     }
-    .sidebar-active {
-      background: rgba(250, 227, 179, 1);
-      color: #1D1A14;
+    .top-logout {
+      display: block;
+      width: 60px;
+      height: 60px;
+      border-left: 1px solid #EEF0F4;
+      float: right;
+      background: url("../images/icon/tab_logout.png") no-repeat center;
     }
   }
-  .main {
-    float: right;
-    .main-top {
-      width: 1030px;
-      height: 60px;
+  .main-warp {
+    padding: 20px;
+    box-sizing: border-box;
+    .dear-user {
+      //width:989px;
+      height: 124px;
       background: rgba(255, 255, 255, 1);
-      box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
-      //border: 1px solid #cccccc;
-      .top-content {
-        width: 960px;
-        height: 60px;
-        //border: 1px solid #000;
+      padding-top: 41px;
+      box-sizing: border-box;
+      .user-content {
+        //width:367px;
+        //height:44px;
         float: left;
-        font-size: 14px;
-        .content-left {
-          font-weight: bold;
-          color: rgba(102, 102, 102, 1);
-          margin-top: 23px;
-          margin-left: 20px;
-          float: left;
-        }
-        .content-right {
-          float: right;
-          margin-top: 23px;
-          margin-right: 20px;
-          color: #999999;
-
-          span {
-            &:last-child {
-              color: #FBCD6C;
-            }
+        font-weight: bold;
+        //border: 1px solid #cccccc;
+        margin-left: 38px;
+        p {
+          color: #1E1E1E;
+          font-size: 18px;
+          &:nth-child(2) {
+            color: #999999;
+            font-size: 14px;
+            margin-top: 10px;
           }
         }
-      }
-      .top-logout {
-        display: block;
-        width: 60px;
-        height: 60px;
-        border-left: 1px solid #EEF0F4;
-        float: right;
-        background: url("../images/icon/tab_logout.png") no-repeat center;
       }
     }
-    .main-warp {
-      padding: 20px;
+    .remind {
+      //width:989px;
+      height: 88px;
+      background: rgba(255, 255, 255, 1);
+      margin-top: 10px;
+      padding-top: 31px;
       box-sizing: border-box;
-      .dear-user {
-        //width:989px;
-        height: 124px;
-        background: rgba(255, 255, 255, 1);
-        padding-top: 41px;
-        box-sizing: border-box;
-        .user-content {
-          //width:367px;
-          //height:44px;
-          float: left;
-          font-weight: bold;
-          //border: 1px solid #cccccc;
-          margin-left: 38px;
-          p {
-            color: #1E1E1E;
-            font-size: 18px;
-            &:nth-child(2) {
-              color: #999999;
-              font-size: 14px;
-              margin-top: 10px;
-            }
-          }
-        }
-      }
-      .remind {
-        //width:989px;
-        height: 88px;
-        background: rgba(255, 255, 255, 1);
-        margin-top: 10px;
-        padding-top: 31px;
-        box-sizing: border-box;
-        .remind-content {
-          //width: 743px;
-          height: 27px;
-          //border: 1px solid #cccccc;
-          margin-left: 40px;
-          .icon {
-            display: block;
-            width: 27px;
-            height: 27px;
-            background: url("../images/icon/home_icon_warn.png") no-repeat;
-            float: left;
-            margin-right: 6px;
-          }
-          p {
-            font-size: 14px;
-            font-weight: 500;
-            color: rgba(102, 102, 102, 1);
-            float: left;
-            line-height: 24px;
-          }
-        }
-      }
-      .cny {
-        //width: 989px;
-        height: 256px;
+      .remind-content {
+        //width: 743px;
+        height: 27px;
         //border: 1px solid #cccccc;
-        margin-top: 10px;
-        .cny-cnh {
-          width: 490px;
-          height: 256px;
-          background: rgba(255, 255, 255, 1);
+        margin-left: 40px;
+        .icon {
+          display: block;
+          width: 27px;
+          height: 27px;
+          background: url("../images/icon/home_icon_warn.png") no-repeat;
           float: left;
-          .cnh-item {
-            width: 244px;
-            height: 256px;
-            padding-top: 20px;
-            text-align: center;
-            float: left;
-            .item-title {
-              font-size: 18px;
-              font-weight: 800;
-              color: rgba(30, 30, 30, 1);
-            }
-            .item-icon {
-              display: block;
-              width: 90px;
-              height: 90px;
-              margin-left: 77px;
-              margin-top: 41px;
-            }
-            .item-text {
-              font-weight: 800;
-              font-size: 14px;
-              color: #999999;
-              margin-top: 19px;
-              strong {
-                font-size: 36px;
-                color: rgba(251, 205, 108, 1);
-              }
-
-            }
-            &:first-child {
-              border-right: 1px solid #EEEEEE;
-              .item-icon {
-                background: url("../images/icon/icon_duiru.png") no-repeat;
-
-              }
-            }
-            &:nth-child(2) {
-              .item-icon {
-                background: url("../images/icon/icon_duichu.png") no-repeat;
-              }
-            }
-          }
+          margin-right: 6px;
         }
-        .asset {
-          width: 490px;
-          height: 256px;
-          background: rgba(255, 255, 255, 1);
-          float: right;
-          padding: 23px 54px 23px 53px;
-          box-sizing: border-box;
-          //border: 1px solid #000;
-          .asset-item {
-            width: 382px;
-            height: 55px;
-            border-bottom: 1px solid #EFEFEF;
-            //border: 1px solid red;
-            .item-icon {
-              display: block;
-              width: 44px;
-              height: 44px;
-              background: url("../images/icon/icon_dangqian.png") no-repeat;
-              float: left;
-              margin-right: 20px;
-            }
-            .item-content {
-              width: 293px;
-              height: 44px;
-              //border: 1px solid #cccccc;
-              float: left;
-              .content-title {
-                font-size: 14px;
-                font-weight: bold;
-                color: rgba(153, 153, 153, 1);
-              }
-              .content-data {
-                margin-top: 8px;
-                color: #999999;
-                span {
-                  &:first-child {
-                    margin-right: 60px;
-                  }
-                }
-                strong {
-                  color: #1E1E1E;
-                }
-              }
-            }
-            &:nth-child(2) {
-              margin-top: 22px;
-              margin-bottom: 22px;
-              .item-icon {
-                background: url("../images/icon/icon_dongjie.png") no-repeat;
-              }
-            }
-            &:nth-child(3) {
-              .item-icon {
-                background: url("../images/icon/icon_keyong.png") no-repeat;
-              }
-            }
-          }
+        p {
+          font-size: 14px;
+          font-weight: 500;
+          color: rgba(102, 102, 102, 1);
+          float: left;
+          line-height: 24px;
         }
       }
-      .sogo-info {
-        width: 990px;
-        height: 172px;
+    }
+    .cny {
+      //width: 989px;
+      height: 256px;
+      //border: 1px solid #cccccc;
+      margin-top: 10px;
+      .cny-cnh {
+        width: 490px;
+        height: 256px;
         background: rgba(255, 255, 255, 1);
-        margin-top: 10px;
-        padding: 20px 39px 29px 37px;
-        box-sizing: border-box;
-        .info {
-          width: 100%;
-          height: 100%;
-          //border: 1px solid #cccccc;
-          .info-title {
+        float: left;
+        .cnh-item {
+          width: 244px;
+          height: 256px;
+          padding-top: 20px;
+          text-align: center;
+          float: left;
+          .item-title {
             font-size: 18px;
             font-weight: 800;
             color: rgba(30, 30, 30, 1);
           }
-          .info-remit {
-            height: 26px;
-            margin-top: 30px;
-            > label {
-              float: left;
-              color: #7F7E7E;
-              margin-top: 3px;
-              > input {
-                width: 720px;
-                outline: none;
-                color: #1E1E1E;
-              }
-            }
-            .copy {
-              float: right;
-              width: 50px;
-              height: 26px;
-              border: 1px solid rgba(251, 205, 108, 1);
-              border-radius: 8px;
-              font-size: 14px;
-              font-weight: 500;
+          .item-icon {
+            display: block;
+            width: 90px;
+            height: 90px;
+            margin-left: 77px;
+            margin-top: 41px;
+          }
+          .item-text {
+            font-weight: 800;
+            font-size: 14px;
+            color: #999999;
+            margin-top: 19px;
+            strong {
+              font-size: 36px;
               color: rgba(251, 205, 108, 1);
-              background-color: white;
-              cursor: pointer;
+            }
+
+          }
+          &:first-child {
+            border-right: 1px solid #EEEEEE;
+            .item-icon {
+              background: url("../images/icon/icon_duiru.png") no-repeat;
+
             }
           }
-          .info-detail {
-            width: 100%;
-            //height: 44px;
-            //border: 1px solid #cccccc;
-            margin-top: 8px;
+          &:nth-child(2) {
+            .item-icon {
+              background: url("../images/icon/icon_duichu.png") no-repeat;
+            }
+          }
+        }
+      }
+      .asset {
+        width: 490px;
+        height: 256px;
+        background: rgba(255, 255, 255, 1);
+        float: right;
+        padding: 23px 54px 23px 53px;
+        box-sizing: border-box;
+        //border: 1px solid #000;
+        .asset-item {
+          width: 382px;
+          height: 55px;
+          border-bottom: 1px solid #EFEFEF;
+          //border: 1px solid red;
+          .item-icon {
+            display: block;
+            width: 44px;
+            height: 44px;
+            background: url("../images/icon/icon_dangqian.png") no-repeat;
             float: left;
-            label {
+            margin-right: 20px;
+          }
+          .item-content {
+            width: 293px;
+            height: 44px;
+            //border: 1px solid #cccccc;
+            float: left;
+            .content-title {
               font-size: 14px;
-              font-weight: 500;
-              float: left;
-              width: 300px;
-              //border: 1px solid #000;
-              margin-bottom: 12px;
+              font-weight: bold;
+              color: rgba(153, 153, 153, 1);
+            }
+            .content-data {
+              margin-top: 8px;
+              color: #999999;
               span {
-                color: #999999;
+                &:first-child {
+                  margin-right: 60px;
+                }
               }
-              input {
+              strong {
                 color: #1E1E1E;
-                outline: none;
               }
+            }
+          }
+          &:nth-child(2) {
+            margin-top: 22px;
+            margin-bottom: 22px;
+            .item-icon {
+              background: url("../images/icon/icon_dongjie.png") no-repeat;
+            }
+          }
+          &:nth-child(3) {
+            .item-icon {
+              background: url("../images/icon/icon_keyong.png") no-repeat;
+            }
+          }
+        }
+      }
+    }
+    .sogo-info {
+      width: 990px;
+      height: 172px;
+      background: rgba(255, 255, 255, 1);
+      margin-top: 10px;
+      padding: 20px 39px 29px 37px;
+      box-sizing: border-box;
+      .info {
+        width: 100%;
+        height: 100%;
+        //border: 1px solid #cccccc;
+        .info-title {
+          font-size: 18px;
+          font-weight: 800;
+          color: rgba(30, 30, 30, 1);
+        }
+        .info-remit {
+          height: 26px;
+          margin-top: 30px;
+          > label {
+            float: left;
+            color: #7F7E7E;
+            margin-top: 3px;
+            > input {
+              width: 720px;
+              outline: none;
+              color: #1E1E1E;
+            }
+          }
+          .copy {
+            float: right;
+            width: 50px;
+            height: 26px;
+            border: 1px solid rgba(251, 205, 108, 1);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(251, 205, 108, 1);
+            background-color: white;
+            cursor: pointer;
+          }
+        }
+        .info-detail {
+          width: 100%;
+          //height: 44px;
+          //border: 1px solid #cccccc;
+          margin-top: 8px;
+          float: left;
+          label {
+            font-size: 14px;
+            font-weight: 500;
+            float: left;
+            width: 300px;
+            //border: 1px solid #000;
+            margin-bottom: 12px;
+            span {
+              color: #999999;
+            }
+            input {
+              color: #1E1E1E;
+              outline: none;
             }
           }
         }
       }
     }
   }
-  .msg {
-    width: 330px;
-    height: 160px;
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 5px 1px rgba(24, 24, 24, 0.2);
+}
+.msg {
+  width: 330px;
+  height: 160px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 5px 1px rgba(24, 24, 24, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  .msg-title {
+    width: 100%;
+    height: 40px;
+    background: rgba(250, 227, 179, 1);
     border-radius: 4px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    .msg-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(24, 24, 24, 1);
+    line-height: 35px;
+    padding-left: 13px;
+    box-sizing: border-box;
+  }
+  .msg-content {
+    width: 100%;
+    height: 120px;
+    padding: 28px 40px 26px;
+    box-sizing: border-box;
+    .content {
       width: 100%;
-      height: 40px;
-      background: rgba(250, 227, 179, 1);
-      border-radius: 4px;
-      font-size: 14px;
-      font-weight: bold;
-      color: rgba(24, 24, 24, 1);
-      line-height: 35px;
-      padding-left: 13px;
-      box-sizing: border-box;
-    }
-    .msg-content {
-      width: 100%;
-      height: 120px;
-      padding: 28px 40px 26px;
-      box-sizing: border-box;
-      .content {
-        width: 100%;
-        height: 100%;
+      height: 100%;
+      //border: 1px solid #cccccc;
+      .content-icon {
+        display: block;
+        width: 67px;
+        height: 66px;
+        background: url("../images/icon/popup_icon_suc2.png") no-repeat;
+        float: left;
+      }
+      .content-detail {
+        width: 158px;
+        height: 34px;
         //border: 1px solid #cccccc;
-        .content-icon {
-          display: block;
-          width: 67px;
-          height: 66px;
-          background: url("../images/icon/popup_icon_suc2.png") no-repeat;
-          float: left;
-        }
-        .content-detail {
-          width: 158px;
-          height: 34px;
-          //border: 1px solid #cccccc;
-          font-size: 14px;
-          font-weight: bold;
-          float: left;
-          margin-top: 15px;
-          margin-left: 17px;
-          p {
-            color: #999999;
-            span {
-              color: #FBCD6C;
-            }
-            &:nth-child(2) {
-              margin-top: 6px;
-            }
+        font-size: 14px;
+        font-weight: bold;
+        float: left;
+        margin-top: 15px;
+        margin-left: 17px;
+        p {
+          color: #999999;
+          span {
+            color: #FBCD6C;
+          }
+          &:nth-child(2) {
+            margin-top: 6px;
           }
         }
       }

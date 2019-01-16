@@ -1,16 +1,46 @@
-'use strict';
+"use strict";
 
 /*经纪商 首页*/
 
 var app = new Vue({
   el: '#app',
   data: {
-    sidebarData: ['兑入订单管理', '兑出订单管理', '收款订单管理', '数字资产汇款', '自定义风格页面 '],
-    homeSidebarIndex: 0,
+    sidebarNavList: [{
+      icon: "icon-match",
+      text: "兑入订单管理",
+      href: "index.html"
+    }, {
+      icon: "icon-cash-out",
+      text: "兑出订单管理",
+      href: "cash_out.html"
+    }, {
+      icon: "icon-gathering",
+      text: "收款订单管理",
+      href: "gathering.html"
+    }, {
+      icon: "icon-remit",
+      text: "数字资产汇款",
+      href: "cny_set.html"
+    }, {
+      icon: "icon-custom",
+      text: "自定义风格页面",
+      href: "javascript:;"
+    }],
+    // homeSidebarIndex: 0,
     cashOutOrderSidebarIndex: 1,
-    assets: [{ title: '当前资产', USDT: '10000.00', CNY: '70000.00' }, { title: '冻结资产', USDT: '10000.00', CNY: '70000.00' }, { title: '可用资产', USDT: '10000.00', CNY: '70000.00' }],
+    assets: [{ title: '当前资产', USDT: '10000.00', CNY: '70000.00' }, {
+      title: '冻结资产',
+      USDT: '10000.00',
+      CNY: '70000.00'
+    }, { title: '可用资产', USDT: '10000.00', CNY: '70000.00' }],
     remitUrl: 'http://18.136.105.121:8087/acceptant/' + 'toPayPayeeConfigIndexPage?model=acceptor&fun=acceptor_edit',
-    infoDetail: [{ name: '商户名称：', value: 'CPT' }, { name: '允许调用的IP：', value: '192.25.56.366' }, { name: '加密key：', value: '192.25.56.366' }, { name: '商户电话：', value: '192.25.56.366' }, { name: '商户邮箱：', value: 'zhongwuchisha@163.com' }, { name: '回调地址：', value: '192.25.56.366' }],
+    infoDetail: [{ name: '商户名称：', value: 'CPT' }, { name: '允许调用的IP：', value: '192.25.56.366' }, {
+      name: '加密key：',
+      value: '192.25.56.366'
+    }, { name: '商户电话：', value: '192.25.56.366' }, { name: '商户邮箱：', value: 'zhongwuchisha@163.com' }, {
+      name: '回调地址：',
+      value: '192.25.56.366'
+    }],
     order: 35461244321245,
     isHasOrder: false, // 是否有订单
     confirmOrPay: [{ value: '客户已确认转账!' }, { value: '已支付!' }],
@@ -23,7 +53,8 @@ var app = new Vue({
       time: '2018.8.3 15:15:15',
       payer: '张三',
       USDTNumber: '1000.01',
-      sum: '7000.01' }, {
+      sum: '7000.01'
+    }, {
       orderNumber: '20180802_1500022135',
       thirdPartyOrder: '1500022135',
       orderState: '待客户支付',
@@ -31,7 +62,8 @@ var app = new Vue({
       time: '2018.8.3 15:15:15',
       payer: '张三',
       USDTNumber: '1000.01',
-      sum: '7000.01' }, {
+      sum: '7000.01'
+    }, {
       orderNumber: '20180802_1500022135',
       thirdPartyOrder: '1500022135',
       orderState: '待客户支付',
@@ -39,7 +71,8 @@ var app = new Vue({
       time: '2018.8.3 15:15:15',
       payer: '张三',
       USDTNumber: '1000.01',
-      sum: '7000.01' }, {
+      sum: '7000.01'
+    }, {
       orderNumber: '20180802_1500022135',
       thirdPartyOrder: '1500022135',
       orderState: '待客户支付',
@@ -47,7 +80,8 @@ var app = new Vue({
       time: '2018.8.3 15:15:15',
       payer: '张三',
       USDTNumber: '1000.01',
-      sum: '7000.01' }, {
+      sum: '7000.01'
+    }, {
       orderNumber: '20180802_1500022135',
       thirdPartyOrder: '1500022135',
       orderState: '待客户支付',
@@ -55,39 +89,8 @@ var app = new Vue({
       time: '2018.8.3 15:15:15',
       payer: '张三',
       USDTNumber: '1000.01',
-      sum: '7000.01' }, {
-      orderNumber: '20180802_1500022135',
-      thirdPartyOrder: '1500022135',
-      orderState: '待客户支付',
-      facilitator: '李沅泽',
-      time: '2018.8.3 15:15:15',
-      payer: '张三',
-      USDTNumber: '1000.01',
-      sum: '7000.01' }, {
-      orderNumber: '20180802_1500022135',
-      thirdPartyOrder: '1500022135',
-      orderState: '待客户支付',
-      facilitator: '李沅泽',
-      time: '2018.8.3 15:15:15',
-      payer: '张三',
-      USDTNumber: '1000.01',
-      sum: '7000.01' }, {
-      orderNumber: '20180802_1500022135',
-      thirdPartyOrder: '1500022135',
-      orderState: '待客户支付',
-      facilitator: '李沅泽',
-      time: '2018.8.3 15:15:15',
-      payer: '张三',
-      USDTNumber: '1000.01',
-      sum: '7000.01' }, {
-      orderNumber: '20180802_1500022135',
-      thirdPartyOrder: '1500022135',
-      orderState: '待客户支付',
-      facilitator: '李沅泽',
-      time: '2018.8.3 15:15:15',
-      payer: '张三',
-      USDTNumber: '1000.01',
-      sum: '7000.01' }],
+      sum: '7000.01'
+    }],
     orderDetail: [{
       title: '订单信息'
     }],
@@ -105,10 +108,8 @@ var app = new Vue({
     isShowSendEmail: false,
     // 发送成功
     isShowSendSucceed: false,
-
     // 兑出设置
     cashOutSet: false,
-
     // 汇率设置
     cnySetSidebarIndex: 3,
     cnySetText: ['汇率设置', '服务器设置']
@@ -141,14 +142,6 @@ var app = new Vue({
     }
   },
   methods: {
-    // 侧栏tab
-    indexTab: function indexTab(index) {
-      this.homeSidebarIndex = index;
-      this.cashOutOrderSidebarIndex = index;
-      this.sendEmailsSidebarIndex = index;
-      this.cnySetSidebarIndex = index;
-    },
-
     lookLog: function lookLog() {
       this.log = true;
     },

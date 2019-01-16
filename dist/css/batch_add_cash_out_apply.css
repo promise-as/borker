@@ -6,10 +6,9 @@
   margin-right: auto;
   background: #efefef;
   position: relative;
-  /*凭证 弹出框*/
-  /*提交打款信息 弹出框*/
 }
-.order-detail .voucher-mask .mask {
+/*凭证 弹出框*/
+.voucher-mask .mask {
   position: absolute;
   top: 0;
   left: 0;
@@ -18,33 +17,33 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
-.order-detail .voucher-mask .wrap {
+.voucher-mask .wrap {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
 }
-.order-detail .voucher-mask .wrap .modal {
+.voucher-mask .wrap .modal {
   width: 1200px;
   height: 735px;
   background: transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.order-detail .voucher-mask .wrap .modal .model-header {
+.voucher-mask .wrap .modal .model-header {
   width: 100%;
   height: 40px;
   padding: 13px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.order-detail .voucher-mask .wrap .modal .model-header > span {
+.voucher-mask .wrap .modal .model-header > span {
   font-size: 14px;
   font-weight: bold;
   float: left;
   color: white;
 }
-.order-detail .voucher-mask .wrap .modal .model-header > i {
+.voucher-mask .wrap .modal .model-header > i {
   display: block;
   width: 14px;
   height: 14px;
@@ -52,7 +51,7 @@
   float: right;
   cursor: pointer;
 }
-.order-detail .voucher-mask .wrap .modal .model-content {
+.voucher-mask .wrap .modal .model-content {
   width: 450px;
   height: 281px;
   border: 1px solid white;
@@ -63,14 +62,14 @@
   right: 0;
   margin: auto;
 }
-.order-detail .voucher-mask .wrap .modal .model-bottom {
+.voucher-mask .wrap .modal .model-bottom {
   width: 100%;
   height: 60px;
   background: rgba(1, 9, 16, 0.4);
   position: absolute;
   bottom: 0;
 }
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom {
+.voucher-mask .wrap .modal .model-bottom .bottom {
   width: 220px;
   height: 60px;
   padding-top: 21px;
@@ -80,33 +79,34 @@
   margin-left: auto;
   margin-right: auto;
 }
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom input {
+.voucher-mask .wrap .modal .model-bottom .bottom input {
   cursor: pointer;
 }
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom input:first-child {
+.voucher-mask .wrap .modal .model-bottom .bottom input:first-child {
   width: 20px;
   height: 17px;
   background: url("../images/icon/icon_popup_left.png") no-repeat;
 }
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(2) {
+.voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(2) {
   width: 19px;
   height: 20px;
   background: url("../images/icon/icon_popup_rotate.png") no-repeat;
   margin-left: 47px;
   padding-right: 47px;
 }
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(3) {
+.voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(3) {
   width: 20px;
   height: 20px;
   background: url("../images/icon/icon_popup_apli.png") no-repeat;
   margin-right: 47px;
 }
-.order-detail .voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(4) {
+.voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(4) {
   width: 20px;
   height: 18px;
   background: url("../images/icon/icon_popup_right.png") no-repeat;
 }
-.order-detail .remittance-mask .mask {
+/*提交打款信息 弹出框*/
+.remittance-mask .mask {
   position: absolute;
   top: 0;
   left: 0;
@@ -115,7 +115,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
-.order-detail .remittance-mask .modal {
+.remittance-mask .modal {
   width: 470px;
   height: 397px;
   background: transparent;
@@ -126,7 +126,7 @@
   right: 0;
   margin: auto;
 }
-.order-detail .remittance-mask .modal .model-header {
+.remittance-mask .modal .model-header {
   width: 100%;
   height: 40px;
   padding: 13px;
@@ -134,13 +134,13 @@
           box-sizing: border-box;
   background: #fae3b3;
 }
-.order-detail .remittance-mask .modal .model-header > span {
+.remittance-mask .modal .model-header > span {
   font-size: 14px;
   float: left;
   font-weight: bold;
   color: #181818;
 }
-.order-detail .remittance-mask .modal .model-header > i {
+.remittance-mask .modal .model-header > i {
   display: block;
   width: 14px;
   height: 14px;
@@ -148,7 +148,7 @@
   float: right;
   cursor: pointer;
 }
-.order-detail .remittance-mask .modal .model-content {
+.remittance-mask .modal .model-content {
   width: 100%;
   height: 357px;
   background-color: white;
@@ -156,51 +156,51 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.order-detail .remittance-mask .modal .model-content .content {
+.remittance-mask .modal .model-content .content {
   width: 100%;
   height: 100%;
 }
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure {
+.remittance-mask .modal .model-content .content .succeed-failure {
   float: left;
   margin-bottom: 20px;
 }
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item {
+.remittance-mask .modal .model-content .content .succeed-failure .item {
   height: 14px;
   font-size: 12px;
   float: left;
   margin-right: 49px;
 }
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > label {
+.remittance-mask .modal .model-content .content .succeed-failure .item > label {
   float: left;
 }
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > label .radio {
+.remittance-mask .modal .model-content .content .succeed-failure .item > label .radio {
   display: none;
 }
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > label .radio:checked + i {
+.remittance-mask .modal .model-content .content .succeed-failure .item > label .radio:checked + i {
   background: url("../images/icon/icon_dianji.png") no-repeat;
   background-size: contain;
   border: 0;
 }
-.order-detail .remittance-mask .modal .model-content .content .succeed-failure .item > span {
+.remittance-mask .modal .model-content .content .succeed-failure .item > span {
   float: left;
   color: #1E1E1E;
   font-size: 14px;
   margin-left: 5px;
 }
-.order-detail .remittance-mask .modal .model-content .content .upload {
+.remittance-mask .modal .model-content .content .upload {
   width: 100%;
   height: 54px;
   clear: both;
   margin-bottom: 20px;
 }
-.order-detail .remittance-mask .modal .model-content .content .upload span {
+.remittance-mask .modal .model-content .content .upload span {
   font-size: 14px;
   font-weight: 500;
   color: #999999;
   line-height: 43px;
   float: left;
 }
-.order-detail .remittance-mask .modal .model-content .content .upload label {
+.remittance-mask .modal .model-content .content .upload label {
   width: 54px;
   height: 54px;
   border: 1px solid #e2e3e7;
@@ -209,23 +209,23 @@
   background: url("../images/icon/icon_popup_close1.png") no-repeat center;
   cursor: pointer;
 }
-.order-detail .remittance-mask .modal .model-content .content .upload label input {
+.remittance-mask .modal .model-content .content .upload label input {
   width: 54px;
   visibility: hidden;
 }
-.order-detail .remittance-mask .modal .model-content .content .remark {
+.remittance-mask .modal .model-content .content .remark {
   clear: both;
   height: 122px;
   margin-bottom: 20px;
 }
-.order-detail .remittance-mask .modal .model-content .content .remark span {
+.remittance-mask .modal .model-content .content .remark span {
   font-size: 14px;
   font-weight: 500;
   color: #999999;
   line-height: 43px;
   float: left;
 }
-.order-detail .remittance-mask .modal .model-content .content .remark textarea {
+.remittance-mask .modal .model-content .content .remark textarea {
   float: right;
   width: 304px;
   height: 122px;
@@ -237,13 +237,13 @@
   outline: none;
   resize: none;
 }
-.order-detail .remittance-mask .modal .model-content .content .btn {
+.remittance-mask .modal .model-content .content .btn {
   width: 304px;
   height: 36px;
   clear: both;
   float: right;
 }
-.order-detail .remittance-mask .modal .model-content .content .btn input {
+.remittance-mask .modal .model-content .content .btn input {
   width: 120px;
   height: 36px;
   border: 1px solid #fbcd6c;
@@ -256,113 +256,43 @@
   outline: none;
   margin-right: 20px;
 }
-.order-detail .remittance-mask .modal .model-content .content .btn input.active {
+.remittance-mask .modal .model-content .content .btn input.active {
   background: #fbcd6c;
   color: #ffffff;
 }
-.order-detail .sidebar {
-  width: 170px;
-  height: 100%;
-  background: #181818;
-  float: left;
-}
-.order-detail .sidebar .logo {
-  width: 100%;
-  height: 58px;
-  background: url("../images/logo/logo.png") no-repeat center;
-  text-indent: -9999px;
-}
-.order-detail .sidebar .sidebar-item {
-  color: white;
-  height: 46px;
-  text-align: center;
-  line-height: 46px;
-  cursor: pointer;
-}
-.order-detail .sidebar .sidebar-item i {
-  display: block;
-  width: 19px;
-  height: 22px;
-  background: url("../images/icon/nav_icon_ruujin_sel2.png") no-repeat;
-  float: left;
-  margin-top: 12px;
-  margin-left: 15px;
-  margin-right: 10px;
-}
-.order-detail .sidebar .sidebar-item span {
-  float: left;
-}
-.order-detail .sidebar .sidebar-item:nth-child(2).sidebar-active i {
-  background: url("../images/icon/nav_icon_ruujin_sel.png") no-repeat;
-}
-.order-detail .sidebar .sidebar-item:nth-child(3) i {
-  background: url("../images/icon/nav_icon_chujin_nor.png") no-repeat;
-}
-.order-detail .sidebar .sidebar-item:nth-child(3).sidebar-active i {
-  background: url("../images/icon/nav_icon_chujin_nor2.png") no-repeat;
-}
-.order-detail .sidebar .sidebar-item:nth-child(4) i {
-  width: 20px;
-  height: 20px;
-  background: url("../images/icon/nav_icon_gather_sel.png") no-repeat;
-}
-.order-detail .sidebar .sidebar-item:nth-child(4).sidebar-active i {
-  background: url("../images/icon/nav_icon_gather_sel2.png") no-repeat;
-}
-.order-detail .sidebar .sidebar-item:nth-child(5) i {
-  width: 21px;
-  height: 21px;
-  background: url("../images/icon/icon_shuzi.png") no-repeat;
-}
-.order-detail .sidebar .sidebar-item:nth-child(5).sidebar-active i {
-  background: url("../images/icon/icon_shuzi2.png") no-repeat;
-}
-.order-detail .sidebar .sidebar-item:nth-child(6) i {
-  width: 21px;
-  height: 20px;
-  background: url("../images/icon/icon_setting.png") no-repeat;
-  background-size: contain;
-}
-.order-detail .sidebar .sidebar-item:nth-child(6).sidebar-active i {
-  background: url("../images/icon/icon_setting2.png") no-repeat;
-}
-.order-detail .sidebar .sidebar-active {
-  background: #fae3b3;
-  color: #1D1A14;
-}
-.order-detail .main {
+.main {
   float: right;
 }
-.order-detail .main .main-top {
+.main .main-top {
   width: 1030px;
   height: 60px;
   background: #ffffff;
   -webkit-box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
           box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
 }
-.order-detail .main .main-top .top-content {
+.main .main-top .top-content {
   width: 960px;
   height: 60px;
   float: left;
   font-size: 14px;
 }
-.order-detail .main .main-top .top-content .content-left {
+.main .main-top .top-content .content-left {
   font-weight: bold;
   color: #666666;
   margin-top: 23px;
   margin-left: 20px;
   float: left;
 }
-.order-detail .main .main-top .top-content .content-right {
+.main .main-top .top-content .content-right {
   float: right;
   margin-top: 23px;
   margin-right: 20px;
   color: #999999;
 }
-.order-detail .main .main-top .top-content .content-right span:last-child {
+.main .main-top .top-content .content-right span:last-child {
   color: #FBCD6C;
 }
-.order-detail .main .main-top .top-logout {
+.main .main-top .top-logout {
   display: block;
   width: 60px;
   height: 60px;
@@ -370,26 +300,26 @@
   float: right;
   background: url("../images/icon/tab_logout.png") no-repeat center;
 }
-.order-detail .main .main-warp {
+.main .main-warp {
   width: 1030px;
   padding: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   float: left;
 }
-.order-detail .main .main-warp .header {
+.main .main-warp .header {
   width: 990px;
   float: left;
   margin-bottom: 12px;
 }
-.order-detail .main .main-warp .header span {
+.main .main-warp .header span {
   font-size: 18px;
   font-weight: 800;
   color: #1e1e1e;
   line-height: 30px;
   float: left;
 }
-.order-detail .main .main-warp .header a {
+.main .main-warp .header a {
   display: block;
   width: 59px;
   height: 30px;
@@ -407,7 +337,7 @@
   line-height: 30px;
   margin-left: 10px;
 }
-.order-detail .main .main-warp .order {
+.main .main-warp .order {
   clear: both;
   width: 990px;
   height: 660px;
@@ -418,17 +348,17 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.order-detail .main .main-warp .order .import {
+.main .main-warp .order .import {
   width: 100%;
   height: 200px;
 }
-.order-detail .main .main-warp .order .import li {
+.main .main-warp .order .import li {
   margin-bottom: 20px;
 }
-.order-detail .main .main-warp .order .import li span {
+.main .main-warp .order .import li span {
   color: #999999;
 }
-.order-detail .main .main-warp .order .import li input {
+.main .main-warp .order .import li input {
   width: 370px;
   height: 36px;
   border: 1px solid #e2e3e7;
@@ -438,7 +368,7 @@
   padding-right: 10px;
   cursor: pointer;
 }
-.order-detail .main .main-warp .order .import li .browse {
+.main .main-warp .order .import li .browse {
   width: 90px;
   height: 36px;
   background: #fbcd6c;
@@ -450,11 +380,11 @@
   color: #ffffff;
   line-height: 30px;
 }
-.order-detail .main .main-warp .order .import li:nth-child(2) input {
+.main .main-warp .order .import li:nth-child(2) input {
   border: 0;
   color: #377DFF;
 }
-.order-detail .main .main-warp .order .import .confirm-import {
+.main .main-warp .order .import .confirm-import {
   width: 90px;
   height: 36px;
   background: #fbcd6c;

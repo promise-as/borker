@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>兑入订单详情</title>
+  <title>兑出订单详情</title>
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/match_order_detail.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/cash_out_detail.css">
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
@@ -13,16 +14,86 @@
 <body>
 <div id="app">
   <div class="order-detail">
+    <!--凭证-->
+    <div class="voucher-mask" v-if="cashOutOrderDetailIsShow">
+      <div class="mask"></div>
+      <div class="wrap">
+        <div class="modal">
+          <div class="model-header">
+            <span>查看凭证</span>
+            <i @click="closeVoucher"></i>
+          </div>
+          <div class="model-content"></div>
+          <div class="model-bottom">
+            <div class="bottom">
+              <input type="button">
+              <input type="button">
+              <input type="button">
+              <input type="button">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--提交打款信息-->
+    <div class="remittance-mask" v-if="isShowRemitMsg">
+      <div class="mask"></div>
+      <div class="modal">
+        <div class="model-header">
+          <span>提交打款信息</span>
+          <i @click="closeRemitMsg"></i>
+        </div>
+        <div class="model-content">
+          <div class="content">
+            <div class="succeed-failure">
+              <div class="item">
+                <label for="server1">
+                  <input type="radio" id="server1" class="radio" name="ser" checked="checked">
+                  <i></i>
+                </label>
+                <span>确认已成功收款</span>
+              </div>
+              <div class="item">
+                <label for="server2">
+                  <input type="radio" id="server2" class="radio" name="ser">
+                  <i></i>
+                </label>
+                <span>确认打款失败</span>
+              </div>
+            </div>
+            <div class="upload">
+              <span>上传凭证：</span>
+              <label for="upload">
+                <input type="file" id="upload">
+              </label>
+            </div>
+            <div class="remark">
+              <span>备注：</span>
+              <textarea ></textarea>
+            </div>
+            <div class="btn">
+              <input type="button"
+                     v-for="(btnText, index) in submitRemitMsgBtn"
+                     :value="btnText"
+                     :class="submitRemitMsgBtnIndex === index ? 'active': ''"
+                     @click="btnIndexTab(index)"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="sidebar">
       <a class="logo" href="./index.html">NOWPAY</a>
-      <li class="sidebar-item"
-          v-for="(item,index) in sidebarData"
-          :class="homeSidebarIndex === index?'sidebar-active':''"
-          @click="indexTab(index)"
+      <a class="sidebar-item"
+         v-for="(item,index) in sidebarNavList"
+         :class="index === 1?'sidebar-active':''"
+         :href="item.href"
       >
-        <i></i>
-        <span>{{item}}</span>
-      </li>
+        <i :class="item.icon"></i>
+        <span>{{item.text}}</span>
+      </a>
     </div>
     <div class="main">
       <div class="main-top">
@@ -40,7 +111,10 @@
       <div class="main-warp">
         <div class="header">
           <span>订单详情</span>
-          <a href="./match_order.html">返回</a>
+          <a href="cash_out.html">返回</a>
+          <input @click="showRemitMsg"
+                  type="button" value="确认收款信息"/>
+
         </div>
         <div class="order">
           <div class="order-item">
@@ -57,14 +131,14 @@
                 </li>
                 <li>
                   <label for="0">
-                    <span>第三方平台订单号：</span>
+                    <span>支付单号：</span>
                     <input type="text" value="1500022135" id="0">
                   </label>
                 </li>
                 <li>
                   <label for="0">
                     <span>订单状态：</span>
-                    <input type="text" value="待服务商收款" id="0">
+                    <input type="text" value="服务商已打款" id="0">
                   </label>
                 </li>
                 <li>
@@ -79,12 +153,6 @@
                     <input type="text" value="CPT" id="0">
                   </label>
                 </li>
-                <li>
-                  <label for="0">
-                    <span>转账备注码：</span>
-                    <input class="active" type="text" value="353535" id="0">
-                  </label>
-                </li>
               </div>
             </div>
           </div>
@@ -97,26 +165,14 @@
               <div class="content">
                 <li>
                   <label for="0">
-                    <span>付款金额：</span>
+                    <span>收款金额：</span>
                     <input class="active" type="text" value="￥7000" id="0">
                   </label>
                 </li>
                 <li>
                   <label for="0">
-                    <span>付款人姓名：</span>
-                    <input class="active" type="text" value="张三" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>付款方式：</span>
-                    <input class="active" type="text" value="银行转账" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
                     <span>收款人姓名：</span>
-                    <input type="text" value="玉米蒸" id="0">
+                    <input class="active" type="text" value="张三" id="0">
                   </label>
                 </li>
                 <li>
@@ -131,44 +187,10 @@
                     <input class="active" type="text" value="6228 4811 7674 6694 972" id="0">
                   </label>
                 </li>
-              </div>
-            </div>
-          </div>
-
-          <div class="order-item">
-            <div class="item-header">
-              <span>客户信息</span>
-            </div>
-            <div class="item-content">
-              <div class="content">
                 <li>
                   <label for="0">
-                    <span>姓名：</span>
-                    <input type="text" value="玉米甲" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>服务器：</span>
-                    <input type="text" value="101" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>交易帐号：</span>
-                    <input type="text" value="6667845615" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>邮箱：</span>
-                    <input type="text" value="yumijia@163.com" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>手机：</span>
-                    <input type="text" value="18814656852" id="0">
+                    <span>收款凭证:</span>
+                    <input @click="voucher" type="button" value="查看凭证" id="0">
                   </label>
                 </li>
               </div>

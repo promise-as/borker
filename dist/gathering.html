@@ -5,7 +5,8 @@
   <title>收款订单</title>
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/gathering_order.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/gathering.css">
   <!-- 引入样式 -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
@@ -39,14 +40,14 @@
 
     <div class="sidebar">
       <a class="logo" href="./index.html">NOWPAY</a>
-      <li class="sidebar-item"
-          v-for="(item,index) in sidebarData"
-          :class="sendEmailsSidebarIndex === index?'sidebar-active':''"
-          @click="indexTab(index)"
+      <a class="sidebar-item"
+         v-for="(item,index) in sidebarNavList"
+         :class="index === 2?'sidebar-active':''"
+         :href="item.href"
       >
-        <i></i>
-        <span>{{item}}</span>
-      </li>
+        <i :class="item.icon"></i>
+        <span>{{item.text}}</span>
+      </a>
     </div>
     <div class="main">
       <div class="main-top">

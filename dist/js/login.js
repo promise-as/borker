@@ -2,10 +2,13 @@
 
 var app = new Vue({
   el: '#app',
-  data: function data() {
-    return {
-      mobile: ''
-    };
+  data: {
+    mobile: '',
+    pwd: '',
+    url: '',
+
+    isDialog: false,
+    alertText: ''
   },
 
   watch: {
@@ -23,5 +26,19 @@ var app = new Vue({
         }
       }
     }
+  },
+
+  methods: {
+    /*login: function (e) {
+      var that = this;
+      console.log(e.target)
+      if(that.mobile === '' || that.pwd === ''){
+        new dialog(that, '用户名或者密码错误');
+        that.url = ''
+      }else{
+        new dialog(that, '登录成功');
+        that.url = 'index.html'
+      }
+    }*/
   }
 });

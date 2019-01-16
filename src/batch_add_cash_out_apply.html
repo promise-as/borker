@@ -5,6 +5,7 @@
   <title>批量添加兑出申请</title>
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/batch_add_cash_out_apply.css">
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -85,14 +86,14 @@
 
     <div class="sidebar">
       <a class="logo" href="./index.html">NOWPAY</a>
-      <li class="sidebar-item"
-          v-for="(item,index) in sidebarData"
-          :class="cashOutOrderSidebarIndex === index?'sidebar-active':''"
-          @click="indexTab(index)"
+      <a class="sidebar-item"
+         v-for="(item,index) in sidebarNavList"
+         :class="index === 1?'sidebar-active':''"
+         :href="item.href"
       >
-        <i></i>
-        <span>{{item}}</span>
-      </li>
+        <i :class="item.icon"></i>
+        <span>{{item.text}}</span>
+      </a>
     </div>
     <div class="main">
       <div class="main-top">
@@ -110,7 +111,7 @@
       <div class="main-warp">
         <div class="header">
           <span>批量添加兑出申请</span>
-          <a href="./cash_out_order.html">返回</a>
+          <a href="cash_out.html">返回</a>
 
         </div>
         <div class="order">

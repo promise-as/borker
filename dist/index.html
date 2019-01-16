@@ -5,6 +5,7 @@
   <title>首页</title>
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/index.css">
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -15,23 +16,24 @@
   <div class="home">
     <div class="sidebar">
       <a class="logo" href="./index.html">NOWPAY</a>
-      <li class="sidebar-item"
-          v-for="(item,index) in sidebarData"
-          :class="homeSidebarIndex === index?'sidebar-active':''"
-          @click="indexTab(index)"
+      <a class="sidebar-item"
+         v-for="(item,index) in sidebarNavList"
+         :class="index === 0?'sidebar-active':''"
+         :href="item.href"
       >
-        <i></i>
-        <span>{{item}}</span>
-      </li>
+        <i :class="item.icon"></i>
+        <span>{{item.text}}</span>
+      </a>
     </div>
+
     <div class="main">
       <div class="main-top">
         <div class="top-content">
           <div class="content-left">欢迎使用NOVOXPAY出入金系统！</div>
           <div class="content-right">
-            <span>2018.08.03</span>
-            <span>星期五</span>
-            <span>15:23:56</span>
+            <span id="zfk"></span>
+            <span id="watt"></span>
+            <span id="hms"></span>
             <span>xiaodao</span>
           </div>
         </div>
@@ -43,7 +45,9 @@
             <p>尊敬的经纪商用户：</p>
             <p>
               NOVOXPAY欢迎您！上次登录时间：
-              <span>2018-8-3 11:55:16</span></p>
+              <span id="lastZfk"></span>
+              <span id="lastHms"></span>
+            </p>
           </div>
         </div>
         <div class="remind">
@@ -125,3 +129,4 @@
 </body>
 </html>
 <script src="js/index.js"></script>
+<script src="js/read_cache.js"></script>

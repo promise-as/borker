@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>兑出订单</title>
+  <title>兑入订单</title>
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/cash_out_order.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/match.css">
   <!-- 引入样式 -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
@@ -18,9 +19,9 @@
 <body>
 <div id="app">
 
-  <div class="cash-out">
-    <!--操作日志-->
-    <div class="cash-out-mask" v-if="log">
+  <div class="match">
+    <!--蒙版-->
+    <div class="match-mask" v-if="log">
       <div class="mask"></div>
       <div class="wrap">
         <div class="modal">
@@ -36,66 +37,19 @@
         </div>
       </div>
     </div>
-    <!--兑出设置-->
-    <div class="set-mask" v-if="cashOutSet">
-      <div class="mask"></div>
-      <div class="modal">
-        <div class="model-header">
-          <span>兑出设置</span>
-          <i @click="closeCashOutSet"></i>
-        </div>
-        <div class="model-content">
-          <div class="content">
-            <div class="sms">
-              <span>*是否需要短信验证：</span>
-              <div class="item">
-                <label for="server1">
-                  <input type="radio" id="server1" class="radio" name="ser" checked="checked">
-                  <i></i>
-                </label>
-                <span>是</span>
-              </div>
-              <div class="item">
-                <label for="server2">
-                  <input type="radio" id="server2" class="radio" name="ser">
-                  <i></i>
-                </label>
-                <span>否</span>
-              </div>
-            </div>
-            <div class="verification-code">
-              <span>*接收验证码手机：</span>
-              <input type="text" value="139****1325">
-              <input type="button" value="发送验证码">
-            </div>
-            <div class="mms-verification">
-              <span>*短信验证码：</span>
-              <input type="text" value=" ">
-            </div>
-            <div class="btn">
-              <input type="button"
-                     v-for="(btnText, index) in submitRemitMsgBtn"
-                     :value="btnText"
-                     :class="submitRemitMsgBtnIndex === index ? 'active': ''"
-                     @click="btnIndexTab(index)"
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="sidebar">
       <a class="logo" href="./index.html">NOWPAY</a>
-      <li class="sidebar-item"
-          v-for="(item,index) in sidebarData"
-          :class="cashOutOrderSidebarIndex === index?'sidebar-active':''"
-          @click="indexTab(index)"
+      <a class="sidebar-item"
+         v-for="(item,index) in sidebarNavList"
+         :class="index === 0?'sidebar-active':''"
+         :href="item.href"
       >
-        <i></i>
-        <span>{{item}}</span>
-      </li>
+        <i :class="item.icon"></i>
+        <span>{{item.text}}</span>
+      </a>
     </div>
+
     <div class="main">
       <div class="main-top">
         <div class="top-content">
@@ -110,17 +64,8 @@
         <a class="top-logout" href="./login.html"></a>
       </div>
       <div class="main-warp">
-        <p class="title">兑出订单管理</p>
+        <p class="title">兑入订单管理</p>
         <div class="order-state">
-          <div class="state-header">
-            <div class="header-btn"
-                 v-for="(item, index) in orderText" @click="orderTextTab(index)"
-                 :class="orderIndex === index ? 'active': ''">
-              {{item}}
-            </div>
-            <i class="header-icon" @click="showCashOutSet"></i>
-
-          </div>
           <div class="state">
             <span>订单状态</span>
             <select>
@@ -133,14 +78,23 @@
             </select>
             <input type="text" placeholder="付款人">
             <input type="text" placeholder="订单编号">
-            <input type="button" value="添加兑出申请">
-            <input type="button" value="批量添加兑出申请">
+            <input type="text" placeholder="服务商收款账号">
+            <input type="text" placeholder="转账备注码">
           </div>
           <div class="state">
-            <input class="export" type="button" value="导出">
-            <input class="query" type="button" value="查询">
-            <input type="text" placeholder="第三方订单号">
+            <span>订单类型</span>
+            <select>
+              <option value="" style="display: none">所有类型</option>
+              <option value="done">已完成</option>
+              <option value="unpaid">待客户支付</option>
+              <option value="payable">待服务商收款</option>
+              <option value="uncollected">服务商未收款</option>
+              <option value="canceled">已取消</option>
+            </select>
             <input type="text" placeholder="服务商">
+            <input type="text" placeholder="第三方订单号">
+            <input class="query" type="button" value="查询">
+            <input class="export" type="button" value="导出excel">
           </div>
         </div>
         <div class="order-content">
@@ -166,7 +120,7 @@
               <div class="detail-item">{{item.USDTNumber}}</div>
               <div class="detail-item">{{item.sum}}</div>
               <div class="detail-item">
-                <a href="./cash_out_order_detail.html">详情</a>
+                <input type="button" value="详情">
                 <input @click="lookLog" type="button" value="日志">
               </div>
             </div>

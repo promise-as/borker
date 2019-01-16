@@ -5,6 +5,7 @@
   <title>汇率设置</title>
   <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/cny_set.css">
   <!-- 引入样式 -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -87,14 +88,14 @@
 
     <div class="sidebar">
       <a class="logo" href="./index.html">NOWPAY</a>
-      <li class="sidebar-item"
-          v-for="(item,index) in sidebarData"
-          :class="cnySetSidebarIndex === index?'sidebar-active':''"
-          @click="indexTab(index)"
+      <a class="sidebar-item"
+         v-for="(item,index) in sidebarNavList"
+         :class="index === 3?'sidebar-active':''"
+         :href="item.href"
       >
-        <i></i>
-        <span>{{item}}</span>
-      </li>
+        <i :class="item.icon"></i>
+        <span>{{item.text}}</span>
+      </a>
     </div>
     <div class="main">
       <div class="main-top">
@@ -115,7 +116,7 @@
           <div class="state-header">
             <div class="header-btn"
                  v-for="(item, index) in cnySetText" @click="orderTextTab(index)"
-                 :class="1 === index ? 'active': ''">
+                 :class="0 === index ? 'active': ''">
               {{item}}
             </div>
             <input class="add-servers" type="button" value="添加服务器">
@@ -132,7 +133,7 @@
                 <div class="detail-item">{{item.sum}}</div>
                 <div class="detail-item">
                   <div class="item">
-                    <a href="./cash_out_order_detail.html">编辑</a>
+                    <a href="./cash_out_detail.html">编辑</a>
                     <input @click="lookLog" type="button" value="日志">
                   </div>
 
@@ -154,7 +155,7 @@
                 <div class="detail-item">{{item.sum}}</div>
                 <div class="detail-item">
                   <div class="item">
-                    <a href="./cash_out_order_detail.html">编辑</a>
+                    <a href="cash_out_detail.html">编辑</a>
                     <input @click="lookLog" type="button" value="日志">
                   </div>
 
