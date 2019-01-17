@@ -9,7 +9,7 @@ var app = new Vue({
     alertText: '',
   },
 
-  watch: {
+  /*watch: {
     // 通过watch来设置空格
     mobile: function mobile(newValue, oldValue) {
       if (newValue.length > oldValue.length) {
@@ -24,19 +24,25 @@ var app = new Vue({
         }
       }
     }
-  },
+  },*/
 
   methods: {
-    /*login: function (e) {
-      var that = this;
-      console.log(e.target)
-      if(that.mobile === '' || that.pwd === ''){
-        new dialog(that, '用户名或者密码错误');
-        that.url = ''
-      }else{
-        new dialog(that, '登录成功');
-        that.url = 'index.html'
-      }
-    }*/
+    login: function () {
+      var that = this
+      /*if (that.mobile && that.pwd) {
+        axios.post('url',{
+          mobile:that.mobile,
+          pwd:that.pwd,
+        }).then(function (response) {
+
+        }).catch(function (error) {
+          // 弹框提示
+          dialog(that,error);
+        });
+      } else {
+        // 弹框提示
+        dialog(that,"请输入用户名或密码");
+      }*/
+    }
   }
-});
+})

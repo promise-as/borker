@@ -7,13 +7,10 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/match.css">
-  <!-- 引入样式 -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <!-- 引入组件库 -->
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 </head>
 <body>
@@ -21,7 +18,7 @@
 
   <div class="match">
     <!--蒙版-->
-    <div class="match-mask" v-if="log">
+    <div class="match-mask" v-show="log">
       <div class="mask"></div>
       <div class="wrap">
         <div class="modal">
@@ -29,11 +26,30 @@
             <span>操作日志</span>
             <i @click="closeLog"></i>
           </div>
+          <div class="content">
+            <ul>
+              <li v-for="(item, index) in matchOrderFinishData"
+                  :class="finishIndex === index?'finish':''"
+              >
+                <div class="icon">
+                  <span></span>
+                </div>
+                <div class="text">
+                  <p>{{item.title}}</p>
+                  <p>
+                    <span>{{item.zfk}}</span>
+                    <span>{{item.hms}}</span>
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <a class="actCouponBtn" href="javascript:;"
+               @click="closeLog"
 
-          <a class="actCouponBtn" href="javascript:;"
-             @click="assess(enterSum)">
-            <span>确定</span>
-          </a>
+            >
+              <span>确定</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -97,6 +113,8 @@
             <input class="export" type="button" value="导出excel">
           </div>
         </div>
+
+        <!--表单数据-->
         <div class="order-content">
           <div class="content-header">
             <div class="header-item">订单编号</div>
@@ -120,8 +138,8 @@
               <div class="detail-item">{{item.USDTNumber}}</div>
               <div class="detail-item">{{item.sum}}</div>
               <div class="detail-item">
-                <input type="button" value="详情">
-                <input @click="lookLog" type="button" value="日志">
+                <a class="item" href="./match_detail.html">详情</a>
+                <span class="item" @click="lookLog">日志</span>
               </div>
             </div>
           </div>
@@ -131,9 +149,9 @@
                 共<em>64</em>条
               </span>
               <select>
-                <option >10条/页</option>
-                <option >20条/页</option>
-                <option >30条/页</option>
+                <option>10条/页</option>
+                <option>20条/页</option>
+                <option>30条/页</option>
               </select>
               <input class="prev" type="button" value="<">
               <input class="next" type="button" value=">">
@@ -143,6 +161,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -150,3 +169,4 @@
 </body>
 </html>
 <script src="js/index.js"></script>
+<script src="js/match.js"></script>

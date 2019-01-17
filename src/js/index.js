@@ -69,9 +69,9 @@ var app = new Vue({
         sum: '7000.01'
       },
       {
-        orderNumber: '20180802_1500022135',
+        orderNumber: '20180803_1500022135',
         thirdPartyOrder: '1500022135',
-        orderState: '待客户支付',
+        orderState: '待服务商收款',
         facilitator: '李沅泽',
         time: '2018.8.3 15:15:15',
         payer: '张三',
@@ -79,9 +79,9 @@ var app = new Vue({
         sum: '7000.01'
       },
       {
-        orderNumber: '20180802_1500022135',
+        orderNumber: '20180804_1500022135',
         thirdPartyOrder: '1500022135',
-        orderState: '待客户支付',
+        orderState: '服务商未收款',
         facilitator: '李沅泽',
         time: '2018.8.3 15:15:15',
         payer: '张三',
@@ -89,9 +89,9 @@ var app = new Vue({
         sum: '7000.01'
       },
       {
-        orderNumber: '20180802_1500022135',
+        orderNumber: '20180805_1500022135',
         thirdPartyOrder: '1500022135',
-        orderState: '待客户支付',
+        orderState: '已取消',
         facilitator: '李沅泽',
         time: '2018.8.3 15:15:15',
         payer: '张三',
@@ -99,9 +99,9 @@ var app = new Vue({
         sum: '7000.01'
       },
       {
-        orderNumber: '20180802_1500022135',
+        orderNumber: '20180806_1500022135',
         thirdPartyOrder: '1500022135',
-        orderState: '待客户支付',
+        orderState: '已完成',
         facilitator: '李沅泽',
         time: '2018.8.3 15:15:15',
         payer: '张三',
@@ -112,7 +112,42 @@ var app = new Vue({
     orderDetail: [{
       title: '订单信息'
     }],
+    // 兑入订单
     log: false,
+    matchOrderFinishData: [
+      {
+        title: '服务商（user2）确认已收款',
+        zfk: '2018.08.03',
+        hms: '14:20:20',
+      },
+      {
+        title: '服务商（user2）恢复订单，备注：120min收到应收款',
+        zfk: '2018.08.03',
+        hms: '14:20:20',
+      },
+      {
+        title: '运营方（admin）取消订单，备注：经核实90min未收到应收款',
+        zfk: '2018.08.03',
+        hms: '14:20:20',
+      },
+      {
+        title: '服务商（user2）确认未收款，备注：30min未收到应收款',
+        zfk: '2018.08.03',
+        hms: '14:20:20',
+      },
+      {
+        title: '客户确认转账',
+        zfk: '2018.08.03',
+        hms: '14:20:20',
+      },
+      {
+        title: '创建入金订单',
+        zfk: '2018.08.03',
+        hms: '14:20:20',
+      },
+    ],
+    finishIndex: 3, // 日志完成的步骤从0开始
+
     // 订单分类显示
     orderIndex: 0, // 0:全部,1:待处理
     orderText: ['全部订单', '待处理订单'],

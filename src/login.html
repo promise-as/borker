@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/login.css">
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 <div id="app">
@@ -18,29 +19,26 @@
       <form action="#">
         <li>
           <i></i>
-          <input type="tel"
+          <input type="tel" v-model="mobile"
                  placeholder="手机号" maxlength="13">
         </li>
         <li>
           <i></i>
-          <input type="password"
+          <input type="password" v-model="pwd"
                  placeholder="密码" maxlength="16">
         </li>
         <li>
-          <a id="btn" href="./index.html">
-            <input type="submit" value="登录">
-          </a>
+          <input type="button" @click="login" value="登录">
         </li>
       </form>
     </div>
 
-    <!--<div class="confirm" v-show="isDialog">{{alertText}}</div>-->
-    <!--<div class="confirm"></div>-->
+    <div class="confirm" v-show="isDialog">{{alertText}}</div>
   </div>
 </div>
 </body>
 </html>
-<!--<script src="js/common.js"></script>-->
-<!--<script src="js/login.js"></script>-->
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
 <script src="js/save_cache.js"></script>
-<script src="js/login_2.js"></script>
+<!--<script src="js/login_2.js"></script>-->

@@ -8,6 +8,7 @@
   margin-right: auto;
   background: rgba(239, 239, 239, 1);
 }
+
 /*弹出框*/
 .match-mask {
   position: fixed;
@@ -32,41 +33,138 @@
     left: 50%;
     z-index: 1;
     .modal {
-      width:470px;
-      height:353px;
+      float: left;
+      min-width: 470px;
+      //height: 400px;
       background-color: #fff;
       box-sizing: border-box;
+      //position: relative;
       .model-header {
         width: 100%;
         height: 40px;
-        background:rgba(250,227,179,1);
+        background: rgba(250, 227, 179, 1);
         padding: 13px;
         box-sizing: border-box;
-        > span{
-          font-size:14px;
-          font-weight:bold;
-          color:rgba(24,24,24,1);
+        > span {
+          font-size: 14px;
+          font-weight: bold;
+          color: rgba(24, 24, 24, 1);
           float: left;
         }
-        > i{
+        > i {
           display: block;
-          width:14px;
-          height:14px;
+          width: 14px;
+          height: 14px;
           background: url("../images/icon/icon_popup_close.png") no-repeat;
           float: right;
           cursor: pointer;
         }
       }
-      .actCouponBtn {
-        display: block;
-        width:90px;
-        height:36px;
-        border:1px solid rgba(251,205,108,1);
-        border-radius:4px;
-        font-size:14px;
-        font-weight:bold;
-        color:rgba(251,205,108,1);
-        line-height:43px;
+      .content {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        float: left;
+        //height: 100%;
+        ul{
+          float: left;
+          width: 100%;
+          li {
+            //border: 1px solid pink;
+            position: relative;
+            clear: both;
+            float: left;
+            padding-top: 10px;
+            &:first-child{
+              padding-top: 0;
+            }
+            &:before {
+              display: block;
+              content: '';
+              position: absolute;
+              left: 8px;
+              top: 0;
+              z-index: 0;
+              width: 1px;
+              height: 100%;
+              background-color: #e6e6e6;
+            }
+            .icon {
+              display: block;
+              width: 14px;
+              height: 14px;
+              border: 1px solid rgba(226, 227, 231, 1);
+              border-radius: 50%;
+              position: relative;
+              float: left;
+              margin-right: 9px;
+              z-index: 10;
+              background-color: white;
+              > span {
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: rgba(226, 227, 231, 1);
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+              }
+            }
+            .text {
+              float: left;
+              p {
+                line-height: 18px;
+                &:first-child {
+                  font-size: 14px;
+                  color: #999999;
+                }
+                &:nth-child(2) {
+                  font-size: 12px;
+                  color: #CFCFCF;
+                }
+              }
+            }
+            &.finish {
+              .icon {
+                border: 1px solid rgba(251, 205, 108, 1);
+                > span {
+                  background: rgba(251, 205, 108, 1);
+                }
+              }
+              .text {
+                p {
+                  &:first-child {
+                    color: #FBCD6C;
+                  }
+                }
+              }
+            }
+            &:last-child {
+              &:before {
+                height: 22%;
+              }
+            }
+          }
+        }
+        .actCouponBtn {
+          display: block;
+          width: 90px;
+          height: 36px;
+          border: 1px solid rgba(251, 205, 108, 1);
+          border-radius: 4px;
+          font-size: 14px;
+          font-weight: bold;
+          color: rgba(251, 205, 108, 1);
+          line-height: 36px;
+          text-align: center;
+          clear: both;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
 
     }
@@ -273,7 +371,7 @@
               border: 0;
               padding: 10px 13px;
               box-sizing: border-box;
-              input {
+              .item {
                 width: 40px;
                 height: 22px;
                 padding: 4px 6px;
@@ -282,8 +380,9 @@
                 float: left;
                 background-color: white;
                 font-size: 14px;
-                line-height: 10px;
+                line-height: 12px;
                 cursor: pointer;
+                white-space: nowrap;
                 &:first-child {
                   margin-right: 5px;
                   border: 1px solid #FBCD6C;
