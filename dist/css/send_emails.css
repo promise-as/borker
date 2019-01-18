@@ -1,0 +1,389 @@
+/*经纪商 发邮件页面*/
+.order-detail {
+  width: 1200px;
+  height: 735px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #efefef;
+  position: relative;
+}
+/*发送邮件 弹出框*/
+.send-emails-mask .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.send-emails-mask .modal {
+  width: 470px;
+  height: 397px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.send-emails-mask .modal .model-header {
+  width: 100%;
+  height: 40px;
+  padding: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fae3b3;
+}
+.send-emails-mask .modal .model-header > span {
+  font-size: 14px;
+  float: left;
+  font-weight: bold;
+  color: #181818;
+}
+.send-emails-mask .modal .model-header > i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url("../images/icon/icon_popup_close.png") no-repeat;
+  float: right;
+  cursor: pointer;
+}
+.send-emails-mask .modal .model-content {
+  width: 100%;
+  height: 357px;
+  background-color: white;
+  padding: 20px 58px 31px 55px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.send-emails-mask .modal .model-content .content {
+  width: 100%;
+  height: 100%;
+}
+.send-emails-mask .modal .model-content .content .item {
+  width: 100%;
+  height: 36px;
+  margin-bottom: 20px;
+}
+.send-emails-mask .modal .model-content .content .item label span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 36px;
+  float: left;
+}
+.send-emails-mask .modal .model-content .content .item label input {
+  width: 280px;
+  height: 36px;
+  border: 1px solid #e2e3e7;
+  border-radius: 4px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: right;
+  outline: none;
+}
+.send-emails-mask .modal .model-content .content .remark {
+  clear: both;
+  height: 122px;
+  margin-bottom: 20px;
+}
+.send-emails-mask .modal .model-content .content .remark span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 43px;
+  float: left;
+}
+.send-emails-mask .modal .model-content .content .remark textarea {
+  float: right;
+  width: 280px;
+  height: 113px;
+  border: 1px solid #e2e3e7;
+  border-radius: 4px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  resize: none;
+}
+.send-emails-mask .modal .model-content .content .btn {
+  width: 304px;
+  height: 36px;
+  clear: both;
+  float: right;
+}
+.send-emails-mask .modal .model-content .content .btn input {
+  width: 120px;
+  height: 36px;
+  border: 1px solid #fbcd6c;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fbcd6c;
+  cursor: pointer;
+  outline: none;
+  margin-right: 20px;
+}
+.send-emails-mask .modal .model-content .content .btn input.active {
+  background: #fbcd6c;
+  color: #ffffff;
+}
+/*发送邮件 弹出框*/
+.send-succeed-mask .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.send-succeed-mask .modal {
+  width: 370px;
+  height: 296px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.send-succeed-mask .modal .model-header {
+  width: 100%;
+  height: 40px;
+  padding: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fae3b3;
+}
+.send-succeed-mask .modal .model-header > span {
+  font-size: 14px;
+  float: left;
+  font-weight: bold;
+  color: #181818;
+}
+.send-succeed-mask .modal .model-header > i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url("../images/icon/icon_popup_close.png") no-repeat;
+  float: right;
+  cursor: pointer;
+}
+.send-succeed-mask .modal .model-content {
+  width: 100%;
+  background-color: white;
+  padding-top: 40px;
+  padding-bottom: 39px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.send-succeed-mask .modal .model-content .content {
+  width: 100%;
+  height: 100%;
+}
+.send-succeed-mask .modal .model-content .content .icon {
+  display: block;
+  width: 76px;
+  height: 77px;
+  margin-left: auto;
+  margin-right: auto;
+  background: url("../images/icon/icon_order.png") no-repeat;
+  margin-bottom: 20px;
+}
+.send-succeed-mask .modal .model-content .content .text {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e1e1e;
+}
+.send-succeed-mask .modal .model-content .content .btn {
+  width: 120px;
+  height: 36px;
+  border: 1px solid #fbcd6c;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fbcd6c;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main {
+  float: right;
+}
+.main .main-top {
+  width: 1030px;
+  height: 60px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
+          box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
+}
+.main .main-top .top-content {
+  width: 970px;
+  height: 60px;
+  float: left;
+  font-size: 14px;
+  padding: 23px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.main .main-top .top-content .content-left {
+  font-weight: bold;
+  color: #666666;
+  float: left;
+}
+.main .main-top .top-content .content-right {
+  float: right;
+  color: #999999;
+}
+.main .main-top .top-content .content-right span:last-child {
+  color: #FBCD6C;
+}
+.main .main-top .top-logout {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-left: 1px solid #EEF0F4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: right;
+  background: url("../images/icon/tab_logout.png") no-repeat center;
+}
+.main .main-warp {
+  width: 1030px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+}
+.main .main-warp .header {
+  width: 990px;
+  float: left;
+  margin-bottom: 3px;
+}
+.main .main-warp .header span {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e1e1e;
+  line-height: 30px;
+  float: left;
+}
+.main .main-warp .header input {
+  width: 160px;
+  height: 30px;
+  border: 1px solid #fbcd6c;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fbcd6c;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  float: right;
+}
+.main .main-warp .header a {
+  display: block;
+  width: 59px;
+  height: 30px;
+  border: 1px solid #fbcd6c;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fbcd6c;
+  cursor: pointer;
+  background: transparent;
+  float: right;
+  text-align: center;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.main .main-warp .order {
+  width: 990px;
+  float: left;
+}
+.main .main-warp .order .order-item {
+  width: 490px;
+  height: 312px;
+  background: #ffffff;
+  float: left;
+  margin-top: 10px;
+}
+.main .main-warp .order .order-item .item-header {
+  width: 100%;
+  height: 39px;
+  background: rgba(250, 227, 179, 0.3);
+  border-bottom: 1px solid #FAE3B3;
+}
+.main .main-warp .order .order-item .item-header span {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1e1e1e;
+  line-height: 38px;
+  margin-left: 15px;
+  float: left;
+  border-bottom: 1px solid #434343;
+}
+.main .main-warp .order .order-item .item-content {
+  padding: 25px 54px 20px;
+}
+.main .main-warp .order .order-item .item-content .content {
+  width: 100%;
+}
+.main .main-warp .order .order-item .item-content .content li {
+  height: 25px;
+  border-bottom: 1px solid #EFEFEF;
+  margin-bottom: 15px;
+}
+.main .main-warp .order .order-item .item-content .content li label {
+  font-size: 14px;
+}
+.main .main-warp .order .order-item .item-content .content li label span {
+  display: block;
+  width: 130px;
+  float: left;
+  color: #999999;
+}
+.main .main-warp .order .order-item .item-content .content li label input {
+  outline: none;
+  float: left;
+  margin-left: 20px;
+  color: #1E1E1E;
+}
+.main .main-warp .order .order-item .item-content .content li label input.active {
+  color: #FBCD6C;
+}
+.main .main-warp .order .order-item .item-content .content li label i {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: url("../images/icon/icon_vip.png") no-repeat;
+  float: left;
+}
+.main .main-warp .order .order-item .item-content .content li label i:last-child {
+  background: url("../images/icon/icon_cer.png") no-repeat;
+  margin-left: 4px;
+}
+.main .main-warp .order .order-item:nth-of-type(odd) {
+  margin-right: 10px;
+}
+.main .main-warp .order .order-item:nth-child(2) .item-content .content li:last-child input {
+  color: #377dff;
+  background: transparent;
+  cursor: pointer;
+}
