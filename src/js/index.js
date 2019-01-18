@@ -48,7 +48,9 @@ var app = new Vue({
         name: '加密key：',
         value: '192.25.56.366'
       },
-      {name: '商户电话：', value: '192.25.56.366'}, {name: '商户邮箱：', value: 'zhongwuchisha@163.com'}, {
+      {name: '商户电话：', value: '192.25.56.366'},
+      {name: '商户邮箱：', value: 'zhongwuchisha@163.com'},
+      {
         name: '回调地址：',
         value: '192.25.56.366'
       }
@@ -181,7 +183,7 @@ var app = new Vue({
 
     // 1秒之后显示邮件发送成功
     setTimeout(function () {
-      that.isShowSendSucceed = true
+      that.isShowSendSucceed = false
     }, 1000)
   },
   // 组件已更新

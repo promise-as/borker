@@ -2,6 +2,8 @@
 .home {
   width: 1200px;
   height: 769px;
+  /*扩展性强就要去掉*/
+  border: 1px solid #cccccc;
   margin-left: auto;
   margin-right: auto;
   background: #efefef;
@@ -18,22 +20,21 @@
           box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
 }
 .main .main-top .top-content {
-  width: 960px;
+  width: 970px;
   height: 60px;
   float: left;
   font-size: 14px;
+  padding: 23px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .main .main-top .top-content .content-left {
   font-weight: bold;
   color: #666666;
-  margin-top: 23px;
-  margin-left: 20px;
   float: left;
 }
 .main .main-top .top-content .content-right {
   float: right;
-  margin-top: 23px;
-  margin-right: 20px;
   color: #999999;
 }
 .main .main-top .top-content .content-right span:last-child {
@@ -44,6 +45,8 @@
   width: 60px;
   height: 60px;
   border-left: 1px solid #EEF0F4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   float: right;
   background: url("../images/icon/tab_logout.png") no-repeat center;
 }
@@ -53,16 +56,16 @@
           box-sizing: border-box;
 }
 .main .main-warp .dear-user {
+  width: 100%;
   height: 124px;
   background: #ffffff;
-  padding-top: 41px;
+  padding: 41px 38px 39px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 .main .main-warp .dear-user .user-content {
   float: left;
   font-weight: bold;
-  margin-left: 38px;
 }
 .main .main-warp .dear-user .user-content p {
   color: #1E1E1E;
@@ -74,16 +77,15 @@
   margin-top: 10px;
 }
 .main .main-warp .remind {
-  height: 88px;
+  width: 100%;
   background: #ffffff;
   margin-top: 10px;
-  padding-top: 31px;
+  padding: 30px 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 .main .main-warp .remind .remind-content {
   height: 27px;
-  margin-left: 40px;
 }
 .main .main-warp .remind .remind-content .icon {
   display: block;
@@ -98,15 +100,15 @@
   font-weight: 500;
   color: #666666;
   float: left;
-  line-height: 24px;
+  line-height: 27px;
 }
 .main .main-warp .cny {
   height: 256px;
+  clear: both;
   margin-top: 10px;
 }
 .main .main-warp .cny .cny-cnh {
   width: 490px;
-  height: 256px;
   background: #ffffff;
   float: left;
 }
@@ -114,6 +116,8 @@
   width: 244px;
   height: 256px;
   padding-top: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-align: center;
   float: left;
 }
@@ -150,7 +154,6 @@
 }
 .main .main-warp .cny .asset {
   width: 490px;
-  height: 256px;
   background: #ffffff;
   float: right;
   padding: 23px 54px 23px 53px;
@@ -202,14 +205,15 @@
 }
 .main .main-warp .sogo-info {
   width: 990px;
-  height: 172px;
   background: #ffffff;
   margin-top: 10px;
-  padding: 20px 39px 29px 37px;
+  padding: 20px 39px 15px 37px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  float: left;
 }
 .main .main-warp .sogo-info .info {
+  float: left;
   width: 100%;
   height: 100%;
 }
@@ -219,7 +223,8 @@
   color: #1e1e1e;
 }
 .main .main-warp .sogo-info .info .info-remit {
-  height: 26px;
+  float: left;
+  width: 100%;
   margin-top: 30px;
 }
 .main .main-warp .sogo-info .info .info-remit > label {

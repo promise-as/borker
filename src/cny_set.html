@@ -21,7 +21,7 @@
 
   <div class="cash-out">
     <!--操作日志-->
-    <div class="cash-out-mask" v-if="log">
+    <div class="cash-out-mask" v-show="log">
       <div class="mask"></div>
       <div class="wrap">
         <div class="modal">
@@ -29,14 +29,34 @@
             <span>操作日志</span>
             <i @click="closeLog"></i>
           </div>
+          <div class="content">
+            <ul>
+              <li v-for="(item, index) in matchOrderFinishData"
+                  :class="finishIndex === index?'finish':''"
+              >
+                <div class="icon">
+                  <span></span>
+                </div>
+                <div class="text">
+                  <p>{{item.title}}</p>
+                  <p>
+                    <span>{{item.zfk}}</span>
+                    <span>{{item.hms}}</span>
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <a class="actCouponBtn" href="javascript:;"
+               @click="closeLog"
 
-          <a class="actCouponBtn" href="javascript:;"
-             @click="assess(enterSum)">
-            <span>确定</span>
-          </a>
+            >
+              <span>确定</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
     <!--兑出设置-->
     <div class="set-mask" v-if="cashOutSet">
       <div class="mask"></div>
@@ -102,9 +122,9 @@
         <div class="top-content">
           <div class="content-left">欢迎使用NOVOXPAY出入金系统！</div>
           <div class="content-right">
-            <span>2018.08.03</span>
-            <span>星期五</span>
-            <span>15:23:56</span>
+            <span id="zfk"></span>
+            <span id="watt"></span>
+            <span id="hms"></span>
             <span>xiaodao</span>
           </div>
         </div>
@@ -121,26 +141,6 @@
             </div>
             <input class="add-servers" type="button" value="添加服务器">
           </div>
-          <!--<div class="order-content">
-            <div class="content-header">
-              <div class="header-item">币种</div>
-              <div class="header-item">汇率</div>
-              <div class="header-item">相关操作</div>
-            </div>
-            <div class="content-detail">
-              <div class="detail" v-for="(item, index) in orderItems">
-                <div class="detail-item">{{item.USDTNumber}}</div>
-                <div class="detail-item">{{item.sum}}</div>
-                <div class="detail-item">
-                  <div class="item">
-                    <a href="./cash_out_detail.html">编辑</a>
-                    <input @click="lookLog" type="button" value="日志">
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>-->
           <div class="servers-content">
             <div class="content-header">
               <div class="header-item">编号</div>
@@ -171,3 +171,5 @@
 </body>
 </html>
 <script src="js/index.js"></script>
+<script src="js/log_index.js"></script>
+<script src="js/read_cache.js"></script>

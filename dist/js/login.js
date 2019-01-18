@@ -36,7 +36,7 @@ var app = new Vue({
           mobile:that.mobile,
           pwd:that.pwd,
         }).then(function (response) {
-         }).catch(function (error) {
+          }).catch(function (error) {
           // 弹框提示
           dialog(that,error);
         });

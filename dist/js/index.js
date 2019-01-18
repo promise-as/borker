@@ -156,7 +156,7 @@ var app = new Vue({
 
     // 1秒之后显示邮件发送成功
     setTimeout(function () {
-      that.isShowSendSucceed = true;
+      that.isShowSendSucceed = false;
     }, 1000);
   },
   // 组件已更新

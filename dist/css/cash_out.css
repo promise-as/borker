@@ -33,8 +33,8 @@
   z-index: 1;
 }
 .cash-out-mask .wrap .modal {
-  width: 470px;
-  height: 353px;
+  float: left;
+  min-width: 470px;
   background-color: #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -61,7 +61,89 @@
   float: right;
   cursor: pointer;
 }
-.cash-out-mask .wrap .modal .actCouponBtn {
+.cash-out-mask .wrap .modal .content {
+  width: 100%;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+}
+.cash-out-mask .wrap .modal .content ul {
+  float: left;
+  width: 100%;
+}
+.cash-out-mask .wrap .modal .content ul li {
+  position: relative;
+  clear: both;
+  float: left;
+  padding-top: 10px;
+}
+.cash-out-mask .wrap .modal .content ul li:first-child {
+  padding-top: 0;
+}
+.cash-out-mask .wrap .modal .content ul li:before {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  z-index: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #e6e6e6;
+}
+.cash-out-mask .wrap .modal .content ul li .icon {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #e2e3e7;
+  border-radius: 50%;
+  position: relative;
+  float: left;
+  margin-right: 9px;
+  z-index: 10;
+  background-color: white;
+}
+.cash-out-mask .wrap .modal .content ul li .icon > span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #e2e3e7;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.cash-out-mask .wrap .modal .content ul li .text {
+  float: left;
+}
+.cash-out-mask .wrap .modal .content ul li .text p {
+  line-height: 18px;
+}
+.cash-out-mask .wrap .modal .content ul li .text p:first-child {
+  font-size: 14px;
+  color: #999999;
+}
+.cash-out-mask .wrap .modal .content ul li .text p:nth-child(2) {
+  font-size: 12px;
+  color: #CFCFCF;
+}
+.cash-out-mask .wrap .modal .content ul li.finish .icon {
+  border: 1px solid #fbcd6c;
+}
+.cash-out-mask .wrap .modal .content ul li.finish .icon > span {
+  background: #fbcd6c;
+}
+.cash-out-mask .wrap .modal .content ul li.finish .text p:first-child {
+  color: #FBCD6C;
+}
+.cash-out-mask .wrap .modal .content ul li:last-child:before {
+  height: 22%;
+}
+.cash-out-mask .wrap .modal .content .actCouponBtn {
   display: block;
   width: 90px;
   height: 36px;
@@ -70,7 +152,11 @@
   font-size: 14px;
   font-weight: bold;
   color: #fbcd6c;
-  line-height: 43px;
+  line-height: 36px;
+  text-align: center;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*兑出设置*/
 .set-mask .mask {
@@ -261,22 +347,21 @@
           box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
 }
 .main .main-top .top-content {
-  width: 960px;
+  width: 970px;
   height: 60px;
   float: left;
   font-size: 14px;
+  padding: 23px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .main .main-top .top-content .content-left {
   font-weight: bold;
   color: #666666;
-  margin-top: 23px;
-  margin-left: 20px;
   float: left;
 }
 .main .main-top .top-content .content-right {
   float: right;
-  margin-top: 23px;
-  margin-right: 20px;
   color: #999999;
 }
 .main .main-top .top-content .content-right span:last-child {
@@ -287,6 +372,8 @@
   width: 60px;
   height: 60px;
   border-left: 1px solid #EEF0F4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   float: right;
   background: url("../images/icon/tab_logout.png") no-repeat center;
 }

@@ -2,13 +2,12 @@
 
 .home {
   width: 1200px;
-  height: 769px;
-  //border: 1px solid #cccccc;
+  height: 769px; /*扩展性强就要去掉*/
+  border: 1px solid #cccccc;
   margin-left: auto;
   margin-right: auto;
   background: rgba(239, 239, 239, 1);
   position: relative;
-
 }
 
 .main {
@@ -20,24 +19,21 @@
     box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
     //border: 1px solid #cccccc;
     .top-content {
-      width: 960px;
+      width: 970px;
       height: 60px;
       //border: 1px solid #000;
       float: left;
       font-size: 14px;
+      padding: 23px 20px;
+      box-sizing: border-box;
       .content-left {
         font-weight: bold;
         color: rgba(102, 102, 102, 1);
-        margin-top: 23px;
-        margin-left: 20px;
         float: left;
       }
       .content-right {
         float: right;
-        margin-top: 23px;
-        margin-right: 20px;
         color: #999999;
-
         span {
           &:last-child {
             color: #FBCD6C;
@@ -50,6 +46,7 @@
       width: 60px;
       height: 60px;
       border-left: 1px solid #EEF0F4;
+      box-sizing: border-box;
       float: right;
       background: url("../images/icon/tab_logout.png") no-repeat center;
     }
@@ -58,18 +55,18 @@
     padding: 20px;
     box-sizing: border-box;
     .dear-user {
-      //width:989px;
+      width: 100%;
       height: 124px;
       background: rgba(255, 255, 255, 1);
-      padding-top: 41px;
+      padding: 41px 38px 39px;
       box-sizing: border-box;
+      //float: left;
       .user-content {
         //width:367px;
         //height:44px;
         float: left;
         font-weight: bold;
         //border: 1px solid #cccccc;
-        margin-left: 38px;
         p {
           color: #1E1E1E;
           font-size: 18px;
@@ -82,17 +79,14 @@
       }
     }
     .remind {
-      //width:989px;
-      height: 88px;
+      width: 100%;
       background: rgba(255, 255, 255, 1);
       margin-top: 10px;
-      padding-top: 31px;
+      padding: 30px 40px;
       box-sizing: border-box;
       .remind-content {
-        //width: 743px;
         height: 27px;
         //border: 1px solid #cccccc;
-        margin-left: 40px;
         .icon {
           display: block;
           width: 27px;
@@ -106,24 +100,26 @@
           font-weight: 500;
           color: rgba(102, 102, 102, 1);
           float: left;
-          line-height: 24px;
+          line-height: 27px;
         }
       }
     }
     .cny {
       //width: 989px;
       height: 256px;
+      clear: both;
       //border: 1px solid #cccccc;
       margin-top: 10px;
       .cny-cnh {
         width: 490px;
-        height: 256px;
+        //height: 256px;
         background: rgba(255, 255, 255, 1);
         float: left;
         .cnh-item {
           width: 244px;
           height: 256px;
           padding-top: 20px;
+          box-sizing: border-box;
           text-align: center;
           float: left;
           .item-title {
@@ -165,7 +161,7 @@
       }
       .asset {
         width: 490px;
-        height: 256px;
+        //height: 256px;
         background: rgba(255, 255, 255, 1);
         float: right;
         padding: 23px 54px 23px 53px;
@@ -224,12 +220,14 @@
     }
     .sogo-info {
       width: 990px;
-      height: 172px;
+      //height: 172px;
       background: rgba(255, 255, 255, 1);
       margin-top: 10px;
-      padding: 20px 39px 29px 37px;
+      padding: 20px 39px 15px 37px;
       box-sizing: border-box;
+      float: left;
       .info {
+        float: left;
         width: 100%;
         height: 100%;
         //border: 1px solid #cccccc;
@@ -239,7 +237,9 @@
           color: rgba(30, 30, 30, 1);
         }
         .info-remit {
-          height: 26px;
+          float: left;
+          width: 100%;
+          //height: 26px;
           margin-top: 30px;
           > label {
             float: left;
