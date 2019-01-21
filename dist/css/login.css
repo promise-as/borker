@@ -63,8 +63,20 @@
 }
 .login .login-main form li:nth-child(3) {
   border: 1px solid #fae3b3;
+  /*input {
+            width: 100%;
+            margin-left: 0;
+            background: rgba(250, 227, 179, 1);
+            cursor: pointer;
+            color: rgba(35, 24, 21, 1);
+            font-size: 14px;
+            font-weight: bold;
+          }*/
 }
-.login .login-main form li:nth-child(3) input {
+.login .login-main form li:nth-child(3) .login {
+  height: 36px;
+}
+.login .login-main form li:nth-child(3) .login input {
   width: 100%;
   margin-left: 0;
   background: #fae3b3;
