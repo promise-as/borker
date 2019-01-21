@@ -112,7 +112,8 @@
       </div>
     </div>
 
-    <div class="msg" v-if="false">
+    <!--消息弹框-->
+    <div class="msg" v-if="isHasOrder">
       <div class="msg-title">消息</div>
       <div class="msg-content">
         <div class="content">
@@ -120,7 +121,7 @@
           <div class="content-detail">
             <p>订单 <span>{{order}}</span></p>
             <p v-for="(item, index) in confirmOrPay"
-               v-if="index === msgRemindIndex"
+               v-if="msgRemindIndex === index"
             >{{item.value}}</p>
           </div>
         </div>
