@@ -7,14 +7,10 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/cash_out.css">
-  <!-- 引入样式 -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <!-- 引入组件库 -->
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 </head>
 <body>
 <div id="app">
@@ -58,7 +54,7 @@
     </div>
 
     <!--兑出设置-->
-    <div class="set-mask" v-if="cashOutSet">
+    <div class="set-mask" v-if="false">
       <div class="mask"></div>
       <div class="modal">
         <div class="model-header">
@@ -117,6 +113,7 @@
         <span>{{item.text}}</span>
       </a>
     </div>
+
     <div class="main">
       <div class="main-top">
         <div class="top-content">
@@ -164,7 +161,7 @@
             <input type="text" placeholder="服务商">
           </div>
         </div>
-        <div class="order-content">
+        <!--<div class="order-content">
           <div class="content-header">
             <div class="header-item">订单编号</div>
             <div class="header-item">第三方订单</div>
@@ -209,13 +206,13 @@
               <input class="skip-confirm" type="button" value="确定">
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
 </div>
 </body>
 </html>
-<script src="js/index.js"></script>
-<script src="js/log_index.js"></script>
+<script src="js/cash_out.js"></script>
+<script src="js/log_sub.js"></script>
 <script src="js/read_cache.js"></script>

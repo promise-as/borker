@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>兑入订单详情</title>
-  <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/match_detail.css">
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 </head>
 <body>
 <div id="app">
@@ -40,172 +39,20 @@
         </div>
         <a class="top-logout" href="./login.html"></a>
       </div>
+
       <div class="main-warp">
         <div class="header">
           <span>订单详情</span>
           <a href="match.html">返回</a>
         </div>
         <div class="order">
-          <div class="order-item">
-            <div class="item-header">
-              <span>订单信息</span>
-            </div>
-            <div class="item-content">
-              <div class="content">
-                <li>
-                  <label for="0">
-                    <span>订单编号：</span>
-                    <input type="text" value="20180802_1500022135" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>第三方平台订单号：</span>
-                    <input type="text" value="1500022135" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>订单状态：</span>
-                    <input type="text" value="待服务商收款" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>USTD数量：</span>
-                    <input class="active" type="text" value="1000" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>经纪商：</span>
-                    <input type="text" value="CPT" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>转账备注码：</span>
-                    <input class="active" type="text" value="353535" id="0">
-                  </label>
-                </li>
-              </div>
-            </div>
-          </div>
-
-          <div class="order-item">
-            <div class="item-header">
-              <span>付款信息</span>
-            </div>
-            <div class="item-content">
-              <div class="content">
-                <li>
-                  <label for="0">
-                    <span>付款金额：</span>
-                    <input class="active" type="text" value="￥7000" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>付款人姓名：</span>
-                    <input class="active" type="text" value="张三" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>付款方式：</span>
-                    <input class="active" type="text" value="银行转账" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>收款人姓名：</span>
-                    <input type="text" value="玉米蒸" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>收款人银行：</span>
-                    <input type="text" value="农业银行 广东茂名市茂东支行" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>收款人账号:</span>
-                    <input class="active" type="text" value="6228 4811 7674 6694 972" id="0">
-                  </label>
-                </li>
-              </div>
-            </div>
-          </div>
-
-          <div class="order-item">
-            <div class="item-header">
-              <span>客户信息</span>
-            </div>
-            <div class="item-content">
-              <div class="content">
-                <li>
-                  <label for="0">
-                    <span>姓名：</span>
-                    <input type="text" value="玉米甲" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>服务器：</span>
-                    <input type="text" value="101" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>交易帐号：</span>
-                    <input type="text" value="6667845615" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>邮箱：</span>
-                    <input type="text" value="yumijia@163.com" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>手机：</span>
-                    <input type="text" value="18814656852" id="0">
-                  </label>
-                </li>
-              </div>
-            </div>
-          </div>
-
-          <div class="order-item">
-            <div class="item-header">
-              <span>服务商信息</span>
-            </div>
-            <div class="item-content">
-              <div class="content">
-                <li>
-                  <label for="0">
-                    <span>服务商名称：</span>
-                    <input type="text" value="玉米蒸" id="0">
-                    <i></i>
-                    <i></i>
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>服务次数：</span>
-                    <input type="text" value="10010" id="0">
-                  </label>
-                </li>
-                <li>
-                  <label for="0">
-                    <span>平均确认时长：</span>
-                    <input type="text" value="00:05:00" id="0">
-                  </label>
-                </li>
-              </div>
-            </div>
+          <div class="order-item" v-for="(order, index) in orderData">
+            <li v-for="(item, index) in order">
+              <span>{{item.key}}</span>
+              <em>{{item.val}}</em>
+              <i v-if="index === 1"></i>
+              <i v-if="index === 1"></i>
+            </li>
           </div>
         </div>
       </div>
@@ -215,5 +62,5 @@
 </div>
 </body>
 </html>
-<script src="js/index.js"></script>
+<script src="js/match_detail.js"></script>
 <script src="js/read_cache.js"></script>
