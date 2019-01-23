@@ -5,6 +5,7 @@ window.onload = function () {
   var imgNumDom = document.querySelector("#calc_num")
   // 图片数量
   var imgNum = 0, len = 1; //imgBox里面子元素的个数
+
   chooseImg.onchange = function () {
     // 减去label标签
     imgNum = len
@@ -14,12 +15,20 @@ window.onload = function () {
     var imgFile = document.createElement("img")
     imgVessel.classList.add("img_vessel")
     delImg.classList.add("del_img")
+
     delImg.onclick = function () {
-      this.parentNode.style.display = "none"
+      console.log(111, imgNum)
       imgNum = imgNum - 1
+      this.parentNode.style.display = "none"
       imgNumDom.innerText = imgNum
+
+      if(imgNum === 0){
+        imgCalc.style.display = "none"
+      }
     }
     if (imgNum > 4) {
+      imgNum = imgNum - 1
+
       alert("最多只能上传4张图片")
       return null
     }

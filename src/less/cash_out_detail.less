@@ -41,13 +41,21 @@
         height: 40px;
         padding: 13px;
         box-sizing: border-box;
+        > i{
+          display: block;
+          width:20px;
+          height:18px;
+          background: url("../images/icon/icon_popup_pic.png") no-repeat;
+          float: left;
+          margin-right: 6px;
+        }
         > span {
           font-size: 14px;
           font-weight: bold;
           float: left;
           color: white;
         }
-        > i {
+        > em {
           display: block;
           width: 14px;
           height: 14px;
@@ -311,6 +319,10 @@
             cursor: pointer;
             outline: none;
             margin-right: 20px;
+            &:hover{
+              background:rgba(251,205,108,1);
+              color:rgba(255,255,255,1);
+            }
             &.active{
               background:rgba(251,205,108,1);
               color:rgba(255,255,255,1);

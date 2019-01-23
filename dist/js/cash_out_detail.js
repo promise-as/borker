@@ -25,13 +25,10 @@ var app = new Vue({
       text: "自定义风格页面",
       href: "javascript:;"
     }],
-
     cashOutOrderDetailIsShow: false,
-
     isShowRemitMsg: false,
     submitRemitMsgBtn: ['确认', '取消'],
     submitRemitMsgBtnIndex: 0,
-
     orderData: [[{
       key: "订单信息"
     }, {
@@ -77,7 +74,8 @@ var app = new Vue({
     }, {
       key: "平均确认时长: ",
       val: "00:05:00"
-    }]]
+    }]],
+    remark: '1111111111111'
   },
   methods: {
     voucher: function voucher() {

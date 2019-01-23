@@ -15,13 +15,15 @@
 <div id="app">
   <div class="order-detail">
     <!--凭证-->
-    <div class="voucher-mask" v-if="cashOutOrderDetailIsShow">
+    <!--<div class="voucher-mask" v-if="cashOutOrderDetailIsShow">-->
+    <div class="voucher-mask" v-if="true">
       <div class="mask"></div>
       <div class="wrap">
         <div class="modal">
           <div class="model-header">
+            <i></i>
             <span>查看凭证</span>
-            <i @click="closeVoucher"></i>
+            <em @click="closeVoucher"></em>
           </div>
           <div class="model-content"></div>
           <div class="model-bottom">
@@ -37,8 +39,8 @@
     </div>
 
     <!--提交打款信息-->
-    <!--<div class="remittance-mask" v-if="isShowRemitMsg">-->
-    <div class="remittance-mask" v-if="true">
+    <div class="remittance-mask" v-show="isShowRemitMsg">
+    <!--<div class="remittance-mask" v-show="true">-->
       <div class="mask"></div>
       <div class="modal">
         <form action="#">
@@ -81,15 +83,19 @@
               </div>
               <div class="remark">
                 <span>备注：</span>
-                <textarea ></textarea>
+                <textarea v-model="remark"></textarea>
               </div>
-              <div class="btn">
+              <!--<div class="btn">
                 <input type="button"
                        v-for="(btnText, index) in submitRemitMsgBtn"
                        :value="btnText"
-                       :class="submitRemitMsgBtnIndex === index ? 'active': ''"
                        @click="btnIndexTab(index)"
+                       :class="submitRemitMsgBtnIndex === index ? 'active': ''"
                 >
+              </div>-->
+              <div class="btn">
+                <input type="button" value="确认" @click="closeRemitMsg">
+                <input type="button" value="取消" @click="closeRemitMsg">
               </div>
             </div>
           </div>

@@ -29,13 +29,10 @@ var app = new Vue({
         href: "javascript:;"
       }
     ],
-
     cashOutOrderDetailIsShow: false,
-
     isShowRemitMsg: false,
     submitRemitMsgBtn: ['确认', '取消'],
     submitRemitMsgBtnIndex: 0,
-
     orderData: [
       [
         {
@@ -104,7 +101,8 @@ var app = new Vue({
           val: "00:05:00"
         }
       ]
-    ]
+    ],
+    remark: '1111111111111'
   },
   methods: {
     voucher: function voucher() {

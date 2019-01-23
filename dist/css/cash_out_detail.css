@@ -37,13 +37,21 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+.voucher-mask .wrap .modal .model-header > i {
+  display: block;
+  width: 20px;
+  height: 18px;
+  background: url("../images/icon/icon_popup_pic.png") no-repeat;
+  float: left;
+  margin-right: 6px;
+}
 .voucher-mask .wrap .modal .model-header > span {
   font-size: 14px;
   font-weight: bold;
   float: left;
   color: white;
 }
-.voucher-mask .wrap .modal .model-header > i {
+.voucher-mask .wrap .modal .model-header > em {
   display: block;
   width: 14px;
   height: 14px;
@@ -301,6 +309,10 @@
   cursor: pointer;
   outline: none;
   margin-right: 20px;
+}
+.remittance-mask .modal .model-content .content .btn input:hover {
+  background: #fbcd6c;
+  color: #ffffff;
 }
 .remittance-mask .modal .model-content .content .btn input.active {
   background: #fbcd6c;
