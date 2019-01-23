@@ -152,7 +152,7 @@
   width: 100%;
   height: 357px;
   background-color: white;
-  padding: 30px 61px 41px 59px;
+  padding: 30px 58px 41px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -210,18 +210,54 @@
   line-height: 43px;
   float: left;
 }
-.remittance-mask .modal .model-content .content .upload label {
+.remittance-mask .modal .model-content .content .upload .upload_vessel {
+  float: left;
+  margin-bottom: 10px;
+}
+.remittance-mask .modal .model-content .content .upload .upload_vessel .img_vessel {
+  float: left;
+  width: 54px;
+  height: 54px;
+  margin-right: 20px;
+  position: relative;
+}
+.remittance-mask .modal .model-content .content .upload .upload_vessel .img_vessel img {
+  width: 54px;
+  height: 54px;
+  border-radius: 4px;
+}
+.remittance-mask .modal .model-content .content .upload .upload_vessel .img_vessel .del_img {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url("../images/icon/icon_popup_close3.png") no-repeat;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  cursor: pointer;
+}
+.remittance-mask .modal .model-content .content .upload .upload_vessel label {
   width: 54px;
   height: 54px;
   border: 1px solid #e2e3e7;
   border-radius: 4px;
-  float: left;
+  float: right;
   background: url("../images/icon/icon_popup_close1.png") no-repeat center;
   cursor: pointer;
 }
-.remittance-mask .modal .model-content .content .upload label input {
+.remittance-mask .modal .model-content .content .upload .upload_vessel label input {
   width: 54px;
   visibility: hidden;
+}
+.remittance-mask .modal .model-content .content .upload .upload_vessel label p {
+  display: none;
+  text-align: center;
+  color: #B9C2E2;
+  margin-top: 12px;
+  font-size: 12px;
+}
+.remittance-mask .modal .model-content .content .upload .upload_vessel label p em {
+  font-style: normal;
 }
 .remittance-mask .modal .model-content .content .remark {
   clear: both;
@@ -343,6 +379,7 @@
   line-height: 30px;
   cursor: pointer;
   float: right;
+  outline: none;
 }
 .main .main-warp .header a {
   display: block;
@@ -368,77 +405,72 @@
 }
 .main .main-warp .order .order-item {
   width: 490px;
-  height: 312px;
   background: #ffffff;
   float: left;
   margin-top: 10px;
 }
-.main .main-warp .order .order-item .item-header {
+.main .main-warp .order .order-item:nth-of-type(odd) {
+  margin-right: 10px;
+}
+.main .main-warp .order .order-item li {
+  height: 25px;
+  border-bottom: 1px solid #EFEFEF;
+  margin-bottom: 15px;
+  font-size: 14px;
+  margin-left: 54px;
+  margin-right: 54px;
+}
+.main .main-warp .order .order-item li em {
+  font-style: normal;
+  float: left;
+  margin-left: 20px;
+  color: #1E1E1E;
+}
+.main .main-warp .order .order-item li em.active {
+  color: #FBCD6C;
+}
+.main .main-warp .order .order-item li span {
+  font-style: normal;
+  display: block;
+  width: 120px;
+  float: left;
+  color: #999999;
+}
+.main .main-warp .order .order-item li strong {
+  cursor: pointer;
+  color: #377DFF;
+  border-bottom: 1px solid #377DFF;
+}
+.main .main-warp .order .order-item li:first-child {
   width: 100%;
   height: 39px;
   background: rgba(250, 227, 179, 0.3);
   border-bottom: 1px solid #FAE3B3;
+  margin-left: 0;
+  margin-right: 0;
 }
-.main .main-warp .order .order-item .item-header span {
+.main .main-warp .order .order-item li:first-child span {
+  width: auto;
   display: block;
   font-size: 16px;
   font-weight: bold;
   color: #1e1e1e;
   line-height: 38px;
   margin-left: 15px;
-  float: left;
   border-bottom: 1px solid #434343;
 }
-.main .main-warp .order .order-item .item-content {
-  padding: 25px 54px 20px;
-}
-.main .main-warp .order .order-item .item-content .content {
+.main .main-warp .order .order-item:last-child {
   width: 100%;
 }
-.main .main-warp .order .order-item .item-content .content li {
-  height: 25px;
-  border-bottom: 1px solid #EFEFEF;
-  margin-bottom: 15px;
-}
-.main .main-warp .order .order-item .item-content .content li label {
-  font-size: 14px;
-}
-.main .main-warp .order .order-item .item-content .content li label span {
-  display: block;
-  width: 130px;
-  float: left;
-  color: #999999;
-}
-.main .main-warp .order .order-item .item-content .content li label input {
-  outline: none;
-  float: left;
-  margin-left: 20px;
-  color: #1E1E1E;
-}
-.main .main-warp .order .order-item .item-content .content li label input.active {
-  color: #FBCD6C;
-}
-.main .main-warp .order .order-item .item-content .content li label i {
+.main .main-warp .order .order-item:last-child li:nth-child(2) i {
   display: block;
   width: 18px;
   height: 18px;
   border-radius: 4px;
   background: url("../images/icon/icon_vip.png") no-repeat;
   float: left;
-}
-.main .main-warp .order .order-item .item-content .content li label i:last-child {
-  background: url("../images/icon/icon_cer.png") no-repeat;
   margin-left: 4px;
 }
-.main .main-warp .order .order-item:nth-of-type(odd) {
-  margin-right: 10px;
-}
-.main .main-warp .order .order-item:nth-child(2) .item-content .content li:last-child input {
-  color: #377dff;
-  background: transparent;
-  cursor: pointer;
-}
-.main .main-warp .order .order-item:last-child {
-  width: 100%;
-  height: 180px;
+.main .main-warp .order .order-item:last-child li:nth-child(2) i:last-child {
+  background: url("../images/icon/icon_cer.png") no-repeat;
 }

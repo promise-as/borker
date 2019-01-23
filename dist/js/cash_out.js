@@ -26,8 +26,6 @@ var app = new Vue({
       href: "javascript:;"
     }],
 
-    log: false,
-
     orderIndex: 0, // 0:全部,1:待处理
     orderText: ['全部订单', '待处理订单'],
     // 兑出设置
@@ -63,8 +61,8 @@ var app = new Vue({
   },
 
   methods: {
-    closeLog: function closeLog() {
-      this.log = false;
+    orderTextTab: function orderTextTab(index) {
+      this.orderIndex = index;
     },
 
     showCashOutSet: function showCashOutSet() {

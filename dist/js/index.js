@@ -46,13 +46,6 @@ var app = new Vue({
       title: '订单信息'
     }],
 
-    // 订单分类显示
-
-    cashOutOrderDetailIsShow: false,
-    // 提交打款信息
-    isShowRemitMsg: false,
-    submitRemitMsgBtn: ['确认', '取消'],
-    submitRemitMsgBtnIndex: 0,
     // 发邮件
     isShowSendEmail: false,
     // 发送成功
@@ -87,30 +80,6 @@ var app = new Vue({
   },
   // 方法
   methods: {
-    orderTextTab: function orderTextTab(index) {
-      this.orderIndex = index;
-    },
-
-    voucher: function voucher() {
-      this.cashOutOrderDetailIsShow = true;
-    },
-
-    closeVoucher: function closeVoucher() {
-      this.cashOutOrderDetailIsShow = false;
-    },
-
-    showRemitMsg: function showRemitMsg() {
-      this.isShowRemitMsg = true;
-    },
-
-    closeRemitMsg: function closeRemitMsg() {
-      this.isShowRemitMsg = false;
-    },
-
-    btnIndexTab: function btnIndexTab(index) {
-      this.submitRemitMsgBtnIndex = index;
-    },
-
     showSendEmails: function showSendEmails() {
       this.isShowSendEmail = true;
     },

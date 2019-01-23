@@ -1,8 +1,8 @@
 $(function () {
   // 日志弹窗
-  var $logDialog = $(".match-mask");
+  var $logDialog = $(".match-mask")
   // 关闭日志
-  var $closeLog = $(".closeLog");
+  var $closeLog = $(".closeLog")
 
   layui.config({
     version: '1545041465443' //为了更新 js 缓存，可忽略
@@ -42,17 +42,32 @@ $(function () {
       //注：tool 是工具条事件名，order 是 table 原始容器的属性 lay-filter="对应的值"
       table.on('tool(order)', function (obj) {
         var layEvent = obj.event //获得 lay-event 对应的值
-        if (layEvent === 'detail') {
-          // layer.msg('详情操作')
-          // console.log(this)
-          // this.href = './match_detail.html';
-          var detailParentIndex = $($($(this)[0]).parents()[2]).attr("data-index")
-          console.log(111, detailParentIndex)
+        if (layEvent === 'match_detail') {
+          // 下标
+          var detailParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");
+          this.href = `./match_detail.html?index=${detailParentIndex}`
 
-        } else if (layEvent === 'log') {
-          // layer.msg('日志操作')
-          var logParentIndex = $($($(this)[0]).parents()[2]).attr("data-index")
-          // console.log(222, $logDialog)
+        } else if (layEvent === 'match_log') {
+          // 下标
+          var logParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");
+          console.log(111, logParentIndex)
+          // 日志弹窗显示
+          $logDialog.css("display", "block");
+          // 日志关闭
+          $closeLog.click(function () {
+            $logDialog.css("display", "none");
+          })
+        }
+
+        if (layEvent === 'cash_out_detail') {
+          // 下标
+          var detailParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");
+          this.href = `./cash_out_detail.html?index=${detailParentIndex}`
+
+        } else if (layEvent === 'cash_out_log') {
+          // 下标
+          var logParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");
+          console.log(111, logParentIndex)
           // 日志弹窗显示
           $logDialog.css("display", "block");
           // 日志关闭
@@ -73,7 +88,7 @@ $(function () {
             layer.msg('第' + obj.curr + '页', {offset: 'b'})
           }
         }
-      })
+      });
     }
   )
 }())
