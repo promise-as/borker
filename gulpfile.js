@@ -80,8 +80,8 @@ gulp.task('watch', ['default'], function () {
   // open("http://192.168.3.68:5000")
   // open("http://192.168.123.74:5000");
 
-  open("http://192.168.3.68:5000/login.html");
-  // open("http://192.168.123.74:5000/login.html");
+  open("http://192.168.3.68:5000/cny_set.html");
+  // open("http://192.168.123.74:5000/cny_set.html");
   // 配置监视任务
   gulp.watch('./src/js/*.js', ['minifyjs'])
   gulp.watch('./src/less/*.less', ['minifycss'])
