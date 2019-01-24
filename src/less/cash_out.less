@@ -172,6 +172,13 @@
 }
 /*兑出设置*/
 .set-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  //display: none;
   .mask {
     position: absolute;
     top: 0;
@@ -184,7 +191,7 @@
   .modal {
     width:470px;
     height:262px;
-    background: transparent;
+    //background: transparent;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -214,9 +221,9 @@
     }
     .model-content {
       width: 100%;
-      height: 222px;
+      //height: 222px;
       background-color: white;
-      padding: 20px 81px;
+      padding: 20px 65px;
       box-sizing: border-box;
       .content{
         width: 100%;
@@ -236,7 +243,7 @@
             height: 14px;
             font-size: 12px;
             float: left;
-            margin-right: 49px;
+            margin-right: 60px;
             > label{
               float: left;
               .radio {
@@ -262,6 +269,7 @@
               color: #1E1E1E;
               font-size: 14px;
               margin-left: 5px;
+              margin-top: -3px;
             }
           }
         }
@@ -288,16 +296,22 @@
               float: left;
               line-height: 34px;
             }
-            &:last-child{
-              width:90px;
-              height:36px;
-              background:rgba(251,205,108,1);
-              border-radius:8px;
-              float: right;
-              font-size:12px;
-              font-weight:800;
-              color:rgba(255,255,255,1);
-              cursor: pointer;
+          }
+          .smsVerify{
+            //width:90px;
+            //height:36px;
+            padding: 10px;
+            box-sizing: border-box;
+            background:rgba(251,205,108,1);
+            border-radius:8px;
+            float: right;
+            font-size:12px;
+            font-weight:800;
+            color:rgba(255,255,255,1);
+            cursor: pointer;
+            &[disabled]{
+              background-color: #DFDFDF;
+              color: #999999;
             }
           }
         }
@@ -317,19 +331,25 @@
           }
           input{
             outline: none;
-            width:189px;
+            width:210px;
             height:36px;
-            border:1px solid rgba(226,227,231,1);
+            border:1px solid #E2E3E7;
             border-radius:4px;
             float: right;
+            padding-left: 10px;
+            box-sizing: border-box;
+            &::placeholder{
+              color: #E2E3E7;
+            }
           }
         }
         .btn{
-          width: 304px;
-          height: 36px;
+          //width: 304px;
+          //height: 36px;
           //border: 1px solid #cccccc;
-          clear: both;
-          float: right;
+          //clear: both;
+          //float: right;
+          text-align: center;
           input{
             width:120px;
             height:36px;
@@ -341,7 +361,11 @@
             color:rgba(251,205,108,1);
             cursor: pointer;
             outline: none;
-            margin-right: 20px;
+            margin: 0 10px;
+            &:hover{
+              background:rgba(251,205,108,1);
+              color:rgba(255,255,255,1);
+            }
             &.active{
               background:rgba(251,205,108,1);
               color:rgba(255,255,255,1);

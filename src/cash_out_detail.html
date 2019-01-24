@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/cash_out_detail.css">
+  <link rel="stylesheet" href="./js/css/layui.css?t=1545041465443" media="all">
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
@@ -15,8 +16,8 @@
 <div id="app">
   <div class="order-detail">
     <!--凭证-->
-    <!--<div class="voucher-mask" v-if="cashOutOrderDetailIsShow">-->
-    <div class="voucher-mask" v-if="true">
+    <div class="voucher-mask" v-show="cashOutOrderDetailIsShow">
+    <!--<div class="voucher-mask" v-if="true">-->
       <div class="mask"></div>
       <div class="wrap">
         <div class="modal">
@@ -25,15 +26,23 @@
             <span>查看凭证</span>
             <em @click="closeVoucher"></em>
           </div>
-          <div class="model-content"></div>
-          <div class="model-bottom">
+
+          <div class="layui-carousel" id="carousel">
+            <div carousel-item="">
+              <img v-for="(item, index) in carouselImg"
+                   :src="item" :alt="index">
+            </div>
+          </div>
+
+
+          <!--<div class="model-bottom">
             <div class="bottom">
               <input type="button">
               <input type="button">
               <input type="button">
               <input type="button">
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>
@@ -159,3 +168,5 @@
 <script src="./js/read_cache.js"></script>
 <script src="./js/img_upload.js"></script>
 <script src="./js/common.js"></script>
+<script src="./js/layui.js?t=1545041465443"></script>
+<script src="./js/voucher_carousel.js"></script>

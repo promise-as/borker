@@ -160,6 +160,14 @@
   margin-right: auto;
 }
 /*兑出设置*/
+.set-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
 .set-mask .mask {
   position: absolute;
   top: 0;
@@ -172,7 +180,6 @@
 .set-mask .modal {
   width: 470px;
   height: 262px;
-  background: transparent;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -204,9 +211,8 @@
 }
 .set-mask .modal .model-content {
   width: 100%;
-  height: 222px;
   background-color: white;
-  padding: 20px 81px;
+  padding: 20px 65px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -229,7 +235,7 @@
   height: 14px;
   font-size: 12px;
   float: left;
-  margin-right: 49px;
+  margin-right: 60px;
 }
 .set-mask .modal .model-content .content .sms .item > label {
   float: left;
@@ -257,6 +263,7 @@
   color: #1E1E1E;
   font-size: 14px;
   margin-left: 5px;
+  margin-top: -3px;
 }
 .set-mask .modal .model-content .content .verification-code {
   width: 100%;
@@ -281,9 +288,10 @@
   float: left;
   line-height: 34px;
 }
-.set-mask .modal .model-content .content .verification-code input:last-child {
-  width: 90px;
-  height: 36px;
+.set-mask .modal .model-content .content .verification-code .smsVerify {
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background: #fbcd6c;
   border-radius: 8px;
   float: right;
@@ -291,6 +299,10 @@
   font-weight: 800;
   color: #ffffff;
   cursor: pointer;
+}
+.set-mask .modal .model-content .content .verification-code .smsVerify[disabled] {
+  background-color: #DFDFDF;
+  color: #999999;
 }
 .set-mask .modal .model-content .content .mms-verification {
   width: 100%;
@@ -308,17 +320,26 @@
 }
 .set-mask .modal .model-content .content .mms-verification input {
   outline: none;
-  width: 189px;
+  width: 210px;
   height: 36px;
-  border: 1px solid #e2e3e7;
+  border: 1px solid #E2E3E7;
   border-radius: 4px;
   float: right;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.set-mask .modal .model-content .content .mms-verification input::-webkit-input-placeholder {
+  color: #E2E3E7;
+}
+.set-mask .modal .model-content .content .mms-verification input::-ms-input-placeholder {
+  color: #E2E3E7;
+}
+.set-mask .modal .model-content .content .mms-verification input::placeholder {
+  color: #E2E3E7;
 }
 .set-mask .modal .model-content .content .btn {
-  width: 304px;
-  height: 36px;
-  clear: both;
-  float: right;
+  text-align: center;
 }
 .set-mask .modal .model-content .content .btn input {
   width: 120px;
@@ -331,7 +352,11 @@
   color: #fbcd6c;
   cursor: pointer;
   outline: none;
-  margin-right: 20px;
+  margin: 0 10px;
+}
+.set-mask .modal .model-content .content .btn input:hover {
+  background: #fbcd6c;
+  color: #ffffff;
 }
 .set-mask .modal .model-content .content .btn input.active {
   background: #fbcd6c;

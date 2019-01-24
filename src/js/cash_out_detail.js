@@ -102,7 +102,14 @@ var app = new Vue({
         }
       ]
     ],
-    remark: '1111111111111'
+    remark: '1111111111111',
+
+    carouselImg: [
+      './images/icon/logo_abc.png',
+      './images/icon/logo_bcc.png',
+      './images/icon/logo_ccb.png',
+      './images/icon/logo_cm.png'
+    ]
   },
   methods: {
     voucher: function voucher() {

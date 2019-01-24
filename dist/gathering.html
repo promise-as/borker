@@ -6,28 +6,49 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/gathering.css">
+  <link rel="stylesheet" href="./js/css/layui.css?t=1545041465443" media="all">
+  <link rel="stylesheet" href="js/css/mylayui.css">
 
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 </head>
 <body>
 <div id="app">
 
   <div class="cash_out">
-    <!--蒙版-->
-    <div class="match-mask" v-if="log">
+    <!--日志弹框-->
+    <div class="match-mask">
       <div class="mask"></div>
       <div class="wrap">
         <div class="modal">
           <div class="model-header">
             <span>操作日志</span>
-            <i @click="closeLog"></i>
+            <i class="closeLog"></i>
           </div>
+          <div class="content">
+            <ul>
+              <li v-for="(item, index) in matchOrderFinishData"
+                  :class="finishIndex === index?'finish':''"
+              >
+                <div class="icon">
+                  <span></span>
+                </div>
+                <div class="text">
+                  <p>{{item.title}}</p>
+                  <p>
+                    <span>{{item.zfk}}</span>
+                    <span>{{item.hms}}</span>
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <a class="actCouponBtn closeLog" href="javascript:;"
 
-          <a class="actCouponBtn" href="javascript:;"
-             @click="assess(enterSum)">
-            <span>确定</span>
-          </a>
+            >
+              <span>确定</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -80,57 +101,28 @@
             <input class="export" type="button" value="导出excel">
           </div>
         </div>
+
+        <!--表单数据-->
         <div class="order-content">
-          <div class="content-header">
-            <div class="header-item">订单编号</div>
-            <div class="header-item">第三方订单</div>
-            <div class="header-item">订单状态</div>
-            <div class="header-item">服务商</div>
-            <div class="header-item">时间</div>
-            <div class="header-item">付款人</div>
-            <div class="header-item">USDT数量</div>
-            <div class="header-item">金额(CNY)</div>
-            <div class="header-item">相关操作</div>
+          <div class="layui-hide" id="demo" lay-filter="order">
           </div>
-          <div class="content-detail">
-            <div class="detail" v-for="(item, index) in orderItems">
-              <div class="detail-item">{{item.orderNumber}}</div>
-              <div class="detail-item">{{item.thirdPartyOrder}}</div>
-              <div class="detail-item">{{item.orderState}}</div>
-              <div class="detail-item">{{item.facilitator}}</div>
-              <div class="detail-item">{{item.time}}</div>
-              <div class="detail-item">{{item.payer}}</div>
-              <div class="detail-item">{{item.USDTNumber}}</div>
-              <div class="detail-item">{{item.sum}}</div>
-              <div class="detail-item">
-                <input type="button" value="详情">
-                <input @click="lookLog" type="button" value="日志">
-              </div>
-            </div>
-          </div>
-          <div class="content-page">
-            <div class="page">
-              <span class="page-row">
-                共<em>64</em>条
-              </span>
-              <select>
-                <option >10条/页</option>
-                <option >20条/页</option>
-                <option >30条/页</option>
-              </select>
-              <input class="prev" type="button" value="<">
-              <input class="next" type="button" value=">">
-              <span class="page-skip">跳转到</span>
-              <input class="skip-number" type="text" value="2">
-              <input class="skip-confirm" type="button" value="确定">
-            </div>
-          </div>
+
+          <script type="text/html" id="barDemo">
+            <a class="layui-btn layui-btn-primary layui-btn-xs"
+               lay-event="match_detail">详情</a>
+            <a class="layui-btn layui-btn-primary layui-btn-xs"
+               lay-event="match_log">日志</a>
+          </script>
         </div>
+
       </div>
     </div>
   </div>
 </div>
 </body>
 </html>
-<script src="js/index.js"></script>
-<script src="js/read_cache.js"></script>
+<script src="./js/gathering.js"></script>
+<script src="./js/read_cache.js"></script>
+<script src="./js/layui.js?t=1545041465443"></script>
+<script src="./js/page.js"></script>
+<script src="./js/log_sub.js"></script>

@@ -1,4 +1,4 @@
-/*经纪商 兑出*/
+/*经纪商 */
 var app = new Vue({
   el: '#app',
   data: {
@@ -29,16 +29,8 @@ var app = new Vue({
         href: "javascript:;"
       }
     ],
-    orderIndex: 0, // 0:全部,1:待处理
-    orderText: ['全部订单', '待处理订单'],
 
-    // 兑出设置
-    cashOutSet: false,
-    mobile: 13809735212,
-    smsVerify: true,
-    smsCode: '', // 短信验证码
-
-    // 兑出订单
+    // 兑入订单
     matchOrderFinishData: [
       {
         title: '服务商（user2）确认已收款',
@@ -72,50 +64,5 @@ var app = new Vue({
       },
     ],
     finishIndex: 3, // 日志完成的步骤(从0开始)
-  },
-
-  mounted: function () {
-    var that = this;
-    if(typeof that.mobile === "number"){
-      that.mobile = that.mobile + ''
-    }
-    that.mobile = that.mobile.substr(0, 3) + '****'
-    + that.mobile.substr(7, 11);
-  },
-
-  methods: {
-    orderTextTab: function (index) {
-      this.orderIndex = index
-    },
-
-    showCashOutSet: function () {
-      this.cashOutSet = true
-    },
-    closeCashOutSet: function () {
-      this.cashOutSet = false
-    },
-
-    submitSmsCode: function () {
-      axios.post('url')
-        .then(function (response) {
-          // handle success
-          console.log(response)
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error)
-        })
-        .then(function () {
-          // always executed
-        })
-      this.cashOutSet = false
-    },
-
-    needSmsVerify: function () {
-      this.smsVerify = true
-    },
-    withoutSmsVerify: function () {
-      this.smsVerify = false
-    }
   }
 })

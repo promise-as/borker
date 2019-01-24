@@ -12,6 +12,7 @@
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
 </head>
 <body>
 <div id="app">
@@ -51,52 +52,62 @@
       </div>
     </div>
 
-    <!--兑出设置-->
-    <div class="set-mask" v-if="false">
+    <!--兑出设置弹框-->
+    <div class="set-mask" v-show="cashOutSet">
+    <!--<div class="set-mask" v-show="true">-->
       <div class="mask"></div>
       <div class="modal">
-        <div class="model-header">
-          <span>兑出设置</span>
-          <i @click="closeCashOutSet"></i>
-        </div>
-        <div class="model-content">
-          <div class="content">
-            <div class="sms">
-              <span>*是否需要短信验证：</span>
-              <div class="item">
-                <label for="server1">
-                  <input type="radio" id="server1" class="radio" name="ser" checked="checked">
-                  <i></i>
-                </label>
-                <span>是</span>
+        <form action="#">
+          <div class="model-header">
+            <span>兑出设置</span>
+            <i @click="closeCashOutSet"></i>
+          </div>
+          <div class="model-content">
+            <div class="content">
+
+              <div class="sms">
+                <span>*是否需要短信验证：</span>
+                <div class="item">
+                  <label for="server1" @click="needSmsVerify">
+                    <input type="radio" id="server1"
+                           class="radio" name="ser" checked="checked">
+                    <i></i>
+                  </label>
+                  <span>是</span>
+                </div>
+                <div class="item">
+                  <label for="server2" @click="withoutSmsVerify">
+                    <input type="radio" id="server2"
+                           class="radio" name="ser">
+                    <i></i>
+                  </label>
+                  <span>否</span>
+                </div>
               </div>
-              <div class="item">
-                <label for="server2">
-                  <input type="radio" id="server2" class="radio" name="ser">
-                  <i></i>
-                </label>
-                <span>否</span>
+
+              <div class="verification-code">
+                <span>*接收验证码手机：</span>
+                <input type="text" v-model="mobile">
+
+                <input id="getCode" class="smsVerify"
+                       type="button" value="获取验证码"
+                       v-show="smsVerify">
               </div>
-            </div>
-            <div class="verification-code">
-              <span>*接收验证码手机：</span>
-              <input type="text" value="139****1325">
-              <input type="button" value="发送验证码">
-            </div>
-            <div class="mms-verification">
-              <span>*短信验证码：</span>
-              <input type="text" value=" ">
-            </div>
-            <div class="btn">
-              <input type="button"
-                     v-for="(btnText, index) in submitRemitMsgBtn"
-                     :value="btnText"
-                     :class="submitRemitMsgBtnIndex === index ? 'active': ''"
-                     @click="btnIndexTab(index)"
-              >
+              <div class="mms-verification" v-show="smsVerify">
+                <span>*短信验证码：</span>
+                <input type="text" v-model="smsCode"
+                       placeholder="输入短信验证码">
+              </div>
+              <div class="btn">
+                <input type="button" value="确定"
+                       @click="submitSmsCode">
+                <input type="button" value="取消"
+                       @click="closeCashOutSet"
+                >
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
 
@@ -184,3 +195,4 @@
 <script src="./js/layui.js?t=1545041465443"></script>
 <script src="./js/page.js"></script>
 <script src="./js/log_sub.js"></script>
+<script src="./js/sms_verify_code.js"></script>

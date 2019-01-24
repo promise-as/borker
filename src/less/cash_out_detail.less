@@ -64,16 +64,24 @@
           cursor: pointer;
         }
       }
-      .model-content {
-        width: 450px;
-        height: 281px;
-        border: 1px solid white;
+      .layui-carousel {
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
         margin: auto;
+        background-color: transparent;
+        //border: 1px solid pink;
+        >[carousel-item]{
+          &:before{
+            top: -15px;
+          }
+          >*{
+            background-color: transparent;
+          }
+        }
+
       }
       .model-bottom {
         width: 100%;
@@ -81,6 +89,7 @@
         background: rgba(1, 9, 16, 0.4);
         position: absolute;
         bottom: 0;
+        display: none;
         .bottom{
           width: 220px;
           height: 60px;

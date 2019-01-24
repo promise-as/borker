@@ -8,12 +8,13 @@
   <link rel="stylesheet" href="./css/add_cash_out_apply.css">
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 </head>
 <body>
 <div id="app">
   <div class="order-detail">
     <!--凭证-->
-    <div class="voucher-mask" v-if="cashOutOrderDetailIsShow">
+    <!--<div class="voucher-mask" v-if="cashOutOrderDetailIsShow">
       <div class="mask"></div>
       <div class="wrap">
         <div class="modal">
@@ -32,9 +33,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
     <!--提交打款信息-->
-    <div class="remittance-mask" v-if="isShowRemitMsg">
+    <!--<div class="remittance-mask" v-if="isShowRemitMsg">
       <div class="mask"></div>
       <div class="modal">
         <div class="model-header">
@@ -80,7 +81,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
     <div class="sidebar">
       <a class="logo" href="./index.html">NOWPAY</a>
@@ -109,7 +110,7 @@
       </div>
       <div class="main-warp">
         <div class="header">
-          <span>订单详情</span>
+          <span>添加兑出申请</span>
           <a href="cash_out.html">返回</a>
 
         </div>
@@ -214,5 +215,5 @@
 </div>
 </body>
 </html>
-<script src="js/index.js"></script>
+<script src="js/add_apply.js"></script>
 <script src="js/read_cache.js"></script>

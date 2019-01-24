@@ -68,7 +68,7 @@ var app = new Vue({
     cnySetText: ['汇率设置', '服务器设置']
   },
   // 组件已经挂载
-  mounted: function mounted() {
+  mounted: function(){
     var that = this
     // 1秒之后消息框显示
     if (this.isHasOrder === false) {
@@ -83,7 +83,7 @@ var app = new Vue({
     }, 1000)
   },
   // 组件已更新
-  updated: function updated() {
+  updated: function(){
     var that = this
     // 3秒之后消息框隐藏
     if (this.isHasOrder === true) {

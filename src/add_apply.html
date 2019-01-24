@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>添加兑出申请</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/add_cash_out_apply.css">
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+<div id="app">
+  <div class="order-detail">
+    <!--凭证-->
+    <!--<div class="voucher-mask" v-if="cashOutOrderDetailIsShow">
+      <div class="mask"></div>
+      <div class="wrap">
+        <div class="modal">
+          <div class="model-header">
+            <span>查看凭证</span>
+            <i @click="closeVoucher"></i>
+          </div>
+          <div class="model-content"></div>
+          <div class="model-bottom">
+            <div class="bottom">
+              <input type="button">
+              <input type="button">
+              <input type="button">
+              <input type="button">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <!--提交打款信息-->
+    <!--<div class="remittance-mask" v-if="isShowRemitMsg">
+      <div class="mask"></div>
+      <div class="modal">
+        <div class="model-header">
+          <span>提交打款信息</span>
+          <i @click="closeRemitMsg"></i>
+        </div>
+        <div class="model-content">
+          <div class="content">
+            <div class="succeed-failure">
+              <div class="item">
+                <label for="server1">
+                  <input type="radio" id="server1" class="radio" name="ser" checked="checked">
+                  <i></i>
+                </label>
+                <span>确认已成功收款</span>
+              </div>
+              <div class="item">
+                <label for="server2">
+                  <input type="radio" id="server2" class="radio" name="ser">
+                  <i></i>
+                </label>
+                <span>确认打款失败</span>
+              </div>
+            </div>
+            <div class="upload">
+              <span>上传凭证：</span>
+              <label for="upload">
+                <input type="file" id="upload">
+              </label>
+            </div>
+            <div class="remark">
+              <span>备注：</span>
+              <textarea ></textarea>
+            </div>
+            <div class="btn">
+              <input type="button"
+                     v-for="(btnText, index) in submitRemitMsgBtn"
+                     :value="btnText"
+                     :class="submitRemitMsgBtnIndex === index ? 'active': ''"
+                     @click="btnIndexTab(index)"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+    <div class="sidebar">
+      <a class="logo" href="./index.html">NOWPAY</a>
+      <a class="sidebar-item"
+         v-for="(item,index) in sidebarNavList"
+         :class="index === 1?'sidebar-active':''"
+         :href="item.href"
+      >
+        <i :class="item.icon"></i>
+        <span>{{item.text}}</span>
+      </a>
+    </div>
+
+    <div class="main">
+      <div class="main-top">
+        <div class="top-content">
+          <div class="content-left">欢迎使用NOVOXPAY出入金系统！</div>
+          <div class="content-right">
+            <span id="zfk"></span>
+            <span id="watt"></span>
+            <span id="hms"></span>
+            <span>xiaodao</span>
+          </div>
+        </div>
+        <a class="top-logout" href="./login.html"></a>
+      </div>
+      <div class="main-warp">
+        <div class="header">
+          <span>添加兑出申请</span>
+          <a href="cash_out.html">返回</a>
+
+        </div>
+        <div class="order">
+          <form action="#">
+            <div class="order-item">
+              <div class="item-header">
+                <span>订单信息</span>
+              </div>
+              <div class="item-content">
+                <div class="content">
+                  <li>
+                    <label for="0">
+                      <span>*兑出商户：</span>
+                      <input type="text" value="" id="0">
+                    </label>
+                  </li>
+                  <li>
+                    <label for="0">
+                      <span>当前余额：</span>
+                      <input type="text" value="1000USDT/￥7000.00" id="0">
+                    </label>
+                    <label for="0">
+                      <span>冻结金额：</span>
+                      <input type="text" value="10USDT/￥70.00" id="0">
+                    </label>
+                    <label for="0">
+                      <span>可兑出金额：</span>
+                      <input type="text" value="990US" id="0">
+                    </label>
+                  </li>
+                  <li>
+                    <label for="0">
+                      <span>*兑出金额：</span>
+                      <input type="text" value="" id="0">
+                    </label>
+                  </li>
+                  <li>
+                    <label for="0">
+                      <span>兑出单号：</span>
+                      <input type="text" value="" id="0">
+                    </label>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="order-item">
+              <div class="item-header">
+                <span>付款信息</span>
+              </div>
+              <div class="item-content">
+                <div class="content">
+                  <li>
+                    <label for="0">
+                      <span>*收款人姓名：</span>
+                      <input type="text" value="" id="0">
+                    </label>
+                  </li>
+                  <li>
+                    <label for="0">
+                      <span>*收款人开户银行：</span>
+                      <input type="text" value="" id="0">
+                    </label>
+                  </li>
+                  <li>
+                    <label for="0">
+                      <span>*收款账号：</span>
+                      <input type="text" value="" id="0">
+                    </label>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="order-item">
+              <div class="item-header">
+                <span>验证信息</span>
+              </div>
+              <div class="item-content">
+                <div class="content">
+                  <li>
+                    <label for="0">
+                      <span>*接收验证码手机：</span>
+                      <input type="text" value="139****1325" id="0">
+                    </label>
+                    <input class="auth-code" type="button" value="发送验证码">
+                  </li>
+                  <li>
+                    <label for="0">
+                      <span>*收款账号：</span>
+                      <input type="text" value="" id="0">
+                    </label>
+                  </li>
+                  <input type="button" class="btn" value="立即提交">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script src="js/add_apply.js"></script>
+<script src="js/read_cache.js"></script>
