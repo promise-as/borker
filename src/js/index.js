@@ -59,13 +59,6 @@ var app = new Vue({
     orderDetail: [{
       title: '订单信息'
     }],
-
-    // 发邮件
-    isShowSendEmail: false,
-    // 发送成功
-    isShowSendSucceed: false,
-    // 汇率设置
-    cnySetText: ['汇率设置', '服务器设置']
   },
   // 组件已经挂载
   mounted: function(){
@@ -94,13 +87,13 @@ var app = new Vue({
   },
   // 方法
   methods: {
-    showSendEmails: function showSendEmails() {
+    showSendEmails: function (){
       this.isShowSendEmail = true
     },
-    closeSendEmails: function closeSendEmails() {
+    closeSendEmails: function (){
       this.isShowSendEmail = false
     },
-    closeSendSucceed: function closeSendSucceed() {
+    closeSendSucceed: function (){
       this.isShowSendSucceed = false
     },
 

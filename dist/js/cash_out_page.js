@@ -20,14 +20,14 @@ $(function () {
     //执行一个 table 实例
     table.render({
       elem: '#demo',
-      url: './json/match.json', // 数据接口,
+      url: './json/cash_out.json', // 数据接口,
       title: '订单表',
       page: true, //开启分页,
       toolbar: 'default', //开启工具栏，此处显示默认图标，可以自定义模板，详见文档,
       totalRow: true, //开启合计行,
       cols: [// 列数目
       [//表头
-      { field: 'orderId', title: '订单编号' }, { field: 'thirdPartyOrder', title: '第三方订单' }, { field: 'status', title: '订单状态' }, { field: 'facilitator', title: '服务商' }, { field: 'time', title: '时间' }, { field: 'payer', title: '付款人' }, { field: 'usdtNumber', title: 'USDT数量' }, { field: 'sum', title: '金额(CNY)' }, { title: '相关操作', toolbar: '#barDemo' }]]
+      { field: 'orderId', title: '订单编号' }, { field: 'facilitator', title: '服务商' }, { field: 'status', title: '订单状态' }, { field: 'time', title: '时间' }, { field: 'payer', title: '付款人' }, { field: 'usdtNumber', title: 'USDT数量' }, { field: 'sum', title: '金额(CNY)' }, { title: '相关操作', toolbar: '#barDemo' }]]
     });
 
     //监听行工具事件

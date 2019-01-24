@@ -3,25 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>汇率设置</title>
-  <!--<link rel="shortcut icon" href="images/ico/logo_2.png" type="image/x-icon"/>-->
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/cny_set.css">
-  <!-- 引入样式 -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <link rel="stylesheet" href="./js/css/layui.css?t=1545041465443" media="all">
+  <link rel="stylesheet" href="js/css/mylayui.css">
 
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <!-- 引入组件库 -->
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 </head>
 <body>
 <div id="app">
 
   <div class="cash-out">
     <!--操作日志-->
-    <div class="cash-out-mask" v-show="log">
+    <div class="cash-out-mask" v-if="log">
       <div class="mask"></div>
       <div class="wrap">
         <div class="modal">
@@ -136,19 +133,20 @@
           <div class="state-header">
             <div class="header-btn"
                  v-for="(item, index) in cnySetText" @click="orderTextTab(index)"
-                 :class="0 === index ? 'active': ''">
+                 :class="cnySetIndex === index ? 'active': ''">
               {{item}}
             </div>
-            <input class="add-servers" type="button" value="添加服务器">
+            <input v-if="cnySetIndex === 1"
+                class="add-servers" type="button" value="添加服务器">
           </div>
           <div class="servers-content">
-            <div class="content-header">
+            <!--<div class="content-header">
               <div class="header-item">编号</div>
               <div class="header-item">服务器名称</div>
               <div class="header-item">状态</div>
               <div class="header-item">相关操作</div>
-            </div>
-            <div class="content-detail">
+            </div>-->
+            <!--<div class="content-detail">
               <div class="detail" v-for="(item, index) in orderItems">
                 <div class="detail-item">{{item.USDTNumber}}</div>
                 <div class="detail-item">{{item.sum}}</div>
@@ -161,6 +159,18 @@
 
                 </div>
               </div>
+            </div>-->
+            <!--表单数据-->
+            <div class="order-content">
+              <div class="layui-hide" id="demo" lay-filter="order">
+              </div>
+
+              <script type="text/html" id="barDemo">
+                <a class="layui-btn layui-btn-primary layui-btn-xs"
+                   lay-event="match_detail">详情</a>
+                <a class="layui-btn layui-btn-primary layui-btn-xs"
+                   lay-event="match_log">日志</a>
+              </script>
             </div>
           </div>
         </div>
@@ -170,6 +180,8 @@
 </div>
 </body>
 </html>
-<script src="js/index.js"></script>
-<script src="js/log_sub.js"></script>
-<script src="js/read_cache.js"></script>
+<script src="./js/cny_set.js"></script>
+<script src="./js/read_cache.js"></script>
+<script src="./js/layui.js?t=1545041465443"></script>
+<script src="js/match_page.js"></script>
+<script src="./js/log_sub.js"></script>

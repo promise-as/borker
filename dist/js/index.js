@@ -44,14 +44,7 @@ var app = new Vue({
     msgRemindIndex: 0, // 0是已确认，1是已支付
     orderDetail: [{
       title: '订单信息'
-    }],
-
-    // 发邮件
-    isShowSendEmail: false,
-    // 发送成功
-    isShowSendSucceed: false,
-    // 汇率设置
-    cnySetText: ['汇率设置', '服务器设置']
+    }]
   },
   // 组件已经挂载
   mounted: function mounted() {

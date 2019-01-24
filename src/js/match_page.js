@@ -18,7 +18,7 @@ $(function () {
       //执行一个 table 实例
       table.render({
         elem: '#demo',
-        url: './json/persons.json', // 数据接口,
+        url: './json/match.json', // 数据接口,
         title: '订单表',
         page: true, //开启分页,
         toolbar: 'default', //开启工具栏，此处显示默认图标，可以自定义模板，详见文档,
