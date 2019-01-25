@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 /*经纪商 兑出详情*/
 var app = new Vue({
@@ -29,24 +29,36 @@ var app = new Vue({
     isShowRemitMsg: false,
     submitRemitMsgBtn: ['确认', '取消'],
     submitRemitMsgBtnIndex: 0,
+
+
     orderData: [
-      [{
-        key: "订单信息"
+      [
+        {
+          key: "订单信息"
+        }, {
+        key: "收款订单编号: ",
+        val: "REC201808150303030001"
       }, {
-        key: "订单编号: ",
+        key: "兑入订单编号: ",
         val: "20180802_1500022135"
       }, {
-        key: "支付单号: ",
-        val: "1500022135"
-      }, {
         key: "订单状态: ",
-        val: "待服务商收款"
+        val: "待支付"
       }, {
-        key: "USTD数量: ",
+        key: "收款金额(USTD): ",
         val: "1000"
       }, {
-        key: "经纪商: ",
-        val: "CPT"
+        key: "截止日期: ",
+        val: "2018.10.10"
+      }, {
+        key: "收款公司名称: ",
+        val: "深圳才华有限公司"
+      }, {
+        key: "付款公司名称: ",
+        val: "深圳才华有限公司"
+      }, {
+        key: "产品名称: ",
+        val: "服务费"
       }], [{
         key: "付款信息"
       }, {
@@ -56,46 +68,42 @@ var app = new Vue({
         key: "付款人姓名: ",
         val: "张三"
       }, {
-        key: "收款人银行: ",
-        val: "农业银行 广东茂名市茂东支行"
+        key: "公司名称: ",
+        val: "深圳才华有限公司"
       }, {
-        key: "收款人账号: ",
-        val: "6228 4811 7674 6694 972"
+        key: "业务联络人: ",
+        val: "张三"
       }, {
-        key: "收款凭证: ",
-        val: "查看凭证"
-      }], [{
-        key: "服务商信息"
+        key: "联系电话: ",
+        val: "13809735212"
       }, {
-        key: "服务商名称: ",
-        val: "玉米蒸"
+        key: "电子邮箱: ",
+        val: "13809735212@163.com"
       }, {
-        key: "服务次数: ",
-        val: "10010"
-      }, {
-        key: "平均确认时长: ",
-        val: "00:05:00"
-      }]
+        key: "备注: ",
+        val: "已支付，请贵公司查收"
+      }
+      ]
     ],
-    remark: '1111111111111',
+    remark: '',
 
     carouselImg: ['./images/icon/logo_abc.png', './images/icon/logo_bcc.png', './images/icon/logo_ccb.png', './images/icon/logo_cm.png']
   },
   methods: {
     voucher: function voucher() {
-      this.cashOutOrderDetailIsShow = true
+      this.cashOutOrderDetailIsShow = true;
     },
     closeVoucher: function closeVoucher() {
-      this.cashOutOrderDetailIsShow = false
+      this.cashOutOrderDetailIsShow = false;
     },
     closeRemitMsg: function closeRemitMsg() {
-      this.isShowRemitMsg = false
+      this.isShowRemitMsg = false;
     },
     showRemitMsg: function showRemitMsg() {
-      this.isShowRemitMsg = true
+      this.isShowRemitMsg = true;
     },
     btnIndexTab: function btnIndexTab(index) {
-      this.submitRemitMsgBtnIndex = index
+      this.submitRemitMsgBtnIndex = index;
     }
   }
-})
+});

@@ -23,19 +23,65 @@ $(function () {
         page: true, //开启分页,
         toolbar: 'default', //开启工具栏，此处显示默认图标，可以自定义模板，详见文档,
         totalRow: true, //开启合计行,
-        cols: [ // 列数目
-          [ //表头
-            {field: 'orderId', title: '订单编号'},
-            {field: 'thirdPartyOrder', title: '第三方订单'},
-            {field: 'status', title: '订单状态'},
-            {field: 'facilitator', title: '服务商'},
-            {field: 'time', title: '时间'},
-            {field: 'payer', title: '付款人'},
-            {field: 'usdtNumber', title: 'USDT数量'},
-            {field: 'sum', title: '金额(CNY)'},
-            {title: '相关操作', toolbar: '#barDemo'}
+        cols:
+          [// 列数目
+            [//表头
+              {
+                field: 'orderId',
+                title: '订单编号',
+                width: '175',
+                align: 'center'
+              },
+              {
+                field: 'thirdPartyOrder',
+                title: '第三方订单',
+                width: '108',
+                align: 'center'
+              },
+              {
+                field: 'status',
+                title: '订单状态',
+                width: '105',
+                align: 'center'
+              },
+              {
+                field: 'facilitator',
+                title: '服务商',
+                width: '70',
+                align: 'center'
+              },
+              {
+                field: 'time',
+                title: '时间',
+                width: '135',
+                align: 'center'
+              },
+              {
+                field: 'payer',
+                title: '付款人',
+                width: '72',
+                align: 'center'
+              },
+              {
+                field: 'usdtNumber',
+                title: 'USDT数量',
+                width: '97',
+                align: 'center'
+              },
+              {
+                field: 'sum',
+                title: '金额(CNY)',
+                width: '97',
+                align: 'center'
+              },
+              {
+                title: '相关操作',
+                toolbar: '#barDemo',
+                width: '120',
+                align: 'center'
+              }
+            ]
           ]
-        ]
       })
 
       //监听行工具事件
@@ -44,35 +90,35 @@ $(function () {
         var layEvent = obj.event //获得 lay-event 对应的值
         if (layEvent === 'match_detail') {
           // 下标
-          var detailParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");
+          var detailParentIndex = $($($(this)[0]).parents()[2]).attr("data-index")
           this.href = `./match_detail.html?index=${detailParentIndex}`
 
         } else if (layEvent === 'match_log') {
           // 下标
-          var logParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");
+          var logParentIndex = $($($(this)[0]).parents()[2]).attr("data-index")
           console.log(111, logParentIndex)
           // 日志弹窗显示
-          $logDialog.css("display", "block");
+          $logDialog.css("display", "block")
           // 日志关闭
           $closeLog.click(function () {
-            $logDialog.css("display", "none");
+            $logDialog.css("display", "none")
           })
         }
 
         if (layEvent === 'cash_out_detail') {
           // 下标
-          var detailParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");
+          var detailParentIndex = $($($(this)[0]).parents()[2]).attr("data-index")
           this.href = `./cash_out_detail.html?index=${detailParentIndex}`
 
         } else if (layEvent === 'cash_out_log') {
           // 下标
-          var logParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");
+          var logParentIndex = $($($(this)[0]).parents()[2]).attr("data-index")
           console.log("日志下标: ", logParentIndex)
           // 日志弹窗显示
-          $logDialog.css("display", "block");
+          $logDialog.css("display", "block")
           // 日志关闭
           $closeLog.click(function () {
-            $logDialog.css("display", "none");
+            $logDialog.css("display", "none")
           })
         }
       })
@@ -88,7 +134,7 @@ $(function () {
             layer.msg('第' + obj.curr + '页', {offset: 'b'})
           }
         }
-      });
+      })
     }
   )
 }())

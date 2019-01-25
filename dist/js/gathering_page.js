@@ -27,7 +27,52 @@ $(function () {
       totalRow: true, //开启合计行,
       cols: [// 列数目
       [//表头
-      { field: 'orderId', title: '订单编号' }, { field: 'thirdPartyOrder', title: '兑入订单编号' }, { field: 'status', title: '收款公司名称' }, { field: 'facilitator', title: '付款公司名称' }, { field: 'time', title: '产品 名称' }, { field: 'payer', title: '收款金额 （USDT）' }, { field: 'usdtNumber', title: '截止日期' }, { field: 'sum', title: '状态' }, { title: '相关操作', toolbar: '#barDemo' }]]
+      {
+        field: 'gatheringOrder',
+        title: '收款订单编号',
+        width: '170',
+        align: 'center'
+      }, {
+        field: 'matchOrder',
+        title: '兑入订单编号',
+        width: '150',
+        align: 'center'
+      }, {
+        field: 'gatheringCompany',
+        title: '收款公司名称',
+        width: '115',
+        align: 'center'
+      }, {
+        field: 'payCompany',
+        title: '付款公司名称',
+        width: '115',
+        align: 'center'
+      }, {
+        field: 'product',
+        title: '产品 名称',
+        width: '60',
+        align: 'center'
+      }, {
+        field: 'sum',
+        title: '收款金额(USDT)',
+        width: '105',
+        align: 'center'
+      }, {
+        field: 'time',
+        title: '截止日期',
+        width: '72',
+        align: 'center'
+      }, {
+        field: 'status',
+        title: '状态',
+        width: '92',
+        align: 'center'
+      }, {
+        title: '相关操作',
+        toolbar: '#barDemo',
+        width: '100',
+        align: 'center'
+      }]]
     });
 
     //监听行工具事件

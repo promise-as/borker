@@ -1,0 +1,27 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "currency": "USDCNY",
+      "exchangeRate": "7.02"
+    },
+    {
+      "currency": "USDCNY",
+      "exchangeRate": "7.02"
+    },
+    {
+      "currency": "USDCNY",
+      "exchangeRate": "7.02"
+    },
+    {
+      "currency": "USDCNY",
+      "exchangeRate": "7.02"
+    },
+    {
+      "currency": "USDCNY",
+      "exchangeRate": "7.02"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ var app = new Vue({
       {
         icon: "icon-match",
         text: "兑入订单管理",
-        href: "index.html"
+        href: "match.html"
       },
       {
         icon: "icon-cash-out",

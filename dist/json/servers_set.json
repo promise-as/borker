@@ -1,0 +1,27 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "number": "1",
+      "serverName": "服务器一",
+      "status": "开启"
+    },
+    {
+      "number": "2",
+      "serverName": "服务器二",
+      "status": "开启"
+    },
+    {
+      "number": "3",
+      "serverName": "服务器三",
+      "status": "开启"
+    },
+    {
+      "number": "4",
+      "serverName": "服务器四",
+      "status": "开启"
+    }
+  ]
+}
