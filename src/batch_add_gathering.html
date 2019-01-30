@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>批量添加兑出申请</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/batch_add_cash_out_apply.css">
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <div class="order-detail">
+    <!--凭证-->
+    <div class="voucher-mask" v-if="cashOutOrderDetailIsShow">
+      <div class="mask"></div>
+      <div class="wrap">
+        <div class="modal">
+          <div class="model-header">
+            <span>查看凭证</span>
+            <i @click="closeVoucher"></i>
+          </div>
+          <div class="model-content"></div>
+          <div class="model-bottom">
+            <div class="bottom">
+              <input type="button">
+              <input type="button">
+              <input type="button">
+              <input type="button">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--提交打款信息-->
+    <div class="remittance-mask" v-if="isShowRemitMsg">
+      <div class="mask"></div>
+      <div class="modal">
+        <div class="model-header">
+          <span>提交打款信息</span>
+          <i @click="closeRemitMsg"></i>
+        </div>
+        <div class="model-content">
+          <div class="content">
+            <div class="succeed-failure">
+              <div class="item">
+                <label for="server1">
+                  <input type="radio" id="server1" class="radio" name="ser" checked="checked">
+                  <i></i>
+                </label>
+                <span>确认已成功收款</span>
+              </div>
+              <div class="item">
+                <label for="server2">
+                  <input type="radio" id="server2" class="radio" name="ser">
+                  <i></i>
+                </label>
+                <span>确认打款失败</span>
+              </div>
+            </div>
+            <div class="upload">
+              <span>上传凭证：</span>
+              <label for="upload">
+                <input type="file" id="upload">
+              </label>
+            </div>
+            <div class="remark">
+              <span>备注：</span>
+              <textarea ></textarea>
+            </div>
+            <div class="btn">
+              <input type="button"
+                     v-for="(btnText, index) in submitRemitMsgBtn"
+                     :value="btnText"
+                     :class="submitRemitMsgBtnIndex === index ? 'active': ''"
+                     @click="btnIndexTab(index)"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <a class="logo" href="./index.html">NOWPAY</a>
+      <a class="sidebar-item"
+         v-for="(item,index) in sidebarNavList"
+         :class="index === 2?'sidebar-active':''"
+         :href="item.href"
+      >
+        <i :class="item.icon"></i>
+        <span>{{item.text}}</span>
+      </a>
+    </div>
+    <div class="main">
+      <div class="main-top">
+        <div class="top-content">
+          <div class="content-left">欢迎使用NOVOXPAY出入金系统！</div>
+          <div class="content-right">
+            <span id="zfk"></span>
+            <span id="watt"></span>
+            <span id="hms"></span>
+            <span>xiaodao</span>
+          </div>
+        </div>
+        <a class="top-logout" href="./login.html"></a>
+      </div>
+      <div class="main-warp">
+        <div class="header">
+          <span>批量添加收款订单</span>
+          <a href="./gathering.html">上一步</a>
+
+        </div>
+        <div class="order">
+          <form action="#">
+            <div class="import">
+              <li>
+                <label for="file">
+                  <span>*选择文件：</span>
+                  <input type="file" id="file">
+                </label>
+                <input class="browse" type="button" value="浏览">
+              </li>
+              <li>
+                <label for="download">
+                  <span>下载模板：</span>
+                  <input type="text" id="download" value="COINPAY批量添加入金模板.XLS">
+                </label>
+              </li>
+              <input type="button" class="confirm-import" value="确认导入">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script src="js/index.js"></script>
+<script src="js/read_cache.js"></script>

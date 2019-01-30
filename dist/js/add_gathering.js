@@ -25,10 +25,6 @@ var app = new Vue({
       text: "自定义风格页面",
       href: "javascript:;"
     }],
-    cashOutOrderDetailIsShow: false,
-    isShowRemitMsg: false,
-    submitRemitMsgBtn: ['确认', '取消'],
-    submitRemitMsgBtnIndex: 0,
     orderData: [{
       key: "订单信息"
     }, {
@@ -45,24 +41,8 @@ var app = new Vue({
       val: ""
     }, {
       key: "*截止日期：",
-      val: ""
-    }],
-    remark: '1111111111111',
-
-    carouselImg: ['./images/icon/logo_abc.png', './images/icon/logo_bcc.png', './images/icon/logo_ccb.png', './images/icon/logo_cm.png']
+      val: "2018.10.10"
+    }]
   },
-  methods: {
-    voucher: function voucher() {
-      this.cashOutOrderDetailIsShow = true;
-    },
-    closeVoucher: function closeVoucher() {
-      this.cashOutOrderDetailIsShow = false;
-    },
-    closeRemitMsg: function closeRemitMsg() {
-      this.isShowRemitMsg = false;
-    },
-    btnIndexTab: function btnIndexTab(index) {
-      this.submitRemitMsgBtnIndex = index;
-    }
-  }
+  methods: {}
 });

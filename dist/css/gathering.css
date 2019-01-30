@@ -64,14 +64,15 @@
 }
 .match-mask .wrap .modal .content {
   width: 100%;
-  padding: 20px;
+  padding: 20px 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   float: left;
+  height: 100%;
 }
 .match-mask .wrap .modal .content ul {
   float: left;
-  width: 100%;
+  margin-bottom: 30px;
 }
 .match-mask .wrap .modal .content ul li {
   position: relative;

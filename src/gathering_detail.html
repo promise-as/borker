@@ -72,41 +72,30 @@
               </div>
               <div class="btn">
                 <input type="button" value="确认" @click="closeRemitMsg">
-                <input type="button" value="取消" @click="closeRemitMsg">
+                <input type="button" value="取消" @click="cancelRemitMsg">
               </div>
             </div>
           </div>
         </form>
       </div>
     </div>
+
     <!--发送成功-->
-    <!--<div class="remittance-mask" v-show="isShowRemitMsg">-->
-    <div class="send-succeed-mask" v-show="true">
+    <div class="set-succeed" v-show="setSucceed">
+      <!--<div class="set-succeed" v-show="true">-->
       <div class="mask"></div>
       <div class="modal">
         <form action="#">
           <div class="model-header">
-            <span>提示</span>
-            <i @click="closeRemitMsg"></i>
+            <span>编辑</span>
+            <i @click="closeSucceed"></i>
           </div>
           <div class="model-content">
             <div class="content">
-              <div class="item">
-                <span>*收件人：</span>
-                <input type="text">
-              </div>
-              <div class="item">
-                <span>*邮件主题：</span>
-                <input type="text">
-              </div>
-
-              <div class="remark">
-                <span>*邮件内容：</span>
-                <textarea v-model="remark"></textarea>
-              </div>
-              <div class="btn">
-                <input type="button" value="关闭" @click="closeRemitMsg">
-              </div>
+              <div class="content-img"></div>
+              <p class="text">发送成功！</p>
+              <input type="button" value="关闭"
+                     class="btn" @click="closeSucceed">
             </div>
           </div>
         </form>
@@ -141,7 +130,7 @@
       <div class="main-warp">
         <div class="header">
           <span>订单详情</span>
-          <a href="cash_out.html">返回</a>
+          <a href="./gathering.html">返回</a>
           <input @click="showRemitMsg"
                   type="button" value="发送邮件"/>
         </div>

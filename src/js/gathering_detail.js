@@ -40,7 +40,7 @@ var app = new Vue({
         },
         {
           key: "订单编号: ",
-          val: "20180802_1500022135"
+          val: "ZFD2018018181111111111"
         },
         {
           key: "支付单号: ",
@@ -48,15 +48,27 @@ var app = new Vue({
         },
         {
           key: "订单状态: ",
-          val: "待服务商收款"
+          val: "待支付"
         },
         {
-          key: "USTD数量: ",
+          key: "收款金额(USDT): ",
           val: "1000"
         },
         {
-          key: "经纪商: ",
-          val: "CPT"
+          key: "截至日期: ",
+          val: "2018.10.10"
+        },
+        {
+          key: "收款公司名称: ",
+          val: "深圳才华有限公司"
+        },
+        {
+          key: "付款公司名称: ",
+          val: "深圳才华有限公司"
+        },
+        {
+          key: "产品名称: ",
+          val: "服务费"
         }
       ],
       [
@@ -72,60 +84,57 @@ var app = new Vue({
           val: "张三"
         },
         {
-          key: "收款人银行: ",
-          val: "农业银行 广东茂名市茂东支行"
+          key: "公司名称: ",
+          val: "深圳才华有限公司"
         },
         {
-          key: "收款人账号: ",
-          val: "6228 4811 7674 6694 972"
+          key: "业务联络人: ",
+          val: "13809735211"
         },
         {
-          key: "收款凭证: ",
-          val: "查看凭证"
-        }
-      ],
-      [
-        {
-          key: "服务商信息"
+          key: "电子邮箱: ",
+          val: "13809735212@163.com"
         },
         {
-          key: "服务商名称: ",
-          val: "玉米蒸"
-        },
-        {
-          key: "服务次数: ",
-          val: "10010"
-        },
-        {
-          key: "平均确认时长: ",
-          val: "00:05:00"
+          key: "备注: ",
+          val: "已支付，请贵公司查收"
         }
       ]
     ],
-    remark: '1111111111111',
+    remark: '备注点东西',
 
     carouselImg: [
       './images/icon/logo_abc.png',
       './images/icon/logo_bcc.png',
       './images/icon/logo_ccb.png',
       './images/icon/logo_cm.png'
-    ]
+    ],
+
+    setSucceed: false,
   },
   methods: {
-    voucher: function voucher() {
+    voucher: function () {
       this.cashOutOrderDetailIsShow = true
     },
-    closeVoucher: function closeVoucher() {
+    closeVoucher: function () {
       this.cashOutOrderDetailIsShow = false
     },
-    closeRemitMsg: function closeRemitMsg() {
+    closeRemitMsg: function () {
+      this.isShowRemitMsg = false
+      this.setSucceed = true
+    },
+    cancelRemitMsg: function () {
       this.isShowRemitMsg = false
     },
-    showRemitMsg: function showRemitMsg() {
+
+    showRemitMsg: function () {
       this.isShowRemitMsg = true
     },
-    btnIndexTab: function btnIndexTab(index) {
+    btnIndexTab: function () {
       this.submitRemitMsgBtnIndex = index
     },
+    closeSucceed: function () {
+      this.setSucceed = false
+    }
   }
 })
