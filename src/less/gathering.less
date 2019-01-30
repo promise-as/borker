@@ -242,6 +242,7 @@
           font-weight: 500;
           color: rgba(153, 153, 153, 1);
           line-height: 34px;
+          float: left;
         }
         select {
           outline: none;
@@ -255,6 +256,7 @@
           box-sizing: border-box;
           border: 1px solid #999999;
           margin-left: 10px;
+          float: left;
         }
         input {
           outline: none;
@@ -268,22 +270,7 @@
           box-sizing: border-box;
           border: 1px solid #999999;
           margin-left: 20px;
-          &:nth-child(5){
-            border:1px solid rgba(251,205,108,1);
-            color:rgba(251,205,108,1);
-            text-align: center;
-            padding-left: 0;
-            background-color: white;
-            cursor: pointer;
-          }
-          &:nth-child(6){
-            border:1px solid rgba(251,205,108,1);
-            color:rgba(251,205,108,1);
-            text-align: center;
-            padding-left: 0;
-            background-color: white;
-            cursor: pointer;
-          }
+          float: left;
         }
         input.query {
           background: rgba(251, 205, 108, 1);
@@ -297,13 +284,38 @@
           color: white;
           cursor: pointer;
         }
+        .add_gathering_order{
+          width: 156px;
+          height: 36px;
+          line-height: 36px;
+          border:1px solid rgba(251,205,108,1);
+          color:rgba(251,205,108,1);
+          text-align: center;
+          background-color: white;
+          border-radius: 8px;
+          float: left;
+          margin-left: 20px;
+        }
+        .batch_add_order{
+          width: 160px;
+          height: 36px;
+          line-height: 36px;
+          border:1px solid rgba(251,205,108,1);
+          color:rgba(251,205,108,1);
+          text-align: center;
+          background-color: white;
+          border-radius: 8px;
+          float: left;
+          margin-left: 20px;
+        }
+
         &:last-child{
           margin-top: 10px;
           input{
             float: left;
-            margin-left: 25px;
+            margin-left: 20px;
             &:first-child{
-              margin-left: 70px;
+              margin-left: 65px;
             }
           }
         }

@@ -1,4 +1,4 @@
-/*经纪商 兑入订单详情页面*/
+/*经纪商 添加收款订单页面*/
 .order-detail {
   width: 1200px;
   height: 735px;
@@ -118,7 +118,7 @@
   height: 18px;
   background: url("../images/icon/icon_popup_right.png") no-repeat;
 }
-/*提交打款信息 弹出框*/
+/*发送邮件 弹出框*/
 .remittance-mask .mask {
   position: absolute;
   top: 0;
@@ -173,104 +173,24 @@
   width: 100%;
   height: 100%;
 }
-.remittance-mask .modal .model-content .content .succeed-failure {
+.remittance-mask .modal .model-content .content .item {
   float: left;
+  width: 100%;
   margin-bottom: 20px;
 }
-.remittance-mask .modal .model-content .content .succeed-failure .item {
-  height: 14px;
-  font-size: 12px;
-  float: left;
-  margin-right: 49px;
-}
-.remittance-mask .modal .model-content .content .succeed-failure .item > label {
+.remittance-mask .modal .model-content .content .item span {
+  color: #999999;
   float: left;
 }
-.remittance-mask .modal .model-content .content .succeed-failure .item > label .radio {
-  display: none;
-}
-.remittance-mask .modal .model-content .content .succeed-failure .item > label .radio:checked + i {
-  background: url("../images/icon/icon_dianji.png") no-repeat;
-  background-size: contain;
-  border: 0;
-}
-.remittance-mask .modal .model-content .content .succeed-failure .item > label i {
-  display: block;
-  width: 14px;
-  height: 14px;
-  border: 1px solid #c3c3c3;
+.remittance-mask .modal .model-content .content .item input {
+  width: 278px;
+  height: 36px;
+  border: 1px solid #E2E3E7;
+  padding: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.remittance-mask .modal .model-content .content .succeed-failure .item > span {
-  float: left;
-  color: #1E1E1E;
-  font-size: 14px;
-  margin-left: 5px;
-}
-.remittance-mask .modal .model-content .content .upload {
-  width: 100%;
-  height: 54px;
-  clear: both;
-  margin-bottom: 20px;
-}
-.remittance-mask .modal .model-content .content .upload span {
-  font-size: 14px;
-  font-weight: 500;
-  color: #999999;
-  line-height: 43px;
-  float: left;
-}
-.remittance-mask .modal .model-content .content .upload .upload_vessel {
-  float: left;
-  margin-bottom: 10px;
-}
-.remittance-mask .modal .model-content .content .upload .upload_vessel .img_vessel {
-  float: left;
-  width: 54px;
-  height: 54px;
-  margin-right: 20px;
-  position: relative;
-}
-.remittance-mask .modal .model-content .content .upload .upload_vessel .img_vessel img {
-  width: 54px;
-  height: 54px;
-  border-radius: 4px;
-}
-.remittance-mask .modal .model-content .content .upload .upload_vessel .img_vessel .del_img {
-  display: block;
-  width: 14px;
-  height: 14px;
-  background: url("../images/icon/icon_popup_close3.png") no-repeat;
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  cursor: pointer;
-}
-.remittance-mask .modal .model-content .content .upload .upload_vessel label {
-  width: 54px;
-  height: 54px;
-  border: 1px solid #e2e3e7;
-  border-radius: 4px;
   float: right;
-  background: url("../images/icon/icon_popup_close1.png") no-repeat center;
-  cursor: pointer;
-}
-.remittance-mask .modal .model-content .content .upload .upload_vessel label input {
-  width: 54px;
-  visibility: hidden;
-}
-.remittance-mask .modal .model-content .content .upload .upload_vessel label p {
-  display: none;
-  text-align: center;
-  color: #B9C2E2;
-  margin-top: 12px;
-  font-size: 12px;
-}
-.remittance-mask .modal .model-content .content .upload .upload_vessel label p em {
-  font-style: normal;
+  border-radius: 4px;
 }
 .remittance-mask .modal .model-content .content .remark {
   clear: both;
@@ -286,7 +206,7 @@
 }
 .remittance-mask .modal .model-content .content .remark textarea {
   float: right;
-  width: 304px;
+  width: 278px;
   height: 122px;
   border: 1px solid #e2e3e7;
   padding: 10px;
@@ -320,6 +240,132 @@
   color: #ffffff;
 }
 .remittance-mask .modal .model-content .content .btn input.active {
+  background: #fbcd6c;
+  color: #ffffff;
+}
+/*发送成功*/
+.send-succeed-mask .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.send-succeed-mask .modal {
+  width: 470px;
+  height: 397px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.send-succeed-mask .modal .model-header {
+  width: 100%;
+  height: 40px;
+  padding: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fae3b3;
+}
+.send-succeed-mask .modal .model-header > span {
+  font-size: 14px;
+  float: left;
+  font-weight: bold;
+  color: #181818;
+}
+.send-succeed-mask .modal .model-header > i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url("../images/icon/icon_popup_close.png") no-repeat;
+  float: right;
+  cursor: pointer;
+}
+.send-succeed-mask .modal .model-content {
+  width: 100%;
+  height: 357px;
+  background-color: white;
+  padding: 30px 58px 41px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.send-succeed-mask .modal .model-content .content {
+  width: 100%;
+  height: 100%;
+}
+.send-succeed-mask .modal .model-content .content .item {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.send-succeed-mask .modal .model-content .content .item span {
+  color: #999999;
+  float: left;
+}
+.send-succeed-mask .modal .model-content .content .item input {
+  width: 278px;
+  height: 36px;
+  border: 1px solid #E2E3E7;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: right;
+  border-radius: 4px;
+}
+.send-succeed-mask .modal .model-content .content .remark {
+  clear: both;
+  height: 122px;
+  margin-bottom: 20px;
+}
+.send-succeed-mask .modal .model-content .content .remark span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 43px;
+  float: left;
+}
+.send-succeed-mask .modal .model-content .content .remark textarea {
+  float: right;
+  width: 278px;
+  height: 122px;
+  border: 1px solid #e2e3e7;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  resize: none;
+}
+.send-succeed-mask .modal .model-content .content .btn {
+  width: 304px;
+  height: 36px;
+  clear: both;
+  float: right;
+  text-align: center;
+}
+.send-succeed-mask .modal .model-content .content .btn input {
+  width: 120px;
+  height: 36px;
+  border: 1px solid #fbcd6c;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fbcd6c;
+  cursor: pointer;
+  outline: none;
+  margin-right: 20px;
+}
+.send-succeed-mask .modal .model-content .content .btn input:hover {
+  background: #fbcd6c;
+  color: #ffffff;
+}
+.send-succeed-mask .modal .model-content .content .btn input.active {
   background: #fbcd6c;
   color: #ffffff;
 }
@@ -417,34 +463,39 @@
   margin-left: 10px;
 }
 .main .main-warp .order {
-  width: 990px;
+  width: 100%;
   float: left;
 }
 .main .main-warp .order .order-item {
-  width: 490px;
+  width: 100%;
+  min-height: 390px;
   background: #ffffff;
   float: left;
   margin-top: 10px;
 }
-.main .main-warp .order .order-item:nth-of-type(odd) {
-  margin-right: 10px;
-}
 .main .main-warp .order .order-item li {
-  height: 25px;
-  border-bottom: 1px solid #EFEFEF;
-  margin-bottom: 15px;
+  height: 36px;
+  margin-bottom: 20px;
   font-size: 14px;
   margin-left: 54px;
   margin-right: 54px;
 }
-.main .main-warp .order .order-item li em {
-  font-style: normal;
-  float: left;
-  margin-left: 20px;
-  color: #1E1E1E;
+.main .main-warp .order .order-item li:first-child {
+  width: 100%;
+  margin-left: 0;
+  height: 39px;
+  background: rgba(250, 227, 179, 0.3);
 }
-.main .main-warp .order .order-item li em.active {
-  color: #FBCD6C;
+.main .main-warp .order .order-item li:first-child span {
+  width: 80px;
+  margin-left: 54px;
+  border-bottom: 1px solid #434343;
+}
+.main .main-warp .order .order-item li:first-child input {
+  display: none;
+}
+.main .main-warp .order .order-item li:nth-child(5) input {
+  width: 330px;
 }
 .main .main-warp .order .order-item li span {
   font-style: normal;
@@ -452,43 +503,45 @@
   width: 120px;
   float: left;
   color: #999999;
-}
-.main .main-warp .order .order-item li strong {
-  cursor: pointer;
-  color: #377DFF;
-  border-bottom: 1px solid #377DFF;
-  margin-left: 20px;
-}
-.main .main-warp .order .order-item li:first-child {
-  width: 100%;
-  height: 39px;
-  background: rgba(250, 227, 179, 0.3);
-  border-bottom: 1px solid #FAE3B3;
-  margin-left: 0;
-  margin-right: 0;
-}
-.main .main-warp .order .order-item li:first-child span {
-  width: auto;
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  color: #1e1e1e;
   line-height: 38px;
-  margin-left: 15px;
-  border-bottom: 1px solid #434343;
 }
-.main .main-warp .order .order-item:last-child {
-  width: 100%;
-}
-.main .main-warp .order .order-item:last-child li:nth-child(2) i {
-  display: block;
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  background: url("../images/icon/icon_vip.png") no-repeat;
+.main .main-warp .order .order-item li input {
+  width: 370px;
+  height: 36px;
+  border: 1px solid #e2e3e7;
+  border-radius: 8px;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   float: left;
-  margin-left: 4px;
 }
-.main .main-warp .order .order-item:last-child li:nth-child(2) i:last-child {
-  background: url("../images/icon/icon_cer.png") no-repeat;
+.main .main-warp .order .order-item li em {
+  font-size: 12px;
+  font-weight: 500;
+  color: #999999;
+  line-height: 43px;
+  font-style: normal;
+  margin-left: 8px;
+}
+.main .main-warp .order .order-item li .calendar {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url("../images/icon/icon_rl.png") no-repeat;
+  float: left;
+  margin-left: -30px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.main .main-warp .order .order-item .submit {
+  width: 120px;
+  height: 36px;
+  background: #fbcd6c;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 30px;
+  margin-left: 174px;
 }

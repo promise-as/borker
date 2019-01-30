@@ -234,6 +234,7 @@
   font-weight: 500;
   color: #999999;
   line-height: 34px;
+  float: left;
 }
 .main .main-warp .order-state .state select {
   outline: none;
@@ -248,6 +249,7 @@
           box-sizing: border-box;
   border: 1px solid #999999;
   margin-left: 10px;
+  float: left;
 }
 .main .main-warp .order-state .state input {
   outline: none;
@@ -262,22 +264,7 @@
           box-sizing: border-box;
   border: 1px solid #999999;
   margin-left: 20px;
-}
-.main .main-warp .order-state .state input:nth-child(5) {
-  border: 1px solid #fbcd6c;
-  color: #fbcd6c;
-  text-align: center;
-  padding-left: 0;
-  background-color: white;
-  cursor: pointer;
-}
-.main .main-warp .order-state .state input:nth-child(6) {
-  border: 1px solid #fbcd6c;
-  color: #fbcd6c;
-  text-align: center;
-  padding-left: 0;
-  background-color: white;
-  cursor: pointer;
+  float: left;
 }
 .main .main-warp .order-state .state input.query {
   background: #fbcd6c;
@@ -291,15 +278,39 @@
   color: white;
   cursor: pointer;
 }
+.main .main-warp .order-state .state .add_gathering_order {
+  width: 156px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #fbcd6c;
+  color: #fbcd6c;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  float: left;
+  margin-left: 20px;
+}
+.main .main-warp .order-state .state .batch_add_order {
+  width: 160px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #fbcd6c;
+  color: #fbcd6c;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  float: left;
+  margin-left: 20px;
+}
 .main .main-warp .order-state .state:last-child {
   margin-top: 10px;
 }
 .main .main-warp .order-state .state:last-child input {
   float: left;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 .main .main-warp .order-state .state:last-child input:first-child {
-  margin-left: 70px;
+  margin-left: 65px;
 }
 .main .main-warp .order-content {
   height: 550px;

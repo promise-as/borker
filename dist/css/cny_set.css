@@ -6,7 +6,7 @@
   margin-right: auto;
   background: #efefef;
 }
-/*操作日志*/
+/*日志*/
 .match-mask {
   position: fixed;
   top: 0;
@@ -159,7 +159,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-/*编辑设置*/
+/*编辑*/
 .edit-mask {
   position: fixed;
   top: 0;
@@ -220,6 +220,15 @@
 .edit-mask .modal .model-content .content {
   width: 100%;
   height: 100%;
+}
+.edit-mask .modal .model-content .content .verification-code {
+  margin-bottom: 19px;
+}
+.edit-mask .modal .model-content .content .verification-code > span {
+  color: #999999;
+}
+.edit-mask .modal .model-content .content .verification-code > input {
+  margin-left: 6px;
 }
 .edit-mask .modal .model-content .content .mms-verification {
   width: 100%;
@@ -478,6 +487,102 @@
   color: #ffffff;
 }
 .set-mask .modal .model-content .content .btn input.active {
+  background: #fbcd6c;
+  color: #ffffff;
+}
+/*设置成功*/
+.set-succeed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+.set-succeed .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.set-succeed .modal {
+  width: 370px;
+  height: 262px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.set-succeed .modal .model-header {
+  width: 100%;
+  height: 40px;
+  padding: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fae3b3;
+}
+.set-succeed .modal .model-header > span {
+  font-size: 14px;
+  float: left;
+  font-weight: bold;
+  color: #181818;
+}
+.set-succeed .modal .model-header > i {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url("../images/icon/icon_popup_close.png") no-repeat;
+  float: right;
+  cursor: pointer;
+}
+.set-succeed .modal .model-content {
+  width: 100%;
+  background-color: white;
+  padding: 42px 104px 36px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.set-succeed .modal .model-content .content {
+  width: 100%;
+  height: 100%;
+}
+.set-succeed .modal .model-content .content .content-img {
+  width: 76px;
+  height: 77px;
+  background: url("../images/icon/icon_order.png") no-repeat center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.set-succeed .modal .model-content .content .text {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e1e1e;
+  line-height: 18px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.set-succeed .modal .model-content .content .btn {
+  width: 90px;
+  height: 36px;
+  border: 1px solid #fbcd6c;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fbcd6c;
+  cursor: pointer;
+  outline: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.set-succeed .modal .model-content .content .btn:hover {
   background: #fbcd6c;
   color: #ffffff;
 }

@@ -18,7 +18,7 @@
 <div id="app">
 
   <div class="cash-out">
-    <!--编辑弹框-->
+    <!--编辑-->
     <div class="edit-mask">
       <div class="mask"></div>
       <div class="modal">
@@ -50,7 +50,7 @@
         </form>
       </div>
     </div>
-    <!--操作日志-->
+    <!--日志-->
     <div class="match-mask">
       <div class="mask"></div>
       <div class="wrap">
@@ -84,9 +84,9 @@
       </div>
     </div>
 
-    <!--服务器设置弹框-->
+    <!--服务器设置-->
     <div class="set-mask" v-show="cashOutSet">
-    <!--<div class="set-mask" v-show="true">-->
+      <!--<div class="set-mask" v-show="true">-->
       <div class="mask"></div>
       <div class="modal">
         <form action="#">
@@ -127,6 +127,28 @@
                        @click="closeCashOutSet"
                 >
               </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--设置成功-->
+    <div class="set-succeed" v-show="setSucceed">
+    <!--<div class="set-succeed" v-show="true">-->
+      <div class="mask"></div>
+      <div class="modal">
+        <form action="#">
+          <div class="model-header">
+            <span>编辑</span>
+            <i @click="closeSucceed"></i>
+          </div>
+          <div class="model-content">
+            <div class="content">
+              <div class="content-img"></div>
+              <p class="text">设置成功！</p>
+              <input type="button" value="关闭"
+                     class="btn" @click="closeSucceed">
             </div>
           </div>
         </form>

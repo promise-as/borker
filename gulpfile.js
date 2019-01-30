@@ -71,8 +71,8 @@ gulp.task('watch', ['default'], function () {
     root: 'dist',  // 访问的目录
     livereload: true,
     // port: 4000,
-    // host: '192.168.3.68', // 公司ip地址
-    host: '192.168.123.74', // 宿舍ip地址
+    host: '192.168.3.68', // 公司ip地址
+    // host: '192.168.123.74', // 宿舍ip地址
     port: 5000,
   })
   // 打开网页
@@ -80,8 +80,8 @@ gulp.task('watch', ['default'], function () {
   // open("http://192.168.3.68:5000")
   // open("http://192.168.123.74:5000");
 
-  // open("http://192.168.3.68:5000/gathering.html");
-  open("http://192.168.123.74:5000/login.html");
+  open("http://192.168.3.68:5000/login.html");
+  // open("http://192.168.123.74:5000/login.html");
   // 配置监视任务
   gulp.watch('./src/js/*.js', ['minifyjs'])
   gulp.watch('./src/less/*.less', ['minifycss'])

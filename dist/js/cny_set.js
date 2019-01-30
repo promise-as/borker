@@ -64,21 +64,14 @@ var app = new Vue({
 
     // 兑出设置
     cashOutSet: false,
+    setSucceed: false,
     smsCode: '服务器一'
   },
 
   methods: {
     submitSmsCode: function submitSmsCode() {
-      axios.post('url').then(function (response) {
-        // handle success
-        console.log(response);
-      }).catch(function (error) {
-        // handle error
-        console.log(error);
-      }).then(function () {
-        // always executed
-      });
       this.cashOutSet = false;
+      this.setSucceed = true;
     },
 
     addServer: function addServer() {
@@ -86,6 +79,10 @@ var app = new Vue({
     },
     closeCashOutSet: function closeCashOutSet() {
       this.cashOutSet = false;
+    },
+
+    closeSucceed: function closeSucceed() {
+      this.setSucceed = false;
     }
   }
 });

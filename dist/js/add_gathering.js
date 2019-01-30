@@ -29,52 +29,24 @@ var app = new Vue({
     isShowRemitMsg: false,
     submitRemitMsgBtn: ['确认', '取消'],
     submitRemitMsgBtnIndex: 0,
-    orderData: [[{
+    orderData: [{
       key: "订单信息"
     }, {
-      key: "收款订单编号: ",
-      val: "201808150303030001"
+      key: "*收款公司名称：",
+      val: ""
     }, {
-      key: "支付单号: ",
-      val: "1500022135"
+      key: "*付款公司名称：",
+      val: ""
     }, {
-      key: "订单状态: ",
-      val: "服务商已打款"
+      key: "*产片名称：",
+      val: ""
     }, {
-      key: "收款金额(USTD): ",
-      val: "1000"
+      key: "*收款金额：",
+      val: ""
     }, {
-      key: "经纪商: ",
-      val: "CPT"
-    }], [{
-      key: "收款信息"
-    }, {
-      key: "收款金额: ",
-      val: "￥7000"
-    }, {
-      key: "付款人姓名: ",
-      val: "张三"
-    }, {
-      key: "付款人银行: ",
-      val: "农业银行 广东茂名市茂东支行"
-    }, {
-      key: "业务联络人: ",
-      val: "6228 4811 7674 6694 972"
-    }, {
-      key: "收款凭证: ",
-      val: "查看凭证"
-    }], [{
-      key: "服务商信息"
-    }, {
-      key: "服务商名称: ",
-      val: "玉米蒸"
-    }, {
-      key: "服务次数: ",
-      val: "10010"
-    }, {
-      key: "平均确认时长: ",
-      val: "00:05:00"
-    }]],
+      key: "*截止日期：",
+      val: ""
+    }],
     remark: '1111111111111',
 
     carouselImg: ['./images/icon/logo_abc.png', './images/icon/logo_bcc.png', './images/icon/logo_ccb.png', './images/icon/logo_cm.png']
@@ -88,9 +60,6 @@ var app = new Vue({
     },
     closeRemitMsg: function closeRemitMsg() {
       this.isShowRemitMsg = false;
-    },
-    showRemitMsg: function showRemitMsg() {
-      this.isShowRemitMsg = true;
     },
     btnIndexTab: function btnIndexTab(index) {
       this.submitRemitMsgBtnIndex = index;
