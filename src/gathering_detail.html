@@ -15,35 +15,6 @@
 <body>
 <div id="app">
   <div class="order-detail">
-    <!--凭证-->
-    <div class="voucher-mask" v-show="cashOutOrderDetailIsShow">
-    <!--<div class="voucher-mask" v-if="true">-->
-      <div class="mask"></div>
-      <div class="wrap">
-        <div class="modal">
-          <div class="model-header">
-            <i></i>
-            <span>查看凭证</span>
-            <em @click="closeVoucher"></em>
-          </div>
-
-          <div class="layui-carousel" id="carousel">
-            <div carousel-item="">
-              <img v-for="(item, index) in carouselImg"
-                   :src="item" :alt="index">
-            </div>
-          </div>
-          <!--<div class="model-bottom">
-            <div class="bottom">
-              <input type="button">
-              <input type="button">
-              <input type="button">
-              <input type="button">
-            </div>
-          </div>-->
-        </div>
-      </div>
-    </div>
 
     <!--发送邮件-->
     <div class="remittance-mask" v-show="isShowRemitMsg">
@@ -71,7 +42,7 @@
                 <textarea v-model="remark"></textarea>
               </div>
               <div class="btn">
-                <input type="button" value="确认" @click="closeRemitMsg">
+                <input type="button" value="确认" @click="confirmRemitMsg">
                 <input type="button" value="取消" @click="cancelRemitMsg">
               </div>
             </div>
@@ -122,7 +93,7 @@
             <span id="zfk"></span>
             <span id="watt"></span>
             <span id="hms"></span>
-            <span>xiaodao</span>
+            <span>{{userName}}</span>
           </div>
         </div>
         <a class="top-logout" href="./login.html"></a>
@@ -151,7 +122,3 @@
 </html>
 <script src="./js/gathering_detail.js"></script>
 <script src="./js/read_cache.js"></script>
-<script src="./js/img_upload.js"></script>
-<script src="./js/common.js"></script>
-<script src="./js/layui.js?t=1545041465443"></script>
-<script src="./js/voucher_carousel.js"></script>

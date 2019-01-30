@@ -789,3 +789,9 @@
   background-color: white;
   clear: both;
 }
+.layui-table-tool {
+  display: none;
+}
+.layui-table-page {
+  display: none;
+}

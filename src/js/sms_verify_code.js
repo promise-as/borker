@@ -1,31 +1,21 @@
 $(function () {
-  var $btn = $("#getCode")[0]
+
+  var $btn = $("#getCode")[0];
   // 点击click
-  $btn.onclick = function () {
+  $($btn).click(function () {
+
     // 倒计时效果 getCode回调函数 获取验证码api
     // 总时间
-    var totalTime = 10
-    axios.get('url')
-      .then(function (response) {
-        // handle success
-        console.log(response)
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error)
-      })
-      .then(function () {
-        // always executed
-      })
+    var totalTime = 60
 
     countdown($(this), totalTime)
-  }
+  })
   // 页面刷新
   refresh($($btn))
 
   // 倒计时效果
   function countdown(obj, totalTime) {
-    if (obj.val() === "获取验证码") {
+    if (obj.val() === "发送验证码") {
       // 剩余时间
       var remainTime = totalTime
       obj.val('(' + totalTime + ')' + "秒后重新发送")

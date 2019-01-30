@@ -1,0 +1,153 @@
+/*经纪商 自定义页面风格*/
+
+.cash-out {
+  width: 1200px;
+  height: 820px;
+  //border: 1px solid #cccccc;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(239, 239, 239, 1);
+
+}
+
+.main {
+  float: right;
+  .main-top {
+    width: 1030px;
+    height: 60px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
+    //border: 1px solid #cccccc;
+    .top-content {
+      width: 970px;
+      height: 60px;
+      //border: 1px solid #000;
+      float: left;
+      font-size: 14px;
+      padding: 23px 20px;
+      box-sizing: border-box;
+      .content-left {
+        font-weight: bold;
+        color: rgba(102, 102, 102, 1);
+        float: left;
+      }
+      .content-right {
+        float: right;
+        color: #999999;
+        span {
+          &:last-child {
+            color: #FBCD6C;
+          }
+        }
+      }
+    }
+    .top-logout {
+      display: block;
+      width: 60px;
+      height: 60px;
+      border-left: 1px solid #EEF0F4;
+      box-sizing: border-box;
+      float: right;
+      background: url("../images/icon/tab_logout.png") no-repeat center;
+    }
+  }
+  .main-warp {
+    width: 1030px;
+    padding: 20px;
+    box-sizing: border-box;
+    .title {
+      font-size: 18px;
+      font-weight: 800;
+      color: rgba(30, 30, 30, 1);
+      line-height: 30px;
+    }
+    .order-state {
+      width:990px;
+      height:663px;
+      background: white;
+      padding-top: 80px;
+      padding-left: 273px;
+      padding-right: 273px;
+      box-sizing: border-box;
+      margin-top: 20px;
+      li{
+        width: 100%;
+        float: left;
+        margin-bottom: 29px;
+        label{
+          > span{
+            display: block;
+            min-width: 100px;
+            float: left;
+          }
+          > input{
+            float: left;
+          }
+        }
+        &:nth-child(2){
+          label{
+            input{
+              width: 320px;
+              color: #377DFF;
+              border-bottom: 1px solid #377DFF;
+            }
+          }
+        }
+        &:nth-child(3){
+          label{
+            input{
+              width: 182px;
+            }
+          }
+        }
+        &:nth-child(4){
+          label{
+            input{
+              width: 36px;
+              height: 36px;
+              background-color: #FAE3B3;
+              margin-right: 13px;
+              cursor: pointer;
+              &:nth-of-type(2){
+                background-color: #FB665A;
+              }
+              &:nth-of-type(3){
+                background-color: #05A648;
+              }
+              &:nth-of-type(4){
+                background-color: #9417E4;
+              }
+              &:nth-of-type(5){
+                background-color: #377DFF;
+              }
+              &:hover{
+                border: 4px solid #AAAAAA;
+                box-sizing: border-box;
+              }
+            }
+          }
+        }
+      }
+      .btn{
+        text-align: center;
+        input{
+          width:90px;
+          height:36px;
+          border:1px solid rgba(251,205,108,1);
+          border-radius:8px;
+          cursor: pointer;
+          background: transparent;
+          font-size:14px;
+          font-weight:bold;
+          color:rgba(251,205,108,1);
+          line-height:30px;
+          margin-right: 30px;
+          &:hover{
+            background:rgba(251,205,108,1);
+            color:rgba(255,255,255,1);
+          }
+        }
+      }
+    }
+  }
+}

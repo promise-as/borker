@@ -11,7 +11,7 @@ var app = new Vue({
       {
         icon: "icon-cash-out",
         text: "兑出订单管理",
-        href: "cash_out.json.html"
+        href: "cash_out.html"
       },
       {
         icon: "icon-gathering",
@@ -26,9 +26,11 @@ var app = new Vue({
       {
         icon: "icon-custom",
         text: "自定义风格页面",
-        href: "javascript:;"
+        href: "custom.html"
       }
     ],
+    userName: '张三',
+
     orderIndex: 0, // 0:全部,1:待处理
     orderText: ['全部订单', '待处理订单'],
 
@@ -41,37 +43,22 @@ var app = new Vue({
     // 兑出订单
     matchOrderFinishData: [
       {
-        title: '服务商（user2）确认已收款',
+        title: '经纪商（user1）确认',
         zfk: '2018.08.03',
         hms: '14:20:20',
       },
       {
-        title: '服务商（user2）恢复订单，备注：120min收到应收款',
+        title: '服务商（user2）确认打款',
         zfk: '2018.08.03',
         hms: '14:20:20',
       },
       {
-        title: '运营方（admin）取消订单，备注：经核实90min未收到应收款',
+        title: '经纪商（user1）创建出金订单',
         zfk: '2018.08.03',
         hms: '14:20:20',
-      },
-      {
-        title: '服务商（user2）确认未收款，备注：30min未收到应收款',
-        zfk: '2018.08.03',
-        hms: '14:20:20',
-      },
-      {
-        title: '客户确认转账',
-        zfk: '2018.08.03',
-        hms: '14:20:20',
-      },
-      {
-        title: '创建入金订单',
-        zfk: '2018.08.03',
-        hms: '14:20:20',
-      },
+      }
     ],
-    finishIndex: 3, // 日志完成的步骤(从0开始)
+    finishIndex: 1, // 日志完成的步骤(从0开始)
   },
 
   mounted: function () {

@@ -7,117 +7,6 @@
   background: #efefef;
   position: relative;
 }
-/*凭证 弹出框*/
-.voucher-mask .mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.voucher-mask .wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-.voucher-mask .wrap .modal {
-  width: 1200px;
-  height: 735px;
-  background: transparent;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.voucher-mask .wrap .modal .model-header {
-  width: 100%;
-  height: 40px;
-  padding: 13px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.voucher-mask .wrap .modal .model-header > i {
-  display: block;
-  width: 20px;
-  height: 18px;
-  background: url("../images/icon/icon_popup_pic.png") no-repeat;
-  float: left;
-  margin-right: 6px;
-}
-.voucher-mask .wrap .modal .model-header > span {
-  font-size: 14px;
-  font-weight: bold;
-  float: left;
-  color: white;
-}
-.voucher-mask .wrap .modal .model-header > em {
-  display: block;
-  width: 14px;
-  height: 14px;
-  background: url("../images/icon/icon_popup_close.png") no-repeat;
-  float: right;
-  cursor: pointer;
-}
-.voucher-mask .wrap .modal .layui-carousel {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background-color: transparent;
-}
-.voucher-mask .wrap .modal .layui-carousel > [carousel-item]:before {
-  top: -15px;
-}
-.voucher-mask .wrap .modal .layui-carousel > [carousel-item] > * {
-  background-color: transparent;
-}
-.voucher-mask .wrap .modal .model-bottom {
-  width: 100%;
-  height: 60px;
-  background: rgba(1, 9, 16, 0.4);
-  position: absolute;
-  bottom: 0;
-  display: none;
-}
-.voucher-mask .wrap .modal .model-bottom .bottom {
-  width: 220px;
-  height: 60px;
-  padding-top: 21px;
-  padding-bottom: 21px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-}
-.voucher-mask .wrap .modal .model-bottom .bottom input {
-  cursor: pointer;
-}
-.voucher-mask .wrap .modal .model-bottom .bottom input:first-child {
-  width: 20px;
-  height: 17px;
-  background: url("../images/icon/icon_popup_left.png") no-repeat;
-}
-.voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(2) {
-  width: 19px;
-  height: 20px;
-  background: url("../images/icon/icon_popup_rotate.png") no-repeat;
-  margin-left: 47px;
-  padding-right: 47px;
-}
-.voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(3) {
-  width: 20px;
-  height: 20px;
-  background: url("../images/icon/icon_popup_apli.png") no-repeat;
-  margin-right: 47px;
-}
-.voucher-mask .wrap .modal .model-bottom .bottom input:nth-child(4) {
-  width: 20px;
-  height: 18px;
-  background: url("../images/icon/icon_popup_right.png") no-repeat;
-}
 /*发送邮件 弹出框*/
 .remittance-mask .mask {
   position: absolute;
@@ -244,14 +133,6 @@
   color: #ffffff;
 }
 /*发送成功*/
-.set-succeed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-}
 .set-succeed .mask {
   position: absolute;
   top: 0;

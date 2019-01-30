@@ -26,9 +26,11 @@ var app = new Vue({
       {
         icon: "icon-custom",
         text: "自定义风格页面",
-        href: "javascript:;"
+        href: "custom.html"
       }
     ],
+    userName: '张三',
+
     assets: [
       {title: '当前资产', USDT: '10000.00', CNY: '70000.00'},
       {
@@ -62,6 +64,7 @@ var app = new Vue({
   },
   // 组件已经挂载
   mounted: function(){
+
     var that = this
     // 1秒之后消息框显示
     if (this.isHasOrder === false) {
@@ -69,33 +72,15 @@ var app = new Vue({
         that.isHasOrder = true
       }, 1000)
     }
-
-    // 1秒之后显示邮件发送成功
-    setTimeout(function () {
-      that.isShowSendSucceed = false
-    }, 1000)
   },
   // 组件已更新
   updated: function(){
     var that = this
-    // 3秒之后消息框隐藏
+    // 2秒之后消息框隐藏
     if (this.isHasOrder === true) {
       setTimeout(function () {
         that.isHasOrder = false
-      }, 3000)
+      }, 2000)
     }
   },
-  // 方法
-  methods: {
-    showSendEmails: function (){
-      this.isShowSendEmail = true
-    },
-    closeSendEmails: function (){
-      this.isShowSendEmail = false
-    },
-    closeSendSucceed: function (){
-      this.isShowSendSucceed = false
-    },
-
-  }
 })

@@ -6,12 +6,12 @@ var app = new Vue({
       {
         icon: "icon-match",
         text: "兑入订单管理",
-        href: "index.html"
+        href: "match.html"
       },
       {
         icon: "icon-cash-out",
         text: "兑出订单管理",
-        href: "cash_out.json.html"
+        href: "cash_out.html"
       },
       {
         icon: "icon-gathering",
@@ -26,9 +26,11 @@ var app = new Vue({
       {
         icon: "icon-custom",
         text: "自定义风格页面",
-        href: "javascript:;"
+        href: "custom.html"
       }
     ],
+    userName: '张三',
+
     cashOutOrderDetailIsShow: false,
     isShowRemitMsg: false,
     submitRemitMsgBtn: ['确认', '取消'],
@@ -113,13 +115,10 @@ var app = new Vue({
     setSucceed: false,
   },
   methods: {
-    voucher: function () {
-      this.cashOutOrderDetailIsShow = true
-    },
-    closeVoucher: function () {
-      this.cashOutOrderDetailIsShow = false
-    },
     closeRemitMsg: function () {
+      this.isShowRemitMsg = false
+    },
+    confirmRemitMsg: function () {
       this.isShowRemitMsg = false
       this.setSucceed = true
     },
@@ -129,9 +128,6 @@ var app = new Vue({
 
     showRemitMsg: function () {
       this.isShowRemitMsg = true
-    },
-    btnIndexTab: function () {
-      this.submitRemitMsgBtnIndex = index
     },
     closeSucceed: function () {
       this.setSucceed = false

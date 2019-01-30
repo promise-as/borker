@@ -5,7 +5,7 @@ $(function () {
   var $closeLog = $(".closeLog")
 
   layui.config({
-    version: '1545041465443' //为了更新 js 缓存，可忽略
+    // version: '1545041465443' //为了更新 js 缓存，可忽略
   })
 
   layui.use(
@@ -83,23 +83,6 @@ $(function () {
       //注：tool 是工具条事件名，order 是 table 原始容器的属性 lay-filter="对应的值"
       table.on('tool(order)', function (obj) {
         var layEvent = obj.event //获得 lay-event 对应的值
-        if (layEvent === 'match_detail') {
-          // 下标
-          var detailParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");
-          this.href = `./match_detail.html?index=${detailParentIndex}`
-
-        } else if (layEvent === 'match_log') {
-          // 下标
-          var logParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");
-          console.log(111, logParentIndex)
-          // 日志弹窗显示
-          $logDialog.css("display", "block");
-          // 日志关闭
-          $closeLog.click(function () {
-            $logDialog.css("display", "none");
-          })
-        }
-
         if (layEvent === 'cash_out_detail') {
           // 下标
           var detailParentIndex = $($($(this)[0]).parents()[2]).attr("data-index");

@@ -8,6 +8,7 @@
   margin-right: auto;
   background: rgba(239, 239, 239, 1);
 }
+
 /*操作日志*/
 .match-mask {
   position: fixed;
@@ -68,7 +69,10 @@
         //height: 100%;
         ul{
           float: left;
-          width: 100%;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-bottom: 30px;
           li {
             //border: 1px solid pink;
             position: relative;
@@ -115,7 +119,7 @@
               }
             }
             .text {
-              float: left;
+              float: right;
               p {
                 line-height: 18px;
                 &:first-child {
@@ -481,10 +485,11 @@
           font-weight: 500;
           color: rgba(153, 153, 153, 1);
           line-height: 34px;
+          float: left;
         }
         select {
           outline: none;
-          width: 156px;
+          width: 160px;
           height: 36px;
           border-radius: 8px;
           font-size: 14px;
@@ -494,10 +499,11 @@
           box-sizing: border-box;
           border: 1px solid #999999;
           margin-left: 10px;
+          float: left;
         }
         input {
           outline: none;
-          width: 156px;
+          width: 160px;
           height: 36px;
           border-radius: 8px;
           font-size: 14px;
@@ -507,28 +513,14 @@
           box-sizing: border-box;
           border: 1px solid #999999;
           margin-left: 20px;
-          &:nth-child(5){
-            border:1px solid rgba(251,205,108,1);
-            color:rgba(251,205,108,1);
-            text-align: center;
-            padding-left: 0;
-            background-color: white;
-            cursor: pointer;
-          }
-          &[type='button']:last-child{
-            border:1px solid rgba(251,205,108,1);
-            color:rgba(251,205,108,1);
-            text-align: center;
-            padding-left: 0;
-            background-color: white;
-            cursor: pointer;
-          }
+          float: left;
         }
         input.query {
           background: rgba(251, 205, 108, 1);
           border: 0;
           color: white;
           cursor: pointer;
+          //margin-right: 16px;
         }
         input.export {
           background: rgba(104, 227, 171, 1);
@@ -536,11 +528,37 @@
           color: white;
           cursor: pointer;
         }
+        .add_gathering_order{
+          width: 156px;
+          height: 36px;
+          line-height: 36px;
+          border:1px solid rgba(251,205,108,1);
+          color:rgba(251,205,108,1);
+          text-align: center;
+          background-color: white;
+          border-radius: 8px;
+          float: left;
+          margin-left: 20px;
+        }
+        .batch_add_order{
+          width: 160px;
+          height: 36px;
+          line-height: 36px;
+          border:1px solid rgba(251,205,108,1);
+          color:rgba(251,205,108,1);
+          text-align: center;
+          background-color: white;
+          border-radius: 8px;
+          float: left;
+          margin-left: 20px;
+        }
+
         &:last-child{
           margin-top: 10px;
           input{
             float: right;
-            margin-left: 25px;
+            margin-left: 16px;
+            margin-right: 4px;
           }
         }
       }
@@ -553,3 +571,4 @@
     }
   }
 }
+

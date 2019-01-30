@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>批量添加兑出申请</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/batch_add_apply.css">
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+<div id="app">
+  <div class="order-detail">
+
+    <div class="sidebar">
+      <a class="logo" href="./index.html">NOWPAY</a>
+      <a class="sidebar-item"
+         v-for="(item,index) in sidebarNavList"
+         :class="index === 1?'sidebar-active':''"
+         :href="item.href"
+      >
+        <i :class="item.icon"></i>
+        <span>{{item.text}}</span>
+      </a>
+    </div>
+    <div class="main">
+      <div class="main-top">
+        <div class="top-content">
+          <div class="content-left">欢迎使用NOVOXPAY出入金系统！</div>
+          <div class="content-right">
+            <span id="zfk"></span>
+            <span id="watt"></span>
+            <span id="hms"></span>
+            <span>{{userName}}</span>
+          </div>
+        </div>
+        <a class="top-logout" href="./login.html"></a>
+      </div>
+      <div class="main-warp">
+        <div class="header">
+          <span>批量添加兑出申请</span>
+          <a href="cash_out.html">返回</a>
+
+        </div>
+        <div class="order">
+          <form action="#">
+            <div class="import">
+              <li>
+                <span>*选择文件：</span>
+                <input id="upFile" type="file" style="display:none">
+                <div class="input-append">
+                  <input id="photoCover" class="input-large" type="text">
+                  <a class="btn" onclick="$('input[id=upFile]').click();">浏览</a>
+                </div>
+
+              </li>
+              <li>
+                <label for="download">
+                  <span>下载模板：</span>
+                  <input type="text" id="download" v-model="downloadTemplate">
+                </label>
+              </li>
+              <a href="./batch_add_apply_detail.html"
+                 class="confirm-import">确认导入</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script src="js/batch_add_apply.js"></script>
+<script src="js/read_cache.js"></script>
+<script src="./js/upload_file.js"></script>

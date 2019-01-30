@@ -23,14 +23,33 @@ var app = new Vue({
     }, {
       icon: "icon-custom",
       text: "自定义风格页面",
-      href: "javascript:;"
+      href: "custom.html"
     }],
+    userName: '张三',
 
-    // 发邮件
-    isShowSendEmail: false,
-    // 发送成功
-    isShowSendSucceed: false,
-    // 汇率设置
-    cnySetText: ['汇率设置', '服务器设置']
+    merchant: '', // 商户
+    currentBalance: '1000USDT/￥7000.00', // 当前余额
+    freezeBalance: '10USDT/￥70.00', // 冻结金额
+    ableCashOutBalance: '990US', // 可兑出金额
+    cashOutBalance: '', // 兑出金额
+    cashOutOrderId: '', // 兑出单号
+
+    payeeName: '', // 收款人姓名
+    payeeBankName: '', // 收款人开户银行
+    payeeAccount: '', // 收款账号
+    smsCode: '', // 短信验证码
+
+    setSucceed: false
+  },
+
+  methods: {
+    closeRemitMsg: function closeRemitMsg() {
+      this.isShowRemitMsg = false;
+      this.setSucceed = true;
+    },
+
+    closeSucceed: function closeSucceed() {
+      this.setSucceed = false;
+    }
   }
 });

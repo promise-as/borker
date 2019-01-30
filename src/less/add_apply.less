@@ -2,7 +2,7 @@
 
 .order-detail {
   width: 1200px;
-  height: 943px;
+  height: 950px;
   //border: 1px solid #cccccc;
   margin-left: auto;
   margin-right: auto;
@@ -10,113 +10,16 @@
   position: relative;
 
 }
-/*凭证 弹出框*/
-.voucher-mask {
-  //position: fixed;
-  //top: 0;
-  //left: 0;
-  //right: 0;
-  //bottom: 0;
-  .mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  .wrap {
-    //transform: translate(-50%, -50%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    .modal {
-      width: 1200px;
-      height: 735px;
-      background: transparent;
-      box-sizing: border-box;
-      .model-header {
-        width: 100%;
-        height: 40px;
-        padding: 13px;
-        box-sizing: border-box;
-        > span {
-          font-size: 14px;
-          font-weight: bold;
-          float: left;
-          color: white;
-        }
-        > i {
-          display: block;
-          width: 14px;
-          height: 14px;
-          background: url("../images/icon/icon_popup_close.png") no-repeat;
-          float: right;
-          cursor: pointer;
-        }
-      }
-      .model-content {
-        width: 450px;
-        height: 281px;
-        border: 1px solid white;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-      }
-      .model-bottom {
-        width: 100%;
-        height: 60px;
-        background: rgba(1, 9, 16, 0.4);
-        position: absolute;
-        bottom: 0;
-        .bottom{
-          width: 220px;
-          height: 60px;
-          padding-top: 21px;
-          padding-bottom: 21px;
-          box-sizing: border-box;
-          //border: 1px solid white;
-          margin-left: auto;
-          margin-right: auto;
-          input{
-            cursor: pointer;
-            &:first-child{
-              width: 20px;
-              height: 17px;
-              background: url("../images/icon/icon_popup_left.png") no-repeat;
-            }
-            &:nth-child(2){
-              width: 19px;
-              height: 20px;
-              background: url("../images/icon/icon_popup_rotate.png") no-repeat;
-              margin-left: 47px;
-              padding-right: 47px;
-            }
-            &:nth-child(3){
-              width: 20px;
-              height: 20px;
-              background: url("../images/icon/icon_popup_apli.png") no-repeat;
-              margin-right: 47px;
-            }
-            &:nth-child(4){
-              width: 20px;
-              height: 18px;
-              background: url("../images/icon/icon_popup_right.png") no-repeat;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 
-/*提交打款信息 弹出框*/
-.remittance-mask {
+/*提交成功*/
+.submit-succeed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  //display: none;
   .mask {
     position: absolute;
     top: 0;
@@ -127,9 +30,9 @@
     background-color: rgba(0, 0, 0, 0.4);
   }
   .modal {
-    width:470px;
-    height:397px;
-    background: transparent;
+    width: 370px;
+    height: 262px;
+    //background: transparent;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -141,12 +44,12 @@
       height: 40px;
       padding: 13px;
       box-sizing: border-box;
-      background:rgba(250,227,179,1);
+      background: rgba(250, 227, 179, 1);
       > span {
         font-size: 14px;
         float: left;
-        font-weight:bold;
-        color:rgba(24,24,24,1);
+        font-weight: bold;
+        color: rgba(24, 24, 24, 1);
       }
       > i {
         display: block;
@@ -159,114 +62,48 @@
     }
     .model-content {
       width: 100%;
-      height: 357px;
+      //height: 222px;
       background-color: white;
-      padding: 30px 61px 41px 59px;
+      padding: 42px 104px 36px;
       box-sizing: border-box;
-      .content{
+      .content {
         width: 100%;
         height: 100%;
-        .succeed-failure {
-          //border: 1px solid #000;
-          float: left;
-          margin-bottom: 20px;
-          .item {
-            height: 14px;
-            font-size: 12px;
-            float: left;
-            margin-right: 49px;
-            > label{
-              float: left;
-              .radio {
-                display: none;
-                &:checked + i {
-                  background: url("../images/icon/icon_dianji.png") no-repeat;
-                  background-size: contain;
-                  border: 0;
-                }
-              }
-            }
-            > span{
-              float: left;
-              color: #1E1E1E;
-              font-size: 14px;
-              margin-left: 5px;
-            }
-          }
+        .content-img {
+          //width: 100%;
+          width: 76px;
+          height: 77px;
+          background: url("../images/icon/icon_order.png") no-repeat center;
+          margin-left: auto;
+          margin-right: auto;
         }
-        .upload{
-          width: 100%;
-          height: 54px;
-          //border: 1px solid #cccccc;
-          clear: both;
-          margin-bottom: 20px;
-          span{
-            font-size:14px;
-            font-weight:500;
-            color:rgba(153,153,153,1);
-            line-height:43px;
-            float: left;
-          }
-          label{
-            width:54px;
-            height:54px;
-            border:1px solid rgba(226,227,231,1);
-            border-radius:4px;
-            float: left;
-            background: url("../images/icon/icon_popup_close1.png") no-repeat center;
-            cursor: pointer;
-            input{
-              width:54px;
-              visibility: hidden;
-            }
-          }
-
+        .text {
+          text-align: center;
+          font-size: 14px;
+          font-weight: 500;
+          color: rgba(30, 30, 30, 1);
+          line-height: 18px;
+          margin-top: 20px;
+          margin-bottom: 30px;
         }
-        .remark{
-          clear: both;
-          height:122px;
-          margin-bottom: 20px;
-          span{
-            font-size:14px;
-            font-weight:500;
-            color:rgba(153,153,153,1);
-            line-height:43px;
-            float: left;
-          }
-          textarea{
-            float: right;
-            width:304px;
-            height:122px;
-            border:1px solid rgba(226,227,231,1);
-            padding: 10px;
-            box-sizing: border-box;
-            border-radius:4px;
-            outline: none;
-            resize: none;
-          }
-        }
-        .btn{
-          width: 304px;
+        .btn {
+          width: 90px;
           height: 36px;
-          //border: 1px solid #cccccc;
-          clear: both;
-          float: right;
-          input{
-            width:120px;
-            height:36px;
-            border:1px solid rgba(251,205,108,1);
-            border-radius:8px;
-            background: transparent;
-            font-size:14px;
-            font-weight:bold;
-            color:rgba(251,205,108,1);
-            cursor: pointer;
-            outline: none;
-            margin-right: 20px;
-            &.active{
-              background:rgba(251,205,108,1);
-              color:rgba(255,255,255,1);
-            }
+          border: 1px solid rgba(251, 205, 108, 1);
+          border-radius: 8px;
+          background: transparent;
+          font-size: 14px;
+          font-weight: bold;
+          color: rgba(251, 205, 108, 1);
+          cursor: pointer;
+          outline: none;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          //margin: 0 10px;
+          &:hover {
+            background: rgba(251, 205, 108, 1);
+            color: rgba(255, 255, 255, 1);
           }
         }
       }
@@ -477,6 +314,8 @@
                   color:rgba(255,255,255,1);
                   line-height:36px;
                   float: left;
+                  outline: none;
+                  cursor: pointer;
                 }
                 &:first-child{
                   input{
@@ -486,6 +325,24 @@
                   }
                 }
               }
+              .smsVerify{
+                //width:90px;
+                //height:36px;
+                padding: 10px;
+                box-sizing: border-box;
+                background:rgba(251,205,108,1);
+                border-radius:8px;
+                float: left;
+                font-size:12px;
+                font-weight:800;
+                color:rgba(255,255,255,1);
+                cursor: pointer;
+                &[disabled]{
+                  background-color: #DFDFDF;
+                  color: #999999;
+                }
+              }
+
               .btn{
                 width:120px;
                 height:36px;
@@ -497,6 +354,7 @@
                 line-height:30px;
                 margin-left: 130px;
                 cursor: pointer;
+                outline: none;
               }
             }
           }

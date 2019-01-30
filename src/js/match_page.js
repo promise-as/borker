@@ -4,10 +4,6 @@ $(function () {
   // 关闭日志
   var $closeLog = $(".closeLog")
 
-  layui.config({
-    version: '1545041465443' //为了更新 js 缓存，可忽略
-  })
-
   layui.use(
     ['laydate', 'laypage', 'layer', 'table', 'element'],
     function () {
@@ -96,24 +92,7 @@ $(function () {
         } else if (layEvent === 'match_log') {
           // 下标
           var logParentIndex = $($($(this)[0]).parents()[2]).attr("data-index")
-          console.log(111, logParentIndex)
-          // 日志弹窗显示
-          $logDialog.css("display", "block")
-          // 日志关闭
-          $closeLog.click(function () {
-            $logDialog.css("display", "none")
-          })
-        }
-
-        if (layEvent === 'cash_out_detail') {
-          // 下标
-          var detailParentIndex = $($($(this)[0]).parents()[2]).attr("data-index")
-          this.href = `./cash_out_detail.html?index=${detailParentIndex}`
-
-        } else if (layEvent === 'cash_out_log') {
-          // 下标
-          var logParentIndex = $($($(this)[0]).parents()[2]).attr("data-index")
-          console.log("日志下标: ", logParentIndex)
+          // console.log(111, logParentIndex)
           // 日志弹窗显示
           $logDialog.css("display", "block")
           // 日志关闭

@@ -11,7 +11,7 @@ var app = new Vue({
       {
         icon: "icon-cash-out",
         text: "兑出订单管理",
-        href: "cash_out.json.html"
+        href: "cash_out.html"
       },
       {
         icon: "icon-gathering",
@@ -26,9 +26,10 @@ var app = new Vue({
       {
         icon: "icon-custom",
         text: "自定义风格页面",
-        href: "javascript:;"
+        href: "custom.html"
       }
     ],
+    userName: '张三',
 
     orderData: [
       [

@@ -1,0 +1,137 @@
+/*经纪商 自定义页面风格*/
+.cash-out {
+  width: 1200px;
+  height: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #efefef;
+}
+.main {
+  float: right;
+}
+.main .main-top {
+  width: 1030px;
+  height: 60px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
+          box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
+}
+.main .main-top .top-content {
+  width: 970px;
+  height: 60px;
+  float: left;
+  font-size: 14px;
+  padding: 23px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.main .main-top .top-content .content-left {
+  font-weight: bold;
+  color: #666666;
+  float: left;
+}
+.main .main-top .top-content .content-right {
+  float: right;
+  color: #999999;
+}
+.main .main-top .top-content .content-right span:last-child {
+  color: #FBCD6C;
+}
+.main .main-top .top-logout {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-left: 1px solid #EEF0F4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: right;
+  background: url("../images/icon/tab_logout.png") no-repeat center;
+}
+.main .main-warp {
+  width: 1030px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.main .main-warp .title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e1e1e;
+  line-height: 30px;
+}
+.main .main-warp .order-state {
+  width: 990px;
+  height: 663px;
+  background: white;
+  padding-top: 80px;
+  padding-left: 273px;
+  padding-right: 273px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 20px;
+}
+.main .main-warp .order-state li {
+  width: 100%;
+  float: left;
+  margin-bottom: 29px;
+}
+.main .main-warp .order-state li label > span {
+  display: block;
+  min-width: 100px;
+  float: left;
+}
+.main .main-warp .order-state li label > input {
+  float: left;
+}
+.main .main-warp .order-state li:nth-child(2) label input {
+  width: 320px;
+  color: #377DFF;
+  border-bottom: 1px solid #377DFF;
+}
+.main .main-warp .order-state li:nth-child(3) label input {
+  width: 182px;
+}
+.main .main-warp .order-state li:nth-child(4) label input {
+  width: 36px;
+  height: 36px;
+  background-color: #FAE3B3;
+  margin-right: 13px;
+  cursor: pointer;
+}
+.main .main-warp .order-state li:nth-child(4) label input:nth-of-type(2) {
+  background-color: #FB665A;
+}
+.main .main-warp .order-state li:nth-child(4) label input:nth-of-type(3) {
+  background-color: #05A648;
+}
+.main .main-warp .order-state li:nth-child(4) label input:nth-of-type(4) {
+  background-color: #9417E4;
+}
+.main .main-warp .order-state li:nth-child(4) label input:nth-of-type(5) {
+  background-color: #377DFF;
+}
+.main .main-warp .order-state li:nth-child(4) label input:hover {
+  border: 4px solid #AAAAAA;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.main .main-warp .order-state .btn {
+  text-align: center;
+}
+.main .main-warp .order-state .btn input {
+  width: 90px;
+  height: 36px;
+  border: 1px solid #fbcd6c;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fbcd6c;
+  line-height: 30px;
+  margin-right: 30px;
+}
+.main .main-warp .order-state .btn input:hover {
+  background: #fbcd6c;
+  color: #ffffff;
+}

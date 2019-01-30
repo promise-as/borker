@@ -33,7 +33,7 @@ $(function () {
   })
 
   layui.config({
-    version: '1545041465443' //为了更新 js 缓存，可忽略
+    // version: '1545041465443' //为了更新 js 缓存，可忽略
   })
 
   layui.use(

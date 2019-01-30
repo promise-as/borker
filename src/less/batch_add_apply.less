@@ -1,0 +1,182 @@
+/*经纪商 批量添加兑入申请页面*/
+
+.order-detail {
+  width: 1200px;
+  height: 803px;
+  //border: 1px solid #cccccc;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(239, 239, 239, 1);
+  position: relative;
+
+}
+
+
+.main {
+  float: right;
+  .main-top {
+    width: 1030px;
+    height: 60px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 7px 1px rgba(37, 35, 33, 0.06);
+    //border: 1px solid #cccccc;
+    .top-content {
+      width: 970px;
+      height: 60px;
+      //border: 1px solid #000;
+      float: left;
+      font-size: 14px;
+      padding: 23px 20px;
+      box-sizing: border-box;
+      .content-left {
+        font-weight: bold;
+        color: rgba(102, 102, 102, 1);
+        float: left;
+      }
+      .content-right {
+        float: right;
+        color: #999999;
+        span {
+          &:last-child {
+            color: #FBCD6C;
+          }
+        }
+      }
+    }
+    .top-logout {
+      display: block;
+      width: 60px;
+      height: 60px;
+      border-left: 1px solid #EEF0F4;
+      box-sizing: border-box;
+      float: right;
+      background: url("../images/icon/tab_logout.png") no-repeat center;
+    }
+  }
+  .main-warp {
+    width: 1030px;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+    //border: 1px solid #cccccc;
+    .header {
+      width: 990px;
+      float: left;
+      margin-bottom: 12px;
+      span {
+        font-size: 18px;
+        font-weight: 800;
+        color: rgba(30, 30, 30, 1);
+        line-height: 30px;
+        float: left;
+      }
+      a {
+        display: block;
+        width: 59px;
+        height: 30px;
+        border: 1px solid rgba(251, 205, 108, 1);
+        box-sizing: border-box;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        color: rgba(251, 205, 108, 1);
+        cursor: pointer;
+        background: transparent;
+        float: right;
+        text-align: center;
+        line-height: 30px;
+        margin-left: 10px;
+      }
+    }
+    .order {
+      clear: both;
+      width:990px;
+      height:660px;
+      background:rgba(255,255,255,1);
+      padding-top: 93px;
+      padding-right: 200px;
+      padding-left: 200px;
+      box-sizing: border-box;
+      .import{
+        width: 100%;
+        height: 200px;
+        //border: 1px solid pink;
+        li{
+          float: left;
+          margin-bottom: 20px;
+          span{
+            color: #999999;
+            float: left;
+            line-height: 36px;
+          }
+          input{
+            width:370px;
+            height:36px;
+            line-height: 38px;
+            border:1px solid rgba(226,227,231,1);
+            border-radius:8px;
+            outline: none;
+            padding-left: 10px;
+            padding-right: 10px;
+            cursor: pointer;
+          }
+          .input-append{
+            float: left;
+            input{
+              float: left;
+            }
+            .btn{
+              width:90px;
+              height:36px;
+              background:rgba(251,205,108,1);
+              border-radius:8px;
+              font-size:14px;
+              font-weight:bold;
+              color:rgba(255,255,255,1);
+              line-height:36px;
+              text-align: center;
+              float: right;
+              margin-left: 10px;
+              cursor: pointer;
+            }
+          }
+
+          .browse{
+            width:90px;
+            height:36px;
+            background:rgba(251,205,108,1);
+            border-radius:8px;
+            border: 0;
+            float: right;
+            font-size:14px;
+            font-weight:bold;
+            color:rgba(255,255,255,1);
+            line-height:30px;
+          }
+          &:nth-child(2){
+            input{
+              border: 0;
+              color: #377DFF;
+              text-decoration: underline;
+              //border-bottom: 1px solid #377DFF;
+            }
+          }
+        }
+        .confirm-import{
+          clear: both;
+          width:90px;
+          height:36px;
+          background:rgba(251,205,108,1);
+          border-radius:8px;
+          font-size:14px;
+          font-weight:bold;
+          color:rgba(255,255,255,1);
+          line-height:36px;
+          margin-left: 94px;
+          cursor: pointer;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

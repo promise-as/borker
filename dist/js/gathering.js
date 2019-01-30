@@ -23,8 +23,9 @@ var app = new Vue({
     }, {
       icon: "icon-custom",
       text: "自定义风格页面",
-      href: "javascript:;"
+      href: "custom.html"
     }],
+    userName: '张三',
 
     // 兑入订单
     matchOrderFinishData: [{
@@ -40,6 +41,6 @@ var app = new Vue({
       zfk: '2018.08.03',
       hms: '14:20:20'
     }],
-    finishIndex: 3 // 日志完成的步骤(从0开始)
+    finishIndex: 1 // 日志完成的步骤(从0开始)
   }
 });

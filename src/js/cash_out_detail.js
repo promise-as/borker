@@ -6,12 +6,12 @@ var app = new Vue({
       {
         icon: "icon-match",
         text: "兑入订单管理",
-        href: "index.html"
+        href: "match.html"
       },
       {
         icon: "icon-cash-out",
         text: "兑出订单管理",
-        href: "cash_out.json.html"
+        href: "cash_out.html"
       },
       {
         icon: "icon-gathering",
@@ -26,9 +26,10 @@ var app = new Vue({
       {
         icon: "icon-custom",
         text: "自定义风格页面",
-        href: "javascript:;"
+        href: "custom.html"
       }
     ],
+    userName: '张三',
     cashOutOrderDetailIsShow: false,
     isShowRemitMsg: false,
     submitRemitMsgBtn: ['确认', '取消'],
@@ -102,7 +103,7 @@ var app = new Vue({
         }
       ]
     ],
-    remark: '1111111111111',
+    remark: '备注点东西呗',
 
     carouselImg: [
       './images/icon/logo_abc.png',
@@ -112,19 +113,32 @@ var app = new Vue({
     ]
   },
   methods: {
-    voucher: function voucher() {
+    voucher: function () {
       this.cashOutOrderDetailIsShow = true
     },
-    closeVoucher: function closeVoucher() {
+    closeVoucher: function () {
       this.cashOutOrderDetailIsShow = false
     },
-    closeRemitMsg: function closeRemitMsg() {
+    submitRemitMsg: function () {
+      axios.post('url', {})
+        .then(function (response) {
+          // handle success
+          // console.log(response)
+        })
+        .catch(function (error) {
+          // handle error
+          // console.log(error)
+        })
+
       this.isShowRemitMsg = false
     },
-    showRemitMsg: function showRemitMsg() {
+    closeRemitMsg: function() {
+      this.isShowRemitMsg = false
+    },
+    showRemitMsg: function() {
       this.isShowRemitMsg = true
     },
-    btnIndexTab: function btnIndexTab(index) {
+    btnIndexTab: function (index) {
       this.submitRemitMsgBtnIndex = index
     },
   }

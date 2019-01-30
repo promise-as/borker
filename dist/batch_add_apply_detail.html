@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>批量添加兑出申请</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/batch_add_apply_detail.css">
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+<div id="app">
+  <div class="order-detail">
+
+    <!--提示-->
+    <div class="set-succeed" v-show="setSucceed">
+      <!--<div class="set-succeed" v-show="true">-->
+      <div class="mask"></div>
+      <div class="modal">
+        <form action="#">
+          <div class="model-header">
+            <span>提示</span>
+            <i @click="closeSucceed"></i>
+          </div>
+          <div class="model-content">
+            <div class="content">
+              <div class="content-img"></div>
+              <p class="text">{{hintText}}</p>
+              <input type="button" value="关闭"
+                     class="btn" @click="closeSucceed">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <a class="logo" href="./index.html">NOWPAY</a>
+      <a class="sidebar-item"
+         v-for="(item,index) in sidebarNavList"
+         :class="index === 1?'sidebar-active':''"
+         :href="item.href"
+      >
+        <i :class="item.icon"></i>
+        <span>{{item.text}}</span>
+      </a>
+    </div>
+    <div class="main">
+      <div class="main-top">
+        <div class="top-content">
+          <div class="content-left">欢迎使用NOVOXPAY出入金系统！</div>
+          <div class="content-right">
+            <span id="zfk"></span>
+            <span id="watt"></span>
+            <span id="hms"></span>
+            <span>{{userName}}</span>
+          </div>
+        </div>
+        <a class="top-logout" href="./login.html"></a>
+      </div>
+      <div class="main-warp">
+        <div class="header">
+          <span>批量添加兑出申请</span>
+          <a href="./batch_add_apply.html">上一步</a>
+
+        </div>
+        <div class="order">
+          <div class="order-header">
+            <div class="header-content">
+              <ul>
+                <li>
+                  <span>当前余额：</span>
+                  <em>1000USDT/￥7000.00</em>
+                </li>
+                <li>
+                  <span>冻结金额：</span>
+                  <em>10USDT/￥70.00</em>
+                </li>
+                <li>
+                  <span>可兑出金额：</span>
+                  <em>990USDT/￥6930.00</em>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>总出金金额：</span>
+                  <em>￥6000</em>
+                </li>
+                <input type="button" @click="confirmRemitMsg"
+                       value="批量生成出金订单">
+              </ul>
+            </div>
+          </div>
+          <div class="tab"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script src="./js/batch_add_apply_detail.js"></script>
+<script src="./js/read_cache.js"></script>

@@ -23,8 +23,9 @@ var app = new Vue({
     }, {
       icon: "icon-custom",
       text: "自定义风格页面",
-      href: "javascript:;"
+      href: "custom.html"
     }],
+    userName: '张三',
 
     // 兑入订单
     matchOrderFinishData: [{
