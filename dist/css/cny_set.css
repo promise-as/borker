@@ -686,6 +686,7 @@
   float: right;
   margin-top: 9px;
   outline: none;
+  display: none;
 }
 .main .main-warp .order-state .order-content {
   height: 550px;
