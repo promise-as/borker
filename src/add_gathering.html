@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/add_gathering.css">
-  <link rel="stylesheet" href="./js/css/layui.css?t=1545041465443" media="all">
+  <link rel="stylesheet" href="./js/css/layui.css" media="all">
   <!-- 开发环境版本，包含了有帮助的命令行警告 -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
@@ -50,9 +50,11 @@
           <div class="order-item">
             <li v-for="(item, index) in orderData">
               <span>{{item.key}}</span>
-              <input v-model="item.val">
+              <!--日期选择 id=calendar-->
+              <input v-model="item.val"
+                     :class="index === 5 ? 'calendar': ''"
+                     :id="index === 5 ? 'calendar': ''">
               <em v-if="index === 4">USDT</em>
-              <i class="calendar" v-if="index === 5"></i>
             </li>
             <input type="button" class="submit"
             value="立即提交">
@@ -67,7 +69,19 @@
 </html>
 <script src="./js/add_gathering.js"></script>
 <script src="./js/read_cache.js"></script>
-<script src="./js/img_upload.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/layui.js?t=1545041465443"></script>
+<script src="./js/layui.js"></script>
 <script src="./js/voucher_carousel.js"></script>
+<script>
+  $(function () {
+    layui.use('laydate', function(){
+      var dateSelection = layui.laydate;
+
+      //执行一个laydate实例
+      dateSelection.render({
+        elem: '#calendar' //指定元素
+      });
+    });
+  })
+
+</script>

@@ -43,7 +43,7 @@ var app = new Vue({
       val: ""
     }, {
       key: "*截止日期：",
-      val: "2018.10.10"
+      val: "2018-10-10"
     }]
   },
   methods: {}
